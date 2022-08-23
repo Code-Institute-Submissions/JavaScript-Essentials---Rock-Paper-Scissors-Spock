@@ -1,8 +1,16 @@
 body {
     color: white;
-    background-color: blue;
+    background-color: 	#ADD8E6;
     font-size: 45px;
     font-family: 'Inconsolata', monospace, sans-serif;
+}
+
+#landing-title {
+    background-color: red;
+    height: 317px;
+    border-style: dashed;
+    border-color: azure;
+    opacity: 70%;
 }
 
 #landing-title,
@@ -18,10 +26,16 @@ h2 {
 #landing-title,
 h1 {
     margin-top: -70px;
-    color: red;
+    color: yellow;
     font-family: 'Bebas Neue', cursive, sans-serif;
     text-align: center;
     font-size: 100px;
+}
+
+#gradient1 {
+    background-color: #FF5F1F;
+    height: 25px;
+    margin-top: -70px;
 }
 
 #landing-images {
@@ -31,11 +45,61 @@ h1 {
 
 #landing-images,
 img {
-    width: 90%;
+    width: 300px;
     height: 350px;
     /* object-fit: cover; */
     display: flex;
     margin: 0 auto;
-    border: 2px, black;
+    border: 4px, black;
+    border-radius: 25px;
  
+}
+
+#game-selection-area {
+    display: flex;
+    justify-content: center;
+}
+
+#selectme {
+    margin: -10px;
+}
+
+#opp-player {
+    height: 118px;
+    width: 350px;
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: white;
+    background-color: red;
+    border: 2px azure solid;
+    border-style: dotted;
+    margin: 10px;
+}
+
+#opp-computer {
+    height: 118px;
+    width: 350px;
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: white;
+    background-color: red;
+    border: 2px azure solid;
+    border-style: dotted;
+    margin: 10px;
+}
+
+#gradient2 {
+    background-color: #FF5F1F;
+    height: 15px;
+    margin-top: 52px;
+}
+
+#gradient3 {
+    background-color: #FF5F1F;
+    height: 15px;
+    margin-top: 16px;
 }
