@@ -38,6 +38,7 @@ function startPVP() {
         <div id=move-three>
             <h2 class="choice-header">Third Choice:</h2>
         </div>
+        <div class="lock-answer" onclick="lockAnswers();">Lock in your choices! <i class="fa-solid fa-lock-open"></i></div>
         <div id="grad-player-one"></div>
 
     </div>
@@ -59,14 +60,13 @@ function startPVP() {
         <div id=move-three>
             <h2 class="choice-header">Third Choice:</h2>
         </div>
+        <div class="lock-answer">Lock in your choices! <i class="fa-solid fa-lock-open"></i></div>
         <div id="grad-player-two"></div>
 
     </div>
 </div>
 
-<div id="reset-button" onclick="resetGame();">
-    <h2>Main Menu</h2>
-</div>
+<div id="reset-button" onclick="resetGame();">Main Menu</div>
 
 
 
@@ -80,7 +80,7 @@ function startPVP() {
 function startPVC() {
     // get the body of the page
     let startBody = document.body;
-    
+
     // Set the body's innerHTML to player vs computer choice selection
     startBody.innerHTML = `
     <div id="landing-title">
@@ -112,9 +112,7 @@ function startPVC() {
 
         </div>
 
-        <div id="reset-button" onclick="resetGame();">
-            <h2>Main Menu</h2>
-        </div>
+        <div id="reset-button" onclick="resetGame();">Main Menu</div>
 
         
 
@@ -130,3 +128,18 @@ function resetGame() {
     startBody.innerHTML = mainMenu;
     console.log('Returning to the Main Menu...');
 }
+
+function lockAnswers() {
+    const hiddenAnswers = document.getElementById("player-one-moves");
+    const showAnswers = document.getElementById("player-two-moves");
+
+    if (hiddenAnswers.style.display !== "none") {
+        hiddenAnswers.style.display = "none";
+        showAnswers.id = "player-two-moves-show"
+        console.log("Player One choices locked")
+        alert("Click OK to hide your choices, then hand the controls to Player Two!")
+    } else {
+        hiddenAnswers.style.display = "block";
+    }
+
+};
