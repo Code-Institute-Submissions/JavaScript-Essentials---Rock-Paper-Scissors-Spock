@@ -20,20 +20,40 @@ function startPVP() {
 
         <br>
 
-        <div id="player-moves">
-        
-          <div id=move-one>
-            <h2>First Choice:</h2>
+        <div id="move-selection">
+          <div id="player-one-moves">
+            <h3>Player One</h3>
+            <div id=move-one>
+              <h2 class="choice-header">First Choice:</h2>
+            </div>
+
+            <div id=move-two>
+              <h2 class="choice-header">Second Choice:</h2>
+            </div>
+
+            <div id=move-three>
+              <h2 class="choice-header">Third Choice:</h2>
+            </div>
+
           </div>
 
-          <div id=move-two>
-            <h2>Second Choice:</h2>
-          </div>
+          <br>
 
-          <div id=move-three>
-            <h2>Third Choice:</h2>
-          </div>
+          <div id="player-two-moves">
+            <h3>Player Two</h3>
+            <div id=move-one>
+              <h2 class="choice-header">First Choice:</h2>
+            </div>
 
+            <div id=move-two>
+              <h2 class="choice-header">Second Choice:</h2>
+            </div>
+
+            <div id=move-three>
+              <h2 class="choice-header">Third Choice:</h2>
+            </div>
+
+          </div>
         </div>
 
         <div id="reset-button" onclick="resetGame();">

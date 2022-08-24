@@ -1,10 +1,12 @@
+/* base page styling */
 body {
     color: white;
-    background-color: 	#ADD8E6;
+    background-color: #ADD8E6;
     font-size: 45px;
     font-family: 'Inconsolata', monospace, sans-serif;
 }
 
+/* title styling */
 #landing-title {
     background-color: red;
     height: 317px;
@@ -13,18 +15,16 @@ body {
     opacity: 70%;
 }
 
-#landing-title,
-h2 {
+#landing-title>h2 {
     color: white;
     font-size: 80px;
     font-family: 'Silkscreen', cursive, sans-serif;
     text-align: center;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-    
+
 }
 
-#landing-title,
-h1 {
+#landing-title>h1 {
     margin-top: -70px;
     color: yellow;
     font-family: 'Bebas Neue', cursive, sans-serif;
@@ -32,12 +32,15 @@ h1 {
     font-size: 100px;
 }
 
+/* colored gradient bars */
 #gradient1 {
     background-color: #FF5F1F;
     height: 25px;
     margin-top: -70px;
 }
 
+
+/* styling the images on the main menu */
 #landing-images {
     /* height: 500px; */
     /* text-align: center; */
@@ -52,9 +55,11 @@ img {
     margin: 0 auto;
     border: 4px, black;
     border-radius: 25px;
- 
+
 }
 
+
+/* styling of the game type buttons */
 #game-selection-area {
     display: flex;
     justify-content: center;
@@ -62,8 +67,12 @@ img {
 
 #selectme {
     margin: -10px;
+    font-family: 'Silkscreen', cursive, sans-serif;
+    text-align: center;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
+/* different styling for the player and the computer in case elements are targetted in different manners */
 #opp-player {
     height: 118px;
     width: 350px;
@@ -92,6 +101,7 @@ img {
     margin: 10px;
 }
 
+/* colored gradient bars for the game type buttons */
 #gradient2 {
     background-color: #FF5F1F;
     height: 15px;
@@ -102,4 +112,48 @@ img {
     background-color: #FF5F1F;
     height: 15px;
     margin-top: 16px;
+}
+
+/* styling applied when the HTML content is updated to the player vs player game type */
+#move-selection {
+    display: flex;
+    column-count: 2;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 50%;
+}
+
+.choice-header {
+    font-size: 50px;
+    text-align: left;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    margin-left: 10px;
+}
+
+#player-one-moves {
+    border: 3px black solid;
+    width: 40%;
+    margin: 10px;
+}
+
+#player-two-moves {
+    border: 3px black solid;
+    width: 40%;
+    text-align: center;
+    margin: 10px;
+}
+
+#reset-button {
+    border: 3px black solid;
+    border-style: dashed;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 120px;
+    margin: 0 auto;
+    width: 320px;
+    height: 120px;
+    font-size: 45px;
 }
