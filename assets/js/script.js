@@ -7,61 +7,71 @@ function startPVP() {
     // Set the body's innerHTML to player vs player choice selection
     startBody.innerHTML = `
     <!-- title division -->
-        <div id="landing-title">
-          <h2>
-            Rock, Paper, Scissors,
-          </h2>
-          <h1>
-            Nucleur Bomb!
-          </h1>
-        
-          <div id="gradient1"></div>
+    <div id="landing-title">
+    <h2>
+        Rock, Paper, Scissors,
+    </h2>
+    <h1>
+        Nucleur Bomb!
+    </h1>
+
+    <div id="gradient1"></div>
+</div>
+
+<br>
+
+<div id="move-selection">
+    <div id="player-one-moves">
+        <h3 class="player-header">Player One</h3>
+        <div id=move-one>
+            <h2 class="choice-header">First Choice:</h2>
         </div>
 
         <br>
 
-        <div id="move-selection">
-          <div id="player-one-moves">
-            <h3>Player One</h3>
-            <div id=move-one>
-              <h2 class="choice-header">First Choice:</h2>
-            </div>
-
-            <div id=move-two>
-              <h2 class="choice-header">Second Choice:</h2>
-            </div>
-
-            <div id=move-three>
-              <h2 class="choice-header">Third Choice:</h2>
-            </div>
-
-          </div>
-
-          <br>
-
-          <div id="player-two-moves">
-            <h3>Player Two</h3>
-            <div id=move-one>
-              <h2 class="choice-header">First Choice:</h2>
-            </div>
-
-            <div id=move-two>
-              <h2 class="choice-header">Second Choice:</h2>
-            </div>
-
-            <div id=move-three>
-              <h2 class="choice-header">Third Choice:</h2>
-            </div>
-
-          </div>
+        <div id=move-two>
+            <h2 class="choice-header">Second Choice:</h2>
         </div>
 
-        <div id="reset-button" onclick="resetGame();">
-            <h2>Main Menu</h2>
+        <br>
+
+        <div id=move-three>
+            <h2 class="choice-header">Third Choice:</h2>
+        </div>
+        <div id="grad-player-one"></div>
+
+    </div>
+
+    <div id="player-two-moves">
+        <h3 class="player-header">Player Two</h3>
+        <div id=move-one>
+            <h2 class="choice-header">First Choice:</h2>
         </div>
 
-        <!-- Linking to javascript game logic -->
-        <script src="assets/js/script.js"></script>
+        <br>
+
+        <div id=move-two>
+            <h2 class="choice-header">Second Choice:</h2>
+        </div>
+
+        <br>
+
+        <div id=move-three>
+            <h2 class="choice-header">Third Choice:</h2>
+        </div>
+        <div id="grad-player-two"></div>
+
+    </div>
+</div>
+
+<div id="reset-button" onclick="resetGame();">
+    <h2>Main Menu</h2>
+</div>
+
+
+
+<!-- Linking to javascript game logic -->
+<script src="assets/js/script.js"></script>
     `;
 
     console.log('Starting Player VS Player.')

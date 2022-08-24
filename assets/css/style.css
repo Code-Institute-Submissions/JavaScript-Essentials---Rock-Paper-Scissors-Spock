@@ -127,16 +127,28 @@ img {
 }
 
 .choice-header {
-    font-size: 50px;
+    font-size: 30px;
     text-align: left;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
     margin-left: 10px;
+}
+
+.player-header {
+    font-family: 'Silkscreen', cursive, sans-serif;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    background-color: rgb(202, 105, 238);
+    border: 2px solid azure;
+    border-style: dotted;
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 5px;
 }
 
 #player-one-moves {
     border: 3px black solid;
     width: 40%;
     margin: 10px;
+    background-color: #FF5F1F;
 }
 
 #player-two-moves {
@@ -144,6 +156,7 @@ img {
     width: 40%;
     text-align: center;
     margin: 10px;
+    background-color: red;
 }
 
 #reset-button {
@@ -156,4 +169,16 @@ img {
     width: 320px;
     height: 120px;
     font-size: 45px;
+}
+
+#grad-player-one {
+    background-color: red;
+    height: 25px;
+    /* margin-top: -70px; */
+}
+
+#grad-player-two {
+    background-color: #FF5F1F;
+    height: 25px;
+    /* margin-top: -70px; */
 }
