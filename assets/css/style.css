@@ -39,26 +39,6 @@ body {
     margin-top: -70px;
 }
 
-
-/* styling the images on the main menu */
-#landing-images {
-    /* height: 500px; */
-    /* text-align: center; */
-}
-
-#landing-images,
-img {
-    width: 300px;
-    height: 350px;
-    /* object-fit: cover; */
-    display: flex;
-    margin: 0 auto;
-    border: 4px, black;
-    border-radius: 25px;
-
-}
-
-
 /* styling of the game type buttons */
 #game-selection-area {
     display: flex;
@@ -196,43 +176,22 @@ img {
 #grad-player-one {
     background-color: red;
     height: 25px;
-    /* margin-top: -70px; */
 }
 
 #grad-player-two {
     background-color: #FF5F1F;
     height: 25px;
-    /* margin-top: -70px; */
 }
 
-/* arrow styles  */
-#p-one-move-choice {
-    display: flex;
-    align-items: center;
-    width: 150px;
-    margin: 0 auto;
+.red-line-breaker {
+    border: solid red 2px;
+    margin-top: 15px;
+
 }
 
-.fa-regular 
- {
-    font-size: 40px;
-}
+.orange-line-breaker {
+    border: solid #FF5F1F 2px;
+    margin-top: 15px;
 
-.arrow {
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-    margin: 20px;
-  }
-  
-  .right {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-  }
-  
-  .left {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-  }
+}
 

@@ -32,49 +32,38 @@ function startPVP() {
         <h3 class="player-header">Player One</h3>
         <div id=player-one-move-one>
             <h2 class="choice-header">First Choice:</h2>
-            <div class="hand-paper">
-              <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceOne('paper')"></i>
-            </div>
-            <div class="hand-scissors">
-              <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceOne('scissors')"></i>
-            </div>
-            <div class="hand-rock">
-              <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceOne('rock')"></i>                       
-            </div>
+
+            <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceOne('paper')"></i>
+            <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceOne('scissors')"></i>
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceOne('rock')"></i>                       
         </div>
 
-        <br>
+        <div class="red-line-breaker"></div>
 
         <div id="player-one-move-two">
             <h2 class="choice-header">Second Choice:</h2>
-            <div class="hand-paper">
-              <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceTwo('paper')"></i>
-            </div>
-            <div class="hand-scissors">
-              <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceTwo('scissors')"></i>
-            </div>
-            <div class="hand-rock">
-              <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceTwo('rock')"></i>                       
-            </div>
+
+            <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceTwo('paper')"></i>
+            <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceTwo('scissors')"></i>
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceTwo('rock')"></i>                       
         </div>
 
-        <br>
+        <div class="red-line-breaker"></div>
 
         <div id="player-one-move-three">
             <h2 class="choice-header">Third Choice:</h2>
-            <div class="hand-paper">
-              <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceThree('paper')"></i>
-            </div>
-            <div class="hand-scissors">
-              <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
-            </div>
-            <div class="hand-rock">
-              <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i>                       
-            </div>
+
+            <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceThree('paper')"></i>
+            <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i>                       
         </div>
+
+        <div class="red-line-breaker"></div>
 
         <!-- the code below will lock the input for player one and update the HTML to display player two -->
         <div class="lock-answer" onclick="lockAnswers();">Lock in your choices! <i class="fa-solid fa-lock-open"></i></div>
+
+        <!-- this division creats a small colored bar at the bottom -->
         <div id="grad-player-one"></div>
 
     </div>
@@ -84,46 +73,37 @@ function startPVP() {
         <h3 class="player-header">Player Two</h3>
         <div id="player-two-move-one">
             <h2 class="choice-header">First Choice:</h2>
-            <div class="hand-paper">
-              <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceOne('paper')"></i>
-            </div>
-            <div class="hand-scissors">
-              <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceOne('scissors')"></i>
-            </div>
-            <div class="hand-rock">
-              <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceOne('rock')"></i>                       
-            </div>
+
+            <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceOne('paper')"></i>
+            <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceOne('scissors')"></i>
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceOne('rock')"></i>                       
         </div>
 
-        <br>
+        <div class="orange-line-breaker"></div>
 
         <div id="player-two-move-two">
             <h2 class="choice-header">Second Choice:</h2>
-            <div class="hand-paper">
-              <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceTwo('paper')"></i>
-            </div>
-            <div class="hand-scissors">
-              <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceTwo('scissors')"></i>
-            </div>
-            <div class="hand-rock">
-              <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceTwo('rock')"></i>                       
-            </div>
+
+            <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceTwo('paper')"></i>
+            <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceTwo('scissors')"></i>
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceTwo('rock')"></i>                       
         </div>
 
-        <br>
+        <div class="orange-line-breaker"></div>
 
         <div id="player-two-move-three">
             <h2 class="choice-header">Third Choice:</h2>
-            <div class="hand-paper">
-              <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceThree('paper')"></i>
-            </div>
-            <div class="hand-scissors">
-              <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceThree('scissors')"></i>
-            </div>
-            <div class="hand-rock">
-              <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceThree('rock')"></i>                       
-            </div>
+
+            <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceThree('paper')"></i>
+            <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceThree('scissors')"></i>
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceThree('rock')"></i>                       
         </div>
+
+        <div class="orange-line-breaker"></div>
+
+        <!-- the code below will start a new game of PVP -->
+        <div class="lock-answer" onclick="startPVP();">Play again!</div>
+
         <div id="grad-player-two"></div>
 
     </div>
