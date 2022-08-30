@@ -7,11 +7,11 @@ let playerTwoMoves = []
 
 
 function startPVP() {
-    // get the body of the page
-    let startBody = document.body;
+  // get the body of the page
+  let startBody = document.body;
 
-    // Set the body's innerHTML to player vs player choice selection
-    startBody.innerHTML = `
+  // Set the body's innerHTML to player vs player choice selection
+  startBody.innerHTML = `
     <!-- title division -->
     <div id="landing-title">
     <h2>
@@ -124,7 +124,6 @@ function startPVP() {
               <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceThree('rock')"></i>                       
             </div>
         </div>
-        <div class="lock-answer" onclick="compareResultsPVP();">Compare your choices!</div>
         <div id="grad-player-two"></div>
 
     </div>
@@ -139,15 +138,15 @@ function startPVP() {
 <script src="assets/js/script.js"></script>
     `;
 
-    console.log('Starting Player VS Player.')
+  console.log('Starting Player VS Player.')
 }
 
 function startPVC() {
-    // get the body of the page
-    let startBody = document.body;
+  // get the body of the page
+  let startBody = document.body;
 
-    // Set the body's innerHTML to player vs computer choice selection
-    startBody.innerHTML = `
+  // Set the body's innerHTML to player vs computer choice selection
+  startBody.innerHTML = `
     <div id="landing-title">
           <h2>
             Rock, Paper, Scissors,
@@ -185,55 +184,58 @@ function startPVC() {
         <script src="assets/js/script.js"></script>
     `;
 
-    console.log('Starting Player VS Computer.');
+  console.log('Starting Player VS Computer.');
 }
 
 pickPlayerOneChoiceOne = (handOne) => {
-    let hideChoiceOne = document.getElementById("player-one-move-one")
-    hideChoiceOne.style.display = "none";
+  let hideChoiceOne = document.getElementById("player-one-move-one")
+  hideChoiceOne.style.display = "none";
 
-    playerOneMoves.push(handOne)
+  playerOneMoves.push(handOne)
+  console.log(playerOneMoves);
+
+  pickPlayerOneChoiceTwo = (handTwo) => {
+    let hideChoiceTwo = document.getElementById("player-one-move-two")
+    hideChoiceTwo.style.display = "none";
+
+    playerOneMoves.push(handTwo)
     console.log(playerOneMoves);
+  }
 
-    pickPlayerOneChoiceTwo = (handTwo) => {
-        let hideChoiceTwo = document.getElementById("player-one-move-two")
-        hideChoiceTwo.style.display = "none";
+  pickPlayerOneChoiceThree = (handThree) => {
+    let hideChoiceTwo = document.getElementById("player-one-move-three")
+    hideChoiceTwo.style.display = "none";
 
-        playerOneMoves.push(handTwo)
-        console.log(playerOneMoves);
-    }
-
-    pickPlayerOneChoiceThree = (handThree) => {
-        let hideChoiceTwo = document.getElementById("player-one-move-three")
-        hideChoiceTwo.style.display = "none";
-
-        playerOneMoves.push(handThree)
-        console.log(playerOneMoves);
-    }
+    playerOneMoves.push(handThree)
+    console.log(playerOneMoves);
+  }
 }
 
 pickPlayerTwoChoiceOne = (handOne) => {
-    let hideChoiceOne = document.getElementById("player-two-move-one")
-    hideChoiceOne.style.display = "none";
+  let hideChoiceOne = document.getElementById("player-two-move-one")
+  hideChoiceOne.style.display = "none";
 
-    playerTwoMoves.push(handOne)
+  playerTwoMoves.push(handOne)
+  console.log(playerTwoMoves);
+
+  pickPlayerTwoChoiceTwo = (handTwo) => {
+    let hideChoiceTwo = document.getElementById("player-two-move-two")
+    hideChoiceTwo.style.display = "none";
+
+    playerTwoMoves.push(handTwo)
+    console.log(playerTwoMoves);
+  }
+
+  pickPlayerTwoChoiceThree = (handThree) => {
+    let hideChoiceThree = document.getElementById("player-two-move-three")
+    hideChoiceThree.style.display = "none";
+
+    playerTwoMoves.push(handThree)
     console.log(playerTwoMoves);
 
-    pickPlayerTwoChoiceTwo = (handTwo) => {
-        let hideChoiceTwo = document.getElementById("player-two-move-two")
-        hideChoiceTwo.style.display = "none";
-
-        playerTwoMoves.push(handTwo)
-        console.log(playerTwoMoves);
-    }
-
-    pickPlayerTwoChoiceThree = (handThree) => {
-        let hideChoiceThree = document.getElementById("player-two-move-three")
-        hideChoiceThree.style.display = "none";
-
-        playerTwoMoves.push(handThree)
-        console.log(playerTwoMoves);
-    }
+    // call the function to compare the arrays and log the winner 
+    compareResultsPVP(playerOneMoves, playerTwoMoves);
+  }
 }
 
 // compare the playerOneMoves and playerTwoMoves arrays once they are full and adjust scoring
@@ -241,44 +243,16 @@ const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
 
   // Draw cases round 1 (array index [0])
   if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "paper") {
-    console.log("Move One is... A draw!")
-    alert("Move One is... A draw!")
+    console.log("Round 1 is... A draw!")
+    alert("Round 1 is... A draw!")
   }
   if (playerOneMoves[0] == "rock" && playerTwoMoves[0] == "rock") {
-    console.log("Move One is... A draw!")
-    alert("Move One is... A draw!")
+    console.log("Round 1 is... A draw!")
+    alert("Round 1 is... A draw!")
   }
   if (playerOneMoves[0] == "scissors" && playerTwoMoves[0] == "scissors") {
-    console.log("Move One is... A draw!")
-    alert("Move One is... A draw!")
-  }
-
-  // check round two (array index [1])
-  if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "paper") {
-    console.log("Move Two is... A draw!")
-    alert("Move Two is... A draw!")
-  }
-  if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "rock") {
-    console.log("Move Two is... A draw!")
-    alert("Move Two is... A draw!")
-  }
-  if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "scissors") {
-    console.log("Move Two is... A draw!")
-    alert("Move Two is... A draw!")
-  }
-
-  // check round three (array index [2])
-  if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "paper") {
-    console.log("Move Three is... A draw!")
-    alert("Move Three is... A draw!")
-  }
-  if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "rock") {
-    console.log("Move Three is... A draw!")
-    alert("Move Three is... A draw!")
-  }
-  if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "scissors") {
-    console.log("Move Three is... A draw!")
-    alert("Move Three is... A draw!")
+    console.log("Round 1 is... A draw!")
+    alert("Round 1 is... A draw!")
   }
 
   // Player One winning cases round 1 (array index [0])
@@ -295,34 +269,6 @@ const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
     alert("Player One wins Round 1!")
   }
 
-  // check round two (array index [1])
-  if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "rock") {
-    console.log("Player One wins Round 2!")
-    alert("Player One wins Round 2!")
-  }
-  if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "scissors") {
-    console.log("Player One wins Round 2!")
-    alert("Player One wins Round 2!")
-  }
-  if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "paper") {
-    console.log("Player One wins Round 2!")
-    alert("Player One wins Round 2!")
-  }
-
-  // check round three (array index [2])
-  if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "rock") {
-    console.log("Player One wins Round 3!")
-    alert("Player One wins Round 3!")
-  }
-  if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "scissors") {
-    console.log("Player One wins Round 3!")
-    alert("Player One wins Round 3!")
-  }
-  if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "paper") {
-    console.log("Player One wins Round 3!")
-    alert("Player One wins Round 3!")
-  }
-
   // Player Two winning cases round 1 (array index [0])
   if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "scissors") {
     console.log("Player Two wins Round 1!")
@@ -337,7 +283,35 @@ const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
     alert("Player Two wins Round 1!")
   }
 
-  // check round two (array index [1])
+  // draw cases, check round two (array index [1])
+  if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "paper") {
+    console.log("Round 2 is... A draw!")
+    alert("Round 2 is... A draw!")
+  }
+  if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "rock") {
+    console.log("Round 2 is... A draw!")
+    alert("Round 2 is... A draw!")
+  }
+  if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "scissors") {
+    console.log("Round 2 is... A draw!")
+    alert("Round 2 is... A draw!")
+  }
+
+  // player one wins, check round two (array index [1])
+  if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "rock") {
+    console.log("Player One wins Round 2!")
+    alert("Player One wins Round 2!")
+  }
+  if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "scissors") {
+    console.log("Player One wins Round 2!")
+    alert("Player One wins Round 2!")
+  }
+  if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "paper") {
+    console.log("Player One wins Round 2!")
+    alert("Player One wins Round 2!")
+  }
+
+  //player two wins, check round two (array index [1])
   if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "scissors") {
     console.log("Player Two wins Round 2!")
     alert("Player Two wins Round 2!")
@@ -351,7 +325,35 @@ const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
     alert("Player Two wins Round 2!")
   }
 
-  // check round three (array index [2])
+  //draw cases, check round three (array index [2])
+  if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "paper") {
+    console.log("Round 3 is... A draw!")
+    alert("Round 3 is... A draw!")
+  }
+  if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "rock") {
+    console.log("Round 3 is... A draw!")
+    alert("Round 3 is... A draw!")
+  }
+  if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "scissors") {
+    console.log("Round 3 is... A draw!")
+    alert("Round 3 is... A draw!")
+  }
+
+  //player one wins, check round three (array index [2])
+  if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "rock") {
+    console.log("Player One wins Round 3!")
+    alert("Player One wins Round 3!")
+  }
+  if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "scissors") {
+    console.log("Player One wins Round 3!")
+    alert("Player One wins Round 3!")
+  }
+  if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "paper") {
+    console.log("Player One wins Round 3!")
+    alert("Player One wins Round 3!")
+  }
+
+  //player two wins, check round three (array index [2])
   if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "scissors") {
     console.log("Player Two wins Round 3!")
     alert("Player Two wins Round 3!")
@@ -368,22 +370,22 @@ const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
 
 
 function resetGame() {
-    let startBody = document.body;
-    startBody.innerHTML = mainMenu;
-    console.log('Returning to the Main Menu...');
+  let startBody = document.body;
+  startBody.innerHTML = mainMenu;
+  console.log('Returning to the Main Menu...');
 }
 
 function lockAnswers() {
-    const hiddenAnswers = document.getElementById("player-one-moves");
-    const showAnswers = document.getElementById("player-two-moves");
+  const hiddenAnswers = document.getElementById("player-one-moves");
+  const showAnswers = document.getElementById("player-two-moves");
 
-    if (hiddenAnswers.style.display !== "none") {
-        hiddenAnswers.style.display = "none";
-        showAnswers.id = "player-two-moves-show"
-        console.log("Player One choices locked")
-        alert("Click OK to hide your choices, then hand the controls to Player Two!")
-    } else {
-        hiddenAnswers.style.display = "block";
-    }
+  if (hiddenAnswers.style.display !== "none") {
+    hiddenAnswers.style.display = "none";
+    showAnswers.id = "player-two-moves-show"
+    console.log("Player One choices locked")
+    alert("Click OK to hide your choices, then hand the controls to Player Two!")
+  } else {
+    hiddenAnswers.style.display = "block";
+  }
 
 };
