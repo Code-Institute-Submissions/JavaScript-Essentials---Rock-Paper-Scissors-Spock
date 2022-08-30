@@ -236,6 +236,135 @@ pickPlayerTwoChoiceOne = (handOne) => {
     }
 }
 
+// compare the playerOneMoves and playerTwoMoves arrays once they are full and adjust scoring
+const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
+
+  // Draw cases round 1 (array index [0])
+  if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "paper") {
+    console.log("Move One is... A draw!")
+    alert("Move One is... A draw!")
+  }
+  if (playerOneMoves[0] == "rock" && playerTwoMoves[0] == "rock") {
+    console.log("Move One is... A draw!")
+    alert("Move One is... A draw!")
+  }
+  if (playerOneMoves[0] == "scissors" && playerTwoMoves[0] == "scissors") {
+    console.log("Move One is... A draw!")
+    alert("Move One is... A draw!")
+  }
+
+  // check round two (array index [1])
+  if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "paper") {
+    console.log("Move Two is... A draw!")
+    alert("Move Two is... A draw!")
+  }
+  if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "rock") {
+    console.log("Move Two is... A draw!")
+    alert("Move Two is... A draw!")
+  }
+  if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "scissors") {
+    console.log("Move Two is... A draw!")
+    alert("Move Two is... A draw!")
+  }
+
+  // check round three (array index [2])
+  if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "paper") {
+    console.log("Move Three is... A draw!")
+    alert("Move Three is... A draw!")
+  }
+  if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "rock") {
+    console.log("Move Three is... A draw!")
+    alert("Move Three is... A draw!")
+  }
+  if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "scissors") {
+    console.log("Move Three is... A draw!")
+    alert("Move Three is... A draw!")
+  }
+
+  // Player One winning cases round 1 (array index [0])
+  if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "rock") {
+    console.log("Player One wins Round 1!")
+    alert("Player One wins Round 1!")
+  }
+  if (playerOneMoves[0] == "rock" && playerTwoMoves[0] == "scissors") {
+    console.log("Player One wins Round 1!")
+    alert("Player One wins Round 1!")
+  }
+  if (playerOneMoves[0] == "scissors" && playerTwoMoves[0] == "paper") {
+    console.log("Player One wins Round 1!")
+    alert("Player One wins Round 1!")
+  }
+
+  // check round two (array index [1])
+  if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "rock") {
+    console.log("Player One wins Round 2!")
+    alert("Player One wins Round 2!")
+  }
+  if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "scissors") {
+    console.log("Player One wins Round 2!")
+    alert("Player One wins Round 2!")
+  }
+  if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "paper") {
+    console.log("Player One wins Round 2!")
+    alert("Player One wins Round 2!")
+  }
+
+  // check round three (array index [2])
+  if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "rock") {
+    console.log("Player One wins Round 3!")
+    alert("Player One wins Round 3!")
+  }
+  if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "scissors") {
+    console.log("Player One wins Round 3!")
+    alert("Player One wins Round 3!")
+  }
+  if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "paper") {
+    console.log("Player One wins Round 3!")
+    alert("Player One wins Round 3!")
+  }
+
+  // Player Two winning cases round 1 (array index [0])
+  if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "scissors") {
+    console.log("Player Two wins Round 1!")
+    alert("Player Two wins Round 1!")
+  }
+  if (playerOneMoves[0] == "rock" && playerTwoMoves[0] == "paper") {
+    console.log("Player Two wins Round 1!")
+    alert("Player Two wins Round 1!")
+  }
+  if (playerOneMoves[0] == "scissors" && playerTwoMoves[0] == "rock") {
+    console.log("Player Two wins Round 1!")
+    alert("Player Two wins Round 1!")
+  }
+
+  // check round two (array index [1])
+  if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "scissors") {
+    console.log("Player Two wins Round 2!")
+    alert("Player Two wins Round 2!")
+  }
+  if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "paper") {
+    console.log("Player Two wins Round 2!")
+    alert("Player Two wins Round 2!")
+  }
+  if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "rock") {
+    console.log("Player Two wins Round 2!")
+    alert("Player Two wins Round 2!")
+  }
+
+  // check round three (array index [2])
+  if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "scissors") {
+    console.log("Player Two wins Round 3!")
+    alert("Player Two wins Round 3!")
+  }
+  if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "paper") {
+    console.log("Player Two wins Round 3!")
+    alert("Player Two wins Round 3!")
+  }
+  if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "rock") {
+    console.log("Player Two wins Round 3!")
+    alert("Player Two wins Round 3!")
+  }
+};
 
 
 function resetGame() {
