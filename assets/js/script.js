@@ -30,7 +30,7 @@ function startPVP() {
 <div id="move-selection">
     <div id="player-one-moves">
         <h3 class="player-header">Player One</h3>
-        <div id=move-one>
+        <div id=player-one-move-one>
             <h2 class="choice-header">First Choice:</h2>
             <div class="hand-paper">
               <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceOne('paper')"></i>
@@ -45,7 +45,7 @@ function startPVP() {
 
         <br>
 
-        <div id=move-two>
+        <div id="player-one-move-two">
             <h2 class="choice-header">Second Choice:</h2>
             <div class="hand-paper">
               <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceTwo('paper')"></i>
@@ -60,7 +60,7 @@ function startPVP() {
 
         <br>
 
-        <div id=move-three>
+        <div id="player-one-move-three">
             <h2 class="choice-header">Third Choice:</h2>
             <div class="hand-paper">
               <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceThree('paper')"></i>
@@ -82,7 +82,7 @@ function startPVP() {
     <!-- the code below builds the same division as above but for player 2 instead -->
     <div id="player-two-moves">
         <h3 class="player-header">Player Two</h3>
-        <div id=move-one>
+        <div id="player-two-move-one">
             <h2 class="choice-header">First Choice:</h2>
             <div class="hand-paper">
               <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceOne('paper')"></i>
@@ -97,7 +97,7 @@ function startPVP() {
 
         <br>
 
-        <div id=move-two>
+        <div id="player-two-move-two">
             <h2 class="choice-header">Second Choice:</h2>
             <div class="hand-paper">
               <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceTwo('paper')"></i>
@@ -112,19 +112,19 @@ function startPVP() {
 
         <br>
 
-        <div id=move-three>
+        <div id="player-two-move-three">
             <h2 class="choice-header">Third Choice:</h2>
             <div class="hand-paper">
-              <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceThree('paper')"></i>
+              <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceThree('paper')"></i>
             </div>
             <div class="hand-scissors">
-              <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
+              <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceThree('scissors')"></i>
             </div>
             <div class="hand-rock">
-              <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i>                       
+              <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceThree('rock')"></i>                       
             </div>
         </div>
-        <div class="lock-answer">Lock in your choices! <i class="fa-solid fa-lock-open"></i></div>
+        <div class="lock-answer" onclick="compareResultsPVP();">Compare your choices!</div>
         <div id="grad-player-two"></div>
 
     </div>
@@ -189,14 +189,14 @@ function startPVC() {
 }
 
 pickPlayerOneChoiceOne = (handOne) => {
-    let hideChoiceOne = document.getElementById("move-one")
+    let hideChoiceOne = document.getElementById("player-one-move-one")
     hideChoiceOne.style.display = "none";
 
     playerOneMoves.push(handOne)
     console.log(playerOneMoves);
 
     pickPlayerOneChoiceTwo = (handTwo) => {
-        let hideChoiceTwo = document.getElementById("move-two")
+        let hideChoiceTwo = document.getElementById("player-one-move-two")
         hideChoiceTwo.style.display = "none";
 
         playerOneMoves.push(handTwo)
@@ -204,7 +204,7 @@ pickPlayerOneChoiceOne = (handOne) => {
     }
 
     pickPlayerOneChoiceThree = (handThree) => {
-        let hideChoiceTwo = document.getElementById("move-three")
+        let hideChoiceTwo = document.getElementById("player-one-move-three")
         hideChoiceTwo.style.display = "none";
 
         playerOneMoves.push(handThree)
@@ -213,15 +213,24 @@ pickPlayerOneChoiceOne = (handOne) => {
 }
 
 pickPlayerTwoChoiceOne = (handOne) => {
+    let hideChoiceOne = document.getElementById("player-two-move-one")
+    hideChoiceOne.style.display = "none";
+
     playerTwoMoves.push(handOne)
     console.log(playerTwoMoves);
 
     pickPlayerTwoChoiceTwo = (handTwo) => {
+        let hideChoiceTwo = document.getElementById("player-two-move-two")
+        hideChoiceTwo.style.display = "none";
+
         playerTwoMoves.push(handTwo)
         console.log(playerTwoMoves);
     }
 
     pickPlayerTwoChoiceThree = (handThree) => {
+        let hideChoiceThree = document.getElementById("player-two-move-three")
+        hideChoiceThree.style.display = "none";
+
         playerTwoMoves.push(handThree)
         console.log(playerTwoMoves);
     }
