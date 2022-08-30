@@ -1,6 +1,10 @@
+// get the HTML content of the main menu for reset function
 const mainMenu = document.body.innerHTML
 
-let playerChoices = []
+// create empty arrays for the player choices
+let playerOneMoves = []
+let playerTwoMoves = []
+
 
 function startPVP() {
     // get the body of the page
@@ -22,6 +26,7 @@ function startPVP() {
 
 <br>
 
+<!--  the code below builds the box where player one can click to select from various move types and lock in their choices -->
 <div id="move-selection">
     <div id="player-one-moves">
         <h3 class="player-header">Player One</h3>
@@ -68,11 +73,13 @@ function startPVP() {
             </div>
         </div>
 
+        <!-- the code below will lock the input for player one and update the HTML to display player two -->
         <div class="lock-answer" onclick="lockAnswers();">Lock in your choices! <i class="fa-solid fa-lock-open"></i></div>
         <div id="grad-player-one"></div>
 
     </div>
 
+    <!-- the code below builds the same division as above but for player 2 instead -->
     <div id="player-two-moves">
         <h3 class="player-header">Player Two</h3>
         <div id=move-one>
@@ -123,6 +130,7 @@ function startPVP() {
     </div>
 </div>
 
+<!-- this code will reset the HTML content of the page to that of the original Main Menu content -->
 <div id="reset-button" onclick="resetGame();">Main Menu</div>
 
 
@@ -181,20 +189,44 @@ function startPVC() {
 }
 
 pickPlayerOneChoiceOne = (handOne) => {
-    playerChoices.push(handOne)
-    console.log(playerChoices);
+    playerOneMoves.push(handOne)
+    console.log(playerOneMoves);
 
+    pickPlayerOneChoiceTwo = (handTwo) => {
+        playerOneMoves.push(handTwo)
+        console.log(playerOneMoves);
+    }
+
+    pickPlayerOneChoiceThree = (handThree) => {
+        playerOneMoves.push(handThree)
+        console.log(playerOneMoves);
+    }
 }
 
-pickPlayerOneChoiceTwo = (handTwo) => {
-    playerChoices.push(handTwo)
-    console.log(playerChoices);
+pickPlayerTwoChoiceOne = (handOne) => {
+    playerTwoMoves.push(handOne)
+    console.log(playerTwoMoves);
+
+    pickPlayerTwoChoiceTwo = (handTwo) => {
+        playerTwoMoves.push(handTwo)
+        console.log(playerTwoMoves);
+    }
+
+    pickPlayerTwoChoiceThree = (handThree) => {
+        playerTwoMoves.push(handThree)
+        console.log(playerTwoMoves);
+    }
 }
 
-pickPlayerOneChoiceThree = (handThree) => {
-    playerChoices.push(handThree)
-    console.log(playerChoices);
-}
+// pickPlayerOneChoiceTwo = (handTwo) => {
+//     playerChoices.push(handTwo)
+//     console.log(playerChoices);
+// }
+
+// pickPlayerOneChoiceThree = (handThree) => {
+//     playerChoices.push(handThree)
+//     console.log(playerChoices);
+// }
 
 function resetGame() {
     let startBody = document.body;
