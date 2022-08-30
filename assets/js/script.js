@@ -1,5 +1,7 @@
 const mainMenu = document.body.innerHTML
 
+let playerChoices = []
+
 function startPVP() {
     // get the body of the page
     let startBody = document.body;
@@ -25,10 +27,14 @@ function startPVP() {
         <h3 class="player-header">Player One</h3>
         <div id=move-one>
             <h2 class="choice-header">First Choice:</h2>
-            <div id="p-one-move-choice">
-              <p class="left-button" onclick="changeLeft();"><i class="arrow left"></i></p>
-              <p><i class="fa-regular fa-hand-back-fist"></i></p>
-              <p class="right-button" onclick="changeRight();"><i class="arrow right"></i></p>
+            <div class="hand-paper">
+              <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceOne('paper')"></i>
+            </div>
+            <div class="hand-scissors">
+              <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceOne('scissors')"></i>
+            </div>
+            <div class="hand-rock">
+              <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceOne('rock')"></i>                       
             </div>
         </div>
 
@@ -36,13 +42,32 @@ function startPVP() {
 
         <div id=move-two>
             <h2 class="choice-header">Second Choice:</h2>
+            <div class="hand-paper">
+              <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceTwo('paper')"></i>
+            </div>
+            <div class="hand-scissors">
+              <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceTwo('scissors')"></i>
+            </div>
+            <div class="hand-rock">
+              <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceTwo('rock')"></i>                       
+            </div>
         </div>
 
         <br>
 
         <div id=move-three>
             <h2 class="choice-header">Third Choice:</h2>
+            <div class="hand-paper">
+              <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceThree('paper')"></i>
+            </div>
+            <div class="hand-scissors">
+              <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
+            </div>
+            <div class="hand-rock">
+              <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i>                       
+            </div>
         </div>
+
         <div class="lock-answer" onclick="lockAnswers();">Lock in your choices! <i class="fa-solid fa-lock-open"></i></div>
         <div id="grad-player-one"></div>
 
@@ -52,18 +77,45 @@ function startPVP() {
         <h3 class="player-header">Player Two</h3>
         <div id=move-one>
             <h2 class="choice-header">First Choice:</h2>
+            <div class="hand-paper">
+              <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceOne('paper')"></i>
+            </div>
+            <div class="hand-scissors">
+              <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceOne('scissors')"></i>
+            </div>
+            <div class="hand-rock">
+              <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceOne('rock')"></i>                       
+            </div>
         </div>
 
         <br>
 
         <div id=move-two>
             <h2 class="choice-header">Second Choice:</h2>
+            <div class="hand-paper">
+              <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceTwo('paper')"></i>
+            </div>
+            <div class="hand-scissors">
+              <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceTwo('scissors')"></i>
+            </div>
+            <div class="hand-rock">
+              <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceTwo('rock')"></i>                       
+            </div>
         </div>
 
         <br>
 
         <div id=move-three>
             <h2 class="choice-header">Third Choice:</h2>
+            <div class="hand-paper">
+              <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceThree('paper')"></i>
+            </div>
+            <div class="hand-scissors">
+              <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
+            </div>
+            <div class="hand-rock">
+              <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i>                       
+            </div>
         </div>
         <div class="lock-answer">Lock in your choices! <i class="fa-solid fa-lock-open"></i></div>
         <div id="grad-player-two"></div>
@@ -128,20 +180,20 @@ function startPVC() {
     console.log('Starting Player VS Computer.');
 }
 
-function changeLeft() {
-    let leftButton = document.getElementById("p-one-move-choice");
+pickPlayerOneChoiceOne = (handOne) => {
+    playerChoices.push(handOne)
+    console.log(playerChoices);
 
-    leftButton.innerHTML = `<p class="left-button" onclick="changeLeft();"><i class="arrow left"></i></p>
-    <p><i class="fa-solid fa-scissors"></i></p>
-    <p class="right-button" onclick="changeRight();"><i class="arrow right"></i></p>`
 }
 
-function changeRight() {
-    let rightButton = document.getElementById("p-one-move-choice");
+pickPlayerOneChoiceTwo = (handTwo) => {
+    playerChoices.push(handTwo)
+    console.log(playerChoices);
+}
 
-    rightButton.innerHTML = `<p class="left-button" onclick="changeLeft();"><i class="arrow left"></i></p>
-    <p><i class="fa-solid fa-paper-plane"></i></i></p>
-    <p class="right-button" onclick="changeRight();"><i class="arrow right"></i></p>`
+pickPlayerOneChoiceThree = (handThree) => {
+    playerChoices.push(handThree)
+    console.log(playerChoices);
 }
 
 function resetGame() {
