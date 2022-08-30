@@ -189,15 +189,24 @@ function startPVC() {
 }
 
 pickPlayerOneChoiceOne = (handOne) => {
+    let hideChoiceOne = document.getElementById("move-one")
+    hideChoiceOne.style.display = "none";
+
     playerOneMoves.push(handOne)
     console.log(playerOneMoves);
 
     pickPlayerOneChoiceTwo = (handTwo) => {
+        let hideChoiceTwo = document.getElementById("move-two")
+        hideChoiceTwo.style.display = "none";
+
         playerOneMoves.push(handTwo)
         console.log(playerOneMoves);
     }
 
     pickPlayerOneChoiceThree = (handThree) => {
+        let hideChoiceTwo = document.getElementById("move-three")
+        hideChoiceTwo.style.display = "none";
+
         playerOneMoves.push(handThree)
         console.log(playerOneMoves);
     }
@@ -218,15 +227,7 @@ pickPlayerTwoChoiceOne = (handOne) => {
     }
 }
 
-// pickPlayerOneChoiceTwo = (handTwo) => {
-//     playerChoices.push(handTwo)
-//     console.log(playerChoices);
-// }
 
-// pickPlayerOneChoiceThree = (handThree) => {
-//     playerChoices.push(handThree)
-//     console.log(playerChoices);
-// }
 
 function resetGame() {
     let startBody = document.body;
