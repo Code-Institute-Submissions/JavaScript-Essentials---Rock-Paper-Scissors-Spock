@@ -13,43 +13,52 @@
 
 <div id="move-selection">
     <div id="player-one-moves">
-        <h3>Player One</h3>
+        <h3 class="player-header">Player One</h3>
         <div id=move-one>
             <h2 class="choice-header">First Choice:</h2>
         </div>
+
+        <br>
 
         <div id=move-two>
             <h2 class="choice-header">Second Choice:</h2>
         </div>
 
+        <br>
+
         <div id=move-three>
             <h2 class="choice-header">Third Choice:</h2>
+        </div>
+        <div class="lock-answer" onclick="lockAnswers();">Lock in your choices! <i class="fa-solid fa-lock-open"></i>
         </div>
         <div id="grad-player-one"></div>
 
     </div>
 
-    <div id=" player-two-moves">
-        <h3>Player Two</h3>
+    <div id="player-two-moves">
+        <h3 class="player-header">Player Two</h3>
         <div id=move-one>
             <h2 class="choice-header">First Choice:</h2>
         </div>
+
+        <br>
 
         <div id=move-two>
             <h2 class="choice-header">Second Choice:</h2>
         </div>
 
+        <br>
+
         <div id=move-three>
             <h2 class="choice-header">Third Choice:</h2>
         </div>
+        <div class="lock-answer">Lock in your choices! <i class="fa-solid fa-lock-open"></i></div>
         <div id="grad-player-two"></div>
 
     </div>
 </div>
 
-<div id="reset-button" onclick="resetGame();">
-    <h2>Main Menu</h2>
-</div>
+<div id="reset-button" onclick="resetGame();">Main Menu</div>
 
 
 

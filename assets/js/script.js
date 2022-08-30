@@ -25,6 +25,11 @@ function startPVP() {
         <h3 class="player-header">Player One</h3>
         <div id=move-one>
             <h2 class="choice-header">First Choice:</h2>
+            <div id="p-one-move-choice">
+              <p class="left-button" onclick="changeLeft();"><i class="arrow left"></i></p>
+              <p><i class="fa-regular fa-hand-back-fist"></i></p>
+              <p class="right-button" onclick="changeRight();"><i class="arrow right"></i></p>
+            </div>
         </div>
 
         <br>
@@ -121,6 +126,22 @@ function startPVC() {
     `;
 
     console.log('Starting Player VS Computer.');
+}
+
+function changeLeft() {
+    let leftButton = document.getElementById("p-one-move-choice");
+
+    leftButton.innerHTML = `<p class="left-button" onclick="changeLeft();"><i class="arrow left"></i></p>
+    <p><i class="fa-solid fa-scissors"></i></p>
+    <p class="right-button" onclick="changeRight();"><i class="arrow right"></i></p>`
+}
+
+function changeRight() {
+    let rightButton = document.getElementById("p-one-move-choice");
+
+    rightButton.innerHTML = `<p class="left-button" onclick="changeLeft();"><i class="arrow left"></i></p>
+    <p><i class="fa-solid fa-paper-plane"></i></i></p>
+    <p class="right-button" onclick="changeRight();"><i class="arrow right"></i></p>`
 }
 
 function resetGame() {
