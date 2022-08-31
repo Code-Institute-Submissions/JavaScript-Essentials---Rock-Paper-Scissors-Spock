@@ -31,13 +31,13 @@ function startPVP() {
   <div id="player-one-score">
     <p contenteditable="true">P1:</p>
     <div class="red-line-breaker"></div>
-    <h1> 0 </h1>
+    <h1 id="score-one"> 0 </h1>
   </div>
   <div class="red-line-breaker"></div>
   <div id="player-two-score">
     <p contenteditable="true">P2</p>
     <div class="red-line-breaker"></div>
-    <h1> 0 </h1>
+    <h1 id="score-two"> 0 </h1>
   </div>
 </div>
 
@@ -118,7 +118,7 @@ function startPVP() {
         <div class="orange-line-breaker"></div>
 
         <!-- the code below will start a new game of PVP -->
-        <div class="lock-answer" onclick="startPVP();">Play again!</div>
+        <div class="lock-answer" onclick="startPVPNewRound();">Play again!</div>
 
         <div id="grad-player-two"></div>
 
@@ -136,6 +136,149 @@ function startPVP() {
     `;
 
   console.log('Starting Player VS Player.')
+}
+
+function startPVPNewRound() {
+  // get the body of the page
+  let startBody = document.body;
+
+  playerOneMoves.length = 0
+  playerTwoMoves.length = 0
+
+  console.log(playerOneMoves)
+  console.log(playerOneMoves)
+
+  let playerOneOldScore = parseInt(document.getElementById('score-one').innerText);
+  let playerTwoOldScore = parseInt(document.getElementById('score-two').innerText);
+
+  // Set the body's innerHTML to player vs player choice selection
+  startBody.innerHTML = `
+    <!-- title division -->
+    <div id="landing-title">
+    <h2>
+        Rock, Paper, Scissors,
+    </h2>
+    <h1>
+        Nucleur Bomb!
+    </h1>
+
+    <div id="gradient1"></div>
+</div>
+
+<br>
+
+<section>
+<div id="score-chart">
+  <div id="player-one-score">
+    <p contenteditable="true">P1:</p>
+    <div class="red-line-breaker"></div>
+    <h1 id="score-one"> 0 </h1>
+  </div>
+  <div class="red-line-breaker"></div>
+  <div id="player-two-score">
+    <p contenteditable="true">P2</p>
+    <div class="red-line-breaker"></div>
+    <h1 id="score-two"> 0 </h1>
+  </div>
+</div>
+
+
+<!--  the code below builds the box where player one can click to select from various move types and lock in their choices -->
+<div id="move-selection">
+    <div id="player-one-moves">
+        <h3 class="player-header" contenteditable="true">Player One</h3>
+        <div id=player-one-move-one>
+            <h2 class="choice-header">First Choice:</h2>
+
+            <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceOne('paper')"></i>
+            <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceOne('scissors')"></i>
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceOne('rock')"></i>                       
+        </div>
+
+        <div class="red-line-breaker"></div>
+
+        <div id="player-one-move-two">
+            <h2 class="choice-header">Second Choice:</h2>
+
+            <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceTwo('paper')"></i>
+            <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceTwo('scissors')"></i>
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceTwo('rock')"></i>                       
+        </div>
+
+        <div class="red-line-breaker"></div>
+
+        <div id="player-one-move-three">
+            <h2 class="choice-header">Third Choice:</h2>
+
+            <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceThree('paper')"></i>
+            <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i>                       
+        </div>
+
+        <div class="red-line-breaker"></div>
+
+        <!-- the code below will lock the input for player one and update the HTML to display player two -->
+        <div class="lock-answer" onclick="lockAnswers();">Lock in your choices! <i class="fa-solid fa-lock-open"></i></div>
+
+        <!-- this division creats a small colored bar at the bottom -->
+        <div id="grad-player-one"></div>
+
+    </div>
+
+    <!-- the code below builds the same division as above but for player 2 instead -->
+    <div id="player-two-moves">
+        <h3 class="player-header" contenteditable="true">Player Two</h3>
+        <div id="player-two-move-one">
+            <h2 class="choice-header">First Choice:</h2>
+
+            <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceOne('paper')"></i>
+            <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceOne('scissors')"></i>
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceOne('rock')"></i>                       
+        </div>
+
+        <div class="orange-line-breaker"></div>
+
+        <div id="player-two-move-two">
+            <h2 class="choice-header">Second Choice:</h2>
+
+            <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceTwo('paper')"></i>
+            <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceTwo('scissors')"></i>
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceTwo('rock')"></i>                       
+        </div>
+
+        <div class="orange-line-breaker"></div>
+
+        <div id="player-two-move-three">
+            <h2 class="choice-header">Third Choice:</h2>
+
+            <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceThree('paper')"></i>
+            <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceThree('scissors')"></i>
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceThree('rock')"></i>                       
+        </div>
+
+        <div class="orange-line-breaker"></div>
+
+        <!-- the code below will start a new game of PVP -->
+        <div class="lock-answer" onclick="startPVPNewRound();">Play again!</div>
+
+        <div id="grad-player-two"></div>
+
+    </div>
+</div>
+</section>
+
+<!-- this code will reset the HTML content of the page to that of the original Main Menu content -->
+<div id="reset-button" onclick="resetGame();">Main Menu</div>
+
+
+
+<!-- Linking to javascript game logic -->
+<script src="assets/js/script.js"></script>
+    `;
+
+  console.log('Starting next round...');
+  document.getElementById('score-one').innerText = playerOneOldScore;
+  document.getElementById('score-two').innerText = playerTwoOldScore;
 }
 
 function startPVC() {
@@ -256,28 +399,34 @@ const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
   if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "rock") {
     console.log("Player One wins Round 1!")
     alert("Player One wins Round 1!")
+    incrementPlayerOneScore();
   }
   if (playerOneMoves[0] == "rock" && playerTwoMoves[0] == "scissors") {
     console.log("Player One wins Round 1!")
     alert("Player One wins Round 1!")
+    incrementPlayerOneScore();
   }
   if (playerOneMoves[0] == "scissors" && playerTwoMoves[0] == "paper") {
     console.log("Player One wins Round 1!")
     alert("Player One wins Round 1!")
+    incrementPlayerOneScore();
   }
 
   // Player Two winning cases round 1 (array index [0])
   if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "scissors") {
     console.log("Player Two wins Round 1!")
     alert("Player Two wins Round 1!")
+    incrementPlayerTwoScore();
   }
   if (playerOneMoves[0] == "rock" && playerTwoMoves[0] == "paper") {
     console.log("Player Two wins Round 1!")
     alert("Player Two wins Round 1!")
+    incrementPlayerTwoScore();
   }
   if (playerOneMoves[0] == "scissors" && playerTwoMoves[0] == "rock") {
     console.log("Player Two wins Round 1!")
     alert("Player Two wins Round 1!")
+    incrementPlayerTwoScore();
   }
 
   // draw cases, check round two (array index [1])
@@ -298,28 +447,34 @@ const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
   if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "rock") {
     console.log("Player One wins Round 2!")
     alert("Player One wins Round 2!")
+    incrementPlayerOneScore();
   }
   if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "scissors") {
     console.log("Player One wins Round 2!")
     alert("Player One wins Round 2!")
+    incrementPlayerOneScore();
   }
   if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "paper") {
     console.log("Player One wins Round 2!")
     alert("Player One wins Round 2!")
+    incrementPlayerOneScore();
   }
 
   //player two wins, check round two (array index [1])
   if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "scissors") {
     console.log("Player Two wins Round 2!")
     alert("Player Two wins Round 2!")
+    incrementPlayerTwoScore();
   }
   if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "paper") {
     console.log("Player Two wins Round 2!")
     alert("Player Two wins Round 2!")
+    incrementPlayerTwoScore();
   }
   if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "rock") {
     console.log("Player Two wins Round 2!")
     alert("Player Two wins Round 2!")
+    incrementPlayerTwoScore();
   }
 
   //draw cases, check round three (array index [2])
@@ -340,31 +495,57 @@ const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
   if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "rock") {
     console.log("Player One wins Round 3!")
     alert("Player One wins Round 3!")
+    incrementPlayerOneScore();
   }
   if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "scissors") {
     console.log("Player One wins Round 3!")
     alert("Player One wins Round 3!")
+    incrementPlayerOneScore();
   }
   if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "paper") {
     console.log("Player One wins Round 3!")
     alert("Player One wins Round 3!")
+    incrementPlayerOneScore();
   }
 
   //player two wins, check round three (array index [2])
   if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "scissors") {
     console.log("Player Two wins Round 3!")
     alert("Player Two wins Round 3!")
+    incrementPlayerTwoScore();
   }
   if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "paper") {
     console.log("Player Two wins Round 3!")
     alert("Player Two wins Round 3!")
+    incrementPlayerTwoScore();
   }
   if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "rock") {
     console.log("Player Two wins Round 3!")
     alert("Player Two wins Round 3!")
+    incrementPlayerTwoScore();
   }
 };
 
+function incrementPlayerOneScore() {
+
+  let oldScoreOne = parseInt(document.getElementById('score-one').innerText);
+  document.getElementById('score-one').innerText = ++oldScoreOne;
+
+}
+
+function incrementPlayerTwoScore() {
+
+  let oldScoreTwo = parseInt(document.getElementById('score-two').innerText);
+  document.getElementById('score-two').innerText = ++oldScoreTwo;
+
+}
+
+function incrementComputerScore() {
+
+  let oldScorePC = parseInt(document.getElementById('score-pc').innerText);
+  document.getElementById('score-pc').innerText = ++oldScorePC;
+
+}
 
 function resetGame() {
   let startBody = document.body;
