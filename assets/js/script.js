@@ -5,6 +5,16 @@ const mainMenu = document.body.innerHTML
 let playerOneMoves = []
 let playerTwoMoves = []
 
+function setPOneName() {
+  let playerOneName = document.getElementById("p-one-name").innerText
+  document.getElementsByClassName("player-header")[0].innerText = playerOneName
+
+}
+
+function setPTwoName() {
+  let playerTwoName = document.getElementById("p-two-name").innerText
+  document.getElementsByClassName("player-header")[1].innerText = playerTwoName
+}
 
 function startPVP() {
   // get the body of the page
@@ -29,13 +39,13 @@ function startPVP() {
 <section>
 <div id="score-chart">
   <div id="player-one-score">
-    <p contenteditable="true">P1:</p>
+    <p id="p-one-name" contenteditable="true">P1:<i class="fa-solid fa-lock-open" onclick="setPOneName();"></i></p>
     <div class="red-line-breaker"></div>
     <h1 id="score-one"> 0 </h1>
   </div>
   <div class="red-line-breaker"></div>
   <div id="player-two-score">
-    <p contenteditable="true">P2</p>
+    <p id="p-two-name" contenteditable="true">P2:<i class="fa-solid fa-lock-open" onclick="setPTwoName();"></i></p>
     <div class="red-line-breaker"></div>
     <h1 id="score-two"> 0 </h1>
   </div>
@@ -45,7 +55,7 @@ function startPVP() {
 <!--  the code below builds the box where player one can click to select from various move types and lock in their choices -->
 <div id="move-selection">
     <div id="player-one-moves">
-        <h3 class="player-header" contenteditable="true">Player One</h3>
+        <h3 class="player-header">Player One</h3>
         <div id=player-one-move-one>
             <h2 class="choice-header">First Choice:</h2>
 
@@ -86,7 +96,7 @@ function startPVP() {
 
     <!-- the code below builds the same division as above but for player 2 instead -->
     <div id="player-two-moves">
-        <h3 class="player-header" contenteditable="true">Player Two</h3>
+        <h3 class="player-header">Player Two</h3>
         <div id="player-two-move-one">
             <h2 class="choice-header">First Choice:</h2>
 
@@ -148,6 +158,11 @@ function startPVPNewRound() {
   console.log(playerOneMoves)
   console.log(playerOneMoves)
 
+  let playerOneOldName = document.getElementById("p-one-name").innerText
+  let playerTwoOldName = document.getElementById("p-two-name").innerText
+
+  let nameHeaders = document.getElementsByClassName("player-header");
+
   let playerOneOldScore = parseInt(document.getElementById('score-one').innerText);
   let playerTwoOldScore = parseInt(document.getElementById('score-two').innerText);
 
@@ -170,13 +185,13 @@ function startPVPNewRound() {
 <section>
 <div id="score-chart">
   <div id="player-one-score">
-    <p contenteditable="true">P1:</p>
+    <p id="p-one-name">P1:</p>
     <div class="red-line-breaker"></div>
     <h1 id="score-one"> 0 </h1>
   </div>
   <div class="red-line-breaker"></div>
   <div id="player-two-score">
-    <p contenteditable="true">P2</p>
+    <p id="p-two-name">P2</p>
     <div class="red-line-breaker"></div>
     <h1 id="score-two"> 0 </h1>
   </div>
@@ -186,7 +201,7 @@ function startPVPNewRound() {
 <!--  the code below builds the box where player one can click to select from various move types and lock in their choices -->
 <div id="move-selection">
     <div id="player-one-moves">
-        <h3 class="player-header" contenteditable="true">Player One</h3>
+        <h3 class="player-header">Player One</h3>
         <div id=player-one-move-one>
             <h2 class="choice-header">First Choice:</h2>
 
@@ -227,7 +242,7 @@ function startPVPNewRound() {
 
     <!-- the code below builds the same division as above but for player 2 instead -->
     <div id="player-two-moves">
-        <h3 class="player-header" contenteditable="true">Player Two</h3>
+        <h3 class="player-header">Player Two</h3>
         <div id="player-two-move-one">
             <h2 class="choice-header">First Choice:</h2>
 
@@ -277,6 +292,12 @@ function startPVPNewRound() {
     `;
 
   console.log('Starting next round...');
+
+  nameHeaders[0].innerText = playerOneOldName
+  nameHeaders[1].innerText = playerTwoOldName
+  document.getElementById("p-one-name").innerText = playerOneOldName
+  document.getElementById("p-two-name").innerText = playerTwoOldName
+
   document.getElementById('score-one').innerText = playerOneOldScore;
   document.getElementById('score-two').innerText = playerTwoOldScore;
 }
