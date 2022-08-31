@@ -26,10 +26,26 @@ function startPVP() {
 
 <br>
 
+<section>
+<div id="score-chart">
+  <div id="player-one-score">
+    <p contenteditable="true">P1:</p>
+    <div class="red-line-breaker"></div>
+    <h1> 0 </h1>
+  </div>
+  <div class="red-line-breaker"></div>
+  <div id="player-two-score">
+    <p contenteditable="true">P2</p>
+    <div class="red-line-breaker"></div>
+    <h1> 0 </h1>
+  </div>
+</div>
+
+
 <!--  the code below builds the box where player one can click to select from various move types and lock in their choices -->
 <div id="move-selection">
     <div id="player-one-moves">
-        <h3 class="player-header">Player One</h3>
+        <h3 class="player-header" contenteditable="true">Player One</h3>
         <div id=player-one-move-one>
             <h2 class="choice-header">First Choice:</h2>
 
@@ -70,7 +86,7 @@ function startPVP() {
 
     <!-- the code below builds the same division as above but for player 2 instead -->
     <div id="player-two-moves">
-        <h3 class="player-header">Player Two</h3>
+        <h3 class="player-header" contenteditable="true">Player Two</h3>
         <div id="player-two-move-one">
             <h2 class="choice-header">First Choice:</h2>
 
@@ -108,6 +124,7 @@ function startPVP() {
 
     </div>
 </div>
+</section>
 
 <!-- this code will reset the HTML content of the page to that of the original Main Menu content -->
 <div id="reset-button" onclick="resetGame();">Main Menu</div>
