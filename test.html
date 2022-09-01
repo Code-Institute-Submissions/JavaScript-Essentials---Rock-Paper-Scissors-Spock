@@ -1,3 +1,4 @@
+<!-- title division -->
 <div id="landing-title">
     <h2>
         Rock, Paper, Scissors,
@@ -11,61 +12,59 @@
 
 <br>
 
-<div id="pvp-instructions">
-    <div class="pvp-step">
-        <h3>
-            Step 1.
-        </h3>
-        <p>
-            Set the name for Player One and Player Two via the scoreboard, the text 'P1:/P2:' can be edited. Once you
-            have chosen your names,
-            click on the small padlock icon shown in the image to lock them in. Your Player Names can only be chosen in
-            the first game, so choose wisely!
-        </p>
+<section>
+    <div id="score-chart">
+        <div id="player-one-score">
+            <p id="p-one-name">P1:</p>
+            <div class="red-line-breaker"></div>
+            <h1 id="score-one"> 0 </h1>
+        </div>
+        <div class="red-line-breaker"></div>
+        <div id="player-two-score">
+            <p id="p-two-name">P2</p>
+            <div class="red-line-breaker"></div>
+            <h1 id="score-two"> 0 </h1>
+        </div>
     </div>
-    <div class="pvp-step">
-        <h3>
-            Step 2:
-        </h3>
-        <p>
-            Player One begins by selecting their hands for Rounds One, Two and Three. Their are three icons to choose
-            from. An icon representing a fist relates to the 'Rock' option, an icon representing a paper plane will
-            choose the 'Paper' option, the pair of scissors is self explanatory.
-        </p>
-    </div>
-    <div class="pvp-step">
-        <h3>
-            Step 3:
-        </h3>
-        <p>
-            Once an option is chosen the round shall dissapear so pay attention to the options you choose. After all of
-            Player One's hands are locked in, click the padlock icon within the hand selection window as shown in the
-            image. This will begin the turn for Player Two.
-        </p>
-    </div>
-    <div class="pvp-step">
-        <h3>
-            Step 4:
-        </h3>
-        <p>
-            Player Two must repeat the process of chosing their hand for each of the three rounds. once the final hand
-            is chosen the game shall compare Player One and PLayer Two's decisions and the results shall be displayed in
-            pop up message boxes. The scoreboard shall update to reflect the scores from the game.
-        </p>
-    </div>
-    <div class="pvp-step">
-        <h3>
-            Step 5:
-        </h3>
-        <p>
-            Once the results have been calculated and the points awarded on the scoreboard, you can select the text
-            'Play again' to continue a new game with your previous scores and chosen player names carried forward.
-            the game can be played as many times as you desire. 
-        </p>
-    </div>
-    <div id="start-pvp-button" onclick="startPVP()">Start a game!</div>
-</div>
 
+
+    <!--  the code below builds the box where player one can click to select from various move types and lock in their choices -->
+    <div id="move-selection">
+        <div id="player-one-moves">
+            <h3 class="player-header">Player One</h3>
+            <div id=player-one-move-one>
+                <h2 class="choice-header">First Choice:</h2>
+
+                <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceOne('paper')"></i>
+                <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceOne('scissors')"></i>
+                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceOne('rock')"></i>
+            </div>
+
+            <div class="red-line-breaker"></div>
+
+            <div id="player-one-move-two">
+                <h2 class="choice-header">Second Choice:</h2>
+
+                <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceTwo('paper')"></i>
+                <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceTwo('scissors')"></i>
+                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceTwo('rock')"></i>
+            </div>
+
+            <div class="red-line-breaker"></div>
+
+            <div id="player-one-move-three">
+                <h2 class="choice-header">Third Choice:</h2>
+
+                <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceThree('paper')"></i>
+                <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
+                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i>
+            </div>
+
+            <div class="red-line-breaker"></div>
+    </div>
+</section>
+
+<!-- this code will reset the HTML content of the page to that of the original Main Menu content -->
 <div id="reset-button" onclick="resetGame();">Main Menu</div>
 
 
