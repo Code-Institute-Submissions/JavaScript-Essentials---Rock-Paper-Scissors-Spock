@@ -15,13 +15,15 @@
 <section>
     <div id="score-chart">
         <div id="player-one-score">
-            <p id="p-one-name">P1:</p>
+            <p id="p-one-name" contenteditable="true">P1:<i class="fa-solid fa-lock-open" onclick="setPOneName();"></i>
+            </p>
             <div class="red-line-breaker"></div>
             <h1 id="score-one"> 0 </h1>
         </div>
         <div class="red-line-breaker"></div>
         <div id="player-two-score">
-            <p id="p-two-name">P2</p>
+            <p id="p-two-name" contenteditable="true">P2:<i class="fa-solid fa-lock-open" onclick="setPTwoName();"></i>
+            </p>
             <div class="red-line-breaker"></div>
             <h1 id="score-two"> 0 </h1>
         </div>
@@ -61,6 +63,55 @@
             </div>
 
             <div class="red-line-breaker"></div>
+
+            <!-- the code below will lock the input for player one and update the HTML to display player two -->
+            <div class="lock-answer" onclick="lockAnswers();">Lock in your choices! <i
+                    class="fa-solid fa-lock-open"></i></div>
+
+            <!-- this division creats a small colored bar at the bottom -->
+            <div id="grad-player-one"></div>
+
+        </div>
+
+        <!-- the code below builds the same division as above but for player 2 instead -->
+        <div id="player-two-moves">
+            <h3 class="player-header">Player Two</h3>
+            <div id="player-two-move-one">
+                <h2 class="choice-header">First Choice:</h2>
+
+                <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceOne('paper')"></i>
+                <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceOne('scissors')"></i>
+                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceOne('rock')"></i>
+            </div>
+
+            <div class="orange-line-breaker"></div>
+
+            <div id="player-two-move-two">
+                <h2 class="choice-header">Second Choice:</h2>
+
+                <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceTwo('paper')"></i>
+                <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceTwo('scissors')"></i>
+                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceTwo('rock')"></i>
+            </div>
+
+            <div class="orange-line-breaker"></div>
+
+            <div id="player-two-move-three">
+                <h2 class="choice-header">Third Choice:</h2>
+
+                <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceThree('paper')"></i>
+                <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceThree('scissors')"></i>
+                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceThree('rock')"></i>
+            </div>
+
+            <div class="orange-line-breaker"></div>
+
+            <!-- the code below will start a new game of PVP -->
+            <div class="lock-answer" onclick="startPVPNewRound();">Play again!</div>
+
+            <div id="grad-player-two"></div>
+
+        </div>
     </div>
 </section>
 
