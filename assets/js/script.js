@@ -332,6 +332,14 @@ function startPVC() {
               </div>
   
               <div class="red-line-breaker"></div>
+
+              <!-- the code below will lock the input for player one and update the HTML to display player two -->
+              <div class="lock-answer" onclick="pickComputerChoiceOne();">Lock in your choices! <i
+                  class="fa-solid fa-lock-open"></i>
+              </div>
+
+              <!-- this division creats a small colored bar at the bottom -->
+              <div id="grad-player-one"></div>
       </div>
   </section>
   
@@ -485,6 +493,33 @@ pickPlayerTwoChoiceOne = (handOne) => {
   }
 }
 
+function pickComputerChoiceOne() {
+  let options = ["rock", "paper", "scissors"];
+  let computerHandOne = options[Math.floor(Math.random() * options.length)];
+
+  computerMoves.push(computerHandOne)
+  console.log(computerMoves);
+
+  pickComputerChoiceTwo = () => {
+    let options = ["rock", "paper", "scissors"];
+    let computerHandTwo = options[Math.floor(Math.random() * options.length)];
+  
+    computerMoves.push(computerHandTwo)
+    console.log(computerMoves);
+  };
+
+  pickComputerChoiceThree = () => {
+    let options = ["rock", "paper", "scissors"];
+    let computerMoves = options[Math.floor(Math.random() * options.length)];
+  
+    computerMoves.push(computerHandThree)
+    console.log(computerMoves);
+
+    // call the function to compare the arrays and log the winner 
+    compareResultsPVC(playerOneMoves, computerMoves);
+  };
+};
+
 // compare the playerOneMoves and playerTwoMoves arrays once they are full and adjust scoring
 const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
 
@@ -634,7 +669,7 @@ const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
 };
 
 // compare the playerOneMoves and computerMovex arrays once they are full and adjust scoring
-const compareResultsPVP = (playerOneMoves, computerMoves) => {
+const compareResultsPVC = (playerOneMoves, computerMoves) => {
 
   // Draw cases round 1 (array index [0])
   if (playerOneMoves[0] == "paper" && computerMoves[0] == "paper") {
