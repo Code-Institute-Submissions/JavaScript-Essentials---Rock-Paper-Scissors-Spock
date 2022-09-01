@@ -39,7 +39,7 @@
         <h1>
             Nucleur Bomb!
         </h1>
-        <div id="gradient1">
+        <div id="gradient-one">
 
         </div>
     </div>
@@ -49,35 +49,59 @@
 
 
     <!-- image section with images from http://clipart-library.com/free/cartoon-rock-png.html -->
-    <div id="landing-images">
-        <!-- <img src="assets/images/rock.jpg" alt="image of a rock">
+    <!-- <div id="landing-images">
+        <img src="assets/images/rock.jpg" alt="image of a rock">
         <img src="assets/images/paper.png" alt="image of paper">
-        <img src="assets/images/sciss.png" alt="image of Scissors"> -->
+        <img src="assets/images/sciss.png" alt="image of Scissors">
         <img src="assets/images/bomb.jpg" alt="image of a mushroom cloud explosion">
-    </div>
+    </div> -->
 
     <!-- Game selection area -->
     <div>
-        <h2 id="selectme">
+        <h2 class="selectme">
             Select game type:
         </h2>
+        <br>
         <div id="game-selection-area">
-            <span id="opp-player" onclick="startPVP();">
+            <span class="main-button" onclick="startPVP();">
                 <p>Challenge a friend!</p>
-                <div id="gradient2">
+                <div id="gradient-two">
 
                 </div>
             </span>
-            <span id="opp-computer" onclick="startPVC();">
-                <p>Test your luck against
-                    the Randomizer!</p>
-                <div id="gradient3">
+            <span class="main-button" onclick="startPVC();">
+                <p>Challenge the computer!</p>
+                <div id="gradient-three">
 
                 </div>
             </span>
         </div>
     </div>
-    
+
+    <br>
+
+    <!-- Instructions area -->
+    <div>
+        <h2 class="selectme">
+            Game manuals:
+        </h2>
+        <br>
+        <div id="instruction-area">
+            <div class="main-button" onclick="openPVPManual();">
+                <p>PVP Game Manual</p>
+                <div id="gradient-four">
+
+                </div>
+            </div>
+            <div class="main-button" onclick="openPVCManual();">
+                <p>P vs PC Game Manual</p>
+                <div id="gradient-five">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Linking to javascript game logic -->
     <script src="assets/js/script.js"></script>
 

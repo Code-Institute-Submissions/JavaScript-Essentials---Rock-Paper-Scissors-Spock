@@ -33,7 +33,7 @@ body {
 }
 
 /* colored gradient bars */
-#gradient1 {
+#gradient-one {
     background-color: #FF5F1F;
     height: 25px;
     margin-top: -70px;
@@ -45,29 +45,20 @@ body {
     justify-content: center;
 }
 
-#selectme {
+.selectme {
     margin: -10px;
     font-family: 'Silkscreen', cursive, sans-serif;
     text-align: center;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
-/* different styling for the player and the computer in case elements are targetted in different manners */
-#opp-player {
-    height: 118px;
-    width: 350px;
-    font-size: 25px;
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    color: white;
-    background-color: red;
-    border: 2px azure solid;
-    border-style: dotted;
-    margin: 10px;
+/* stlying for insturction manual buttons */
+#instruction-area {
+    display: flex;
+    justify-content: center;
 }
 
-#opp-computer {
+.main-button {
     height: 118px;
     width: 350px;
     font-size: 25px;
@@ -82,22 +73,70 @@ body {
 }
 
 /* colored gradient bars for the game type buttons */
-#gradient2 {
+#gradient-two {
     background-color: #FF5F1F;
     height: 15px;
     margin-top: 52px;
 }
 
-#gradient3 {
+#gradient-three {
     background-color: #FF5F1F;
     height: 15px;
-    margin-top: 16px;
+    margin-top: 52px;
 }
+
+#gradient-four {
+    background-color: #FF5F1F;
+    height: 15px;
+    margin-top: 52px;
+}
+
+#gradient-five {
+    background-color: #FF5F1F;
+    height: 15px;
+    margin-top: 52px;
+}
+
+.main-button:hover {
+    height: 122px;
+    width: 362px;
+    color: rgb(202, 105, 238);
+    border-color: rgb(202, 105, 238);
+    background-color: #FF5F1F;
+}
+
+#pvp-instructions {
+    text-align: center;
+    border: 2px azure solid;
+    background-color: red;
+    width: 80%;
+    opacity: 85%;
+    margin: 0 auto;
+    padding: 2%;
+}
+
+#pvp-instructions p {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+#pvp-instructions h3 {
+    font-family: 'Silkscreen', cursive, sans-serif;
+    margin-top: 10px;
+}
+
+.pvp-step {
+    background-color: #FF5F1F;
+    padding: 0.5%;
+}
+
+.pvp-step:hover {
+    color: rgb(202, 105, 238);
+}
+
 
 /* styling applied when the HTML content is updated to the player vs player game type */
 #move-selection {
-    
-    
     margin: 0 auto;
     justify-content: center;
     align-items: center;
@@ -132,11 +171,6 @@ body {
 }
 
 #player-two-moves {
-    border: 3px black solid;
-    width: 40%;
-    text-align: center;
-    margin: 10px;
-    background-color: red;
     display: none;
 }
 
@@ -159,6 +193,11 @@ body {
 .lock-answer i {
     color: teal;
     text-shadow: -1px 0 azure, 0 1px azure, 1px 0 azure, 0 -1px azure;
+}
+
+i:hover {
+    color: yellow;
+    font-size: larger;
 }
 
 #reset-button {
@@ -199,7 +238,6 @@ body {
     width: 300px;
     height: 337px;
     border: 2px solid black;
-    /* border-style: dotted; */
     display: block;
     font-size: 25px;
     align-items: center;
@@ -210,7 +248,7 @@ body {
 }
 
 #player-one-score {
- background-color: #FF5F1F;
+    background-color: #FF5F1F;
 }
 
 
@@ -224,4 +262,3 @@ section {
     align-items: center;
     margin-left: 250px;
 }
-

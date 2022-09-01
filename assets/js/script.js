@@ -348,6 +348,94 @@ function startPVC() {
   console.log('Starting Player VS Computer.');
 }
 
+function openPVPManual() {
+  // get the body of the page
+  let startBody = document.body;
+
+  // Set the body's innerHTML to player vs player iunstruction manual
+  startBody.innerHTML = `<div id="landing-title">
+  <h2>
+      Rock, Paper, Scissors,
+  </h2>
+  <h1>
+      Nucleur Bomb!
+  </h1>
+
+  <div id="gradient1"></div>
+</div>
+
+<br>
+
+<div id="pvp-instructions">
+  <div class="pvp-step">
+      <h3>
+          Step 1.
+      </h3>
+      <p>
+          Set the name for Player One and Player Two via the scoreboard, the text 'P1:/P2:' can be edited. Once you
+          have chosen your names,
+          click on the small padlock icon shown in the image to lock them in. Your Player Names can only be chosen in
+          the first game, so choose wisely!
+      </p>
+  </div>
+  <br>
+  <div class="pvp-step">
+      <h3>
+          Step 2:
+      </h3>
+      <p>
+          Player One begins by selecting their hands for Rounds One, Two and Three. Their are three icons to choose
+          from. An icon representing a fist relates to the 'Rock' option, an icon representing a paper plane will
+          choose the 'Paper' option, the pair of scissors is self explanatory.
+      </p>
+  </div>
+  <br>
+  <div class="pvp-step">
+      <h3>
+          Step 3:
+      </h3>
+      <p>
+          Once an option is chosen the round shall dissapear so pay attention to the options you choose. After all of
+          Player One's hands are locked in, click the padlock icon within the hand selection window as shown in the
+          image. This will begin the turn for Player Two.
+      </p>
+  </div>
+  <br>
+  <div class="pvp-step">
+      <h3>
+          Step 4:
+      </h3>
+      <p>
+          Player Two must repeat the process of chosing their hand for each of the three rounds. once the final hand
+          is chosen the game shall compare Player One and PLayer Two's decisions and the results shall be displayed in
+          pop up message boxes. The scoreboard shall update to reflect the scores from the game.
+      </p>
+  </div>
+  <br>
+  <div class="pvp-step">
+      <h3>
+          Step 5:
+      </h3>
+      <p>
+          Once the results have been calculated and the points awarded on the scoreboard, you can select the text
+          'Play again' to continue a new game with your previous scores and chosen player names carried forward.
+          the game can be played as many times as you desire. 
+      </p>
+  </div>
+  <br>
+  <div id="start-pvp-button" onclick="startPVP()">Start a game!</div>
+</div>
+
+<br>
+
+<div id="reset-button" onclick="resetGame();">Main Menu</div>
+
+
+
+<!-- Linking to javascript game logic -->
+<script src="assets/js/script.js"></script>`
+}
+
 pickPlayerOneChoiceOne = (handOne) => {
   let hideChoiceOne = document.getElementById("player-one-move-one")
   hideChoiceOne.style.display = "none";
