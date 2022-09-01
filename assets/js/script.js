@@ -4,6 +4,7 @@ const mainMenu = document.body.innerHTML
 // create empty arrays for the player choices
 let playerOneMoves = []
 let playerTwoMoves = []
+let computerMoves = []
 
 function setPOneName() {
   let playerOneName = document.getElementById("p-one-name").innerText
@@ -536,28 +537,14 @@ pickPlayerTwoChoiceOne = (handOne) => {
 function pickComputerChoiceOne() {
   let options = ["rock", "paper", "scissors"];
   let computerHandOne = options[Math.floor(Math.random() * options.length)];
+  let computerHandTwo = options[Math.floor(Math.random() * options.length)];
+  let computerHandThree = options[Math.floor(Math.random() * options.length)];
 
-  computerMoves.push(computerHandOne)
-  console.log(computerMoves);
+  computerMoves.push(computerHandOne, computerHandTwo, computerHandThree)
+  console.log(computerMoves)
 
-  pickComputerChoiceTwo = () => {
-    let options = ["rock", "paper", "scissors"];
-    let computerHandTwo = options[Math.floor(Math.random() * options.length)];
-  
-    computerMoves.push(computerHandTwo)
-    console.log(computerMoves);
-  };
+  compareResultsPVC(playerOneMoves, computerMoves);
 
-  pickComputerChoiceThree = () => {
-    let options = ["rock", "paper", "scissors"];
-    let computerMoves = options[Math.floor(Math.random() * options.length)];
-  
-    computerMoves.push(computerHandThree)
-    console.log(computerMoves);
-
-    // call the function to compare the arrays and log the winner 
-    compareResultsPVC(playerOneMoves, computerMoves);
-  };
 };
 
 // compare the playerOneMoves and playerTwoMoves arrays once they are full and adjust scoring
@@ -879,6 +866,10 @@ function incrementComputerScore() {
 }
 
 function resetGame() {
+  playerOneMoves = []
+  playerTwoMoves = []
+  computerMoves = []
+
   let startBody = document.body;
   startBody.innerHTML = mainMenu;
   console.log('Returning to the Main Menu...');
