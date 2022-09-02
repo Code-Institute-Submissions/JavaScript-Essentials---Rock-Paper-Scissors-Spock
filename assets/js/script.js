@@ -38,16 +38,19 @@ function startPVP() {
 <br>
 
 <section>
-<div id="score-chart">
-  <div id="player-one-score">
-    <p id="p-one-name" contenteditable="true">P1:<i class="fa-solid fa-lock-open" onclick="setPOneName();"></i></p>
-    <div class="red-line-breaker"></div>
-    <h1 id="score-one"> 0 </h1>
+
+<div id="score-board">
+
+  <div class="score-chart">
+  <h3>SCOREBOARD</h3>
+      <p id="p-one-name" contenteditable="true">Player One <i class="fa-solid fa-lock-open" onclick="setPOneName();"></i></p>
+      <h1 id="score-one"> 0 </h1>
   </div>
-  <div class="red-line-breaker"></div>
-  <div id="player-two-score">
-    <p id="p-two-name" contenteditable="true">P2:<i class="fa-solid fa-lock-open" onclick="setPTwoName();"></i></p>
-    <div class="red-line-breaker"></div>
+
+
+
+  <div class="score-chart">
+    <p id="p-two-name" contenteditable="true">Player Two <i class="fa-solid fa-lock-open" onclick="setPTwoName();"></i></p>
     <h1 id="score-two"> 0 </h1>
   </div>
 </div>
@@ -184,21 +187,19 @@ function startPVPNewRound() {
 <br>
 
 <section>
-    <div id="score-chart">
-        <div id="player-one-score">
-            <p id="p-one-name" contenteditable="true">P1:<i class="fa-solid fa-lock-open" onclick="setPOneName();"></i>
-            </p>
-            <div class="red-line-breaker"></div>
-            <h1 id="score-one"> 0 </h1>
-        </div>
-        <div class="red-line-breaker"></div>
-        <div id="player-two-score">
-            <p id="p-two-name" contenteditable="true">P2:<i class="fa-solid fa-lock-open" onclick="setPTwoName();"></i>
-            </p>
-            <div class="red-line-breaker"></div>
-            <h1 id="score-two"> 0 </h1>
-        </div>
+  <div id="score-board">
+
+    <div class="score-chart">
+      <h3>SCOREBOARD</h3>
+      <p id="p-one-name" contenteditable="true">Player One <i class="fa-solid fa-lock-open" onclick="setPOneName();"></i></p>
+      <h1 id="score-one"> 0 </h1>
     </div>
+
+    <div class="score-chart">
+      <p id="p-two-name" contenteditable="true">Player Two <i class="fa-solid fa-lock-open" onclick="setPTwoName();"></i></p>
+      <h1 id="score-two"> 0 </h1>
+    </div>
+  </div>
 
 
     <!--  the code below builds the box where player one can click to select from various move types and lock in their choices -->

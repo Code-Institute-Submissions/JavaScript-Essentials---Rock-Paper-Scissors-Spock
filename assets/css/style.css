@@ -143,6 +143,7 @@ body {
     text-align: center;
     width: 75%;
     height: 50%;
+    padding-left: 200px;
 }
 
 .choice-header {
@@ -239,9 +240,16 @@ i:hover {
 
 }
 
-#score-chart {
+#score-board {
+    display: block;
+    /* margin-right: -150px; */
+    /* column-count: 1; */
+    width: 100px;
+}
+
+.score-chart {
     width: 300px;
-    height: 337px;
+    height: 150px;
     border: 2px solid black;
     display: block;
     font-size: 25px;
@@ -252,13 +260,38 @@ i:hover {
     background-color: red;
 }
 
-#player-one-score {
-    background-color: #FF5F1F;
+.score-chart h3 {
+    color: white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    margin: -2px;
 }
 
+#score-one {
+    margin: -15px;
+    padding-top: 25px;
+    background-color: azure;
+    border: solid black 2px;
+}
 
-#player-two-score {
-    background-color: #FF5F1F;
+#score-two {
+    margin: -15px;
+    padding-top: 25px;
+    background-color: azure;
+    border: solid black 2px;
+}
+
+#p-one-name {
+    border: dotted 3px azure;
+    background-color: rgb(202, 105, 238);
+    color: white;
+    margin-top: 5px;
+}
+
+#p-two-name {
+    border: dotted 3px azure;
+    background-color: rgb(202, 105, 238);
+    color: white;
+    margin-top: 5px;
 }
 
 section {
@@ -266,4 +299,8 @@ section {
     width: 100%;
     align-items: center;
     margin-left: 250px;
+}
+
+#score-board i {
+    font-size: 20px;
 }
