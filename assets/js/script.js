@@ -402,6 +402,19 @@ function startPVC() {
 }
 
 function startPVCNewRound() {
+
+  playerOneMoves.length = 0
+  computerMoves.length = 0
+
+  console.log(playerOneMoves)
+  console.log(computerMoves)
+
+  let playerOnePCOldName = document.getElementById("p-one-name").innerText
+
+  let nameHeaders = document.getElementsByClassName("player-header");
+
+  let playerOnePCOldScore = parseInt(document.getElementById('score-one').innerText);
+  let computerOldScore = parseInt(document.getElementById('score-two').innerText);
   // get the body of the page
   let startBody = document.body;
 
@@ -474,8 +487,10 @@ function startPVCNewRound() {
               <div class="red-line-breaker"></div>
 
               <!-- the code below will lock the input for player one and update the HTML to display player two -->
-              <div class="lock-answer" onclick="pickComputerChoiceOne();">Lock in your choices! <i
+              <div id="lock-pc-choices" onclick="pickComputerChoiceOne();">Check the results!<i
                   class="fa-solid fa-lock-open"></i>
+              </div>
+              <div id="play-pvc-new-round" onclick="startPVCNewRound();">Play again!
               </div>
 
               <!-- this division creats a small colored bar at the bottom -->
@@ -490,6 +505,11 @@ function startPVCNewRound() {
   
   <!-- Linking to javascript game logic -->
   <script src="assets/js/script.js"></script>`;
+  nameHeaders[0].innerText = playerOnePCOldName
+  document.getElementById("p-one-name").innerText = playerOnePCOldName
+
+  document.getElementById('score-one').innerText = playerOnePCOldScore;
+  document.getElementById('score-two').innerText = computerOldScore;
 
   console.log('Starting Player VS Computer.');
 }
