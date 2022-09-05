@@ -259,8 +259,6 @@ i:hover {
 
 #score-board {
     display: block;
-    /* margin-right: -150px; */
-    /* column-count: 1; */
     width: 100px;
 }
 
@@ -320,4 +318,12 @@ section {
 
 #score-board i {
     font-size: 20px;
+}
+
+#chosen-moves {
+    background-color: red;
+    border: solid 3px azure;
+    width: 70%;
+    height: 20%;
+    margin: 0 auto;
 }

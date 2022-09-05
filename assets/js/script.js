@@ -387,6 +387,7 @@ function startPVC() {
 
               <!-- this division creats a small colored bar at the bottom -->
               <div id="grad-player-one"></div>
+              <button type ="button" onclick="viewSource()">View Source</button>
       </div>
   </section>
   
@@ -495,8 +496,14 @@ function startPVCNewRound() {
 
               <!-- this division creats a small colored bar at the bottom -->
               <div id="grad-player-one"></div>
+              <button type ="button" onclick="viewSource()">View Source</button>
       </div>
   </section>
+
+  <div id="chosen-moves">
+    <div id="player-one-choices"><h1>Your hand:</h1></div>
+    <div id="computer-choices"><h2>Computers hand:</h2></div>
+  </div>
   
   <!-- this code will reset the HTML content of the page to that of the original Main Menu content -->
   <div id="reset-button" onclick="resetGame();">Main Menu</div>
@@ -609,12 +616,24 @@ pickPlayerOneChoiceOne = (handOne) => {
   playerOneMoves.push(handOne)
   console.log(playerOneMoves);
 
+  let oneChoiceOne = document.createElement("p");
+  oneChoiceOne.textContent = handOne;
+
+  const firstMovePlayerOne = document.getElementById("player-one-choices")
+  firstMovePlayerOne.appendChild(oneChoiceOne)
+
   pickPlayerOneChoiceTwo = (handTwo) => {
     let hideChoiceTwo = document.getElementById("player-one-move-two")
     hideChoiceTwo.style.display = "none";
 
     playerOneMoves.push(handTwo)
     console.log(playerOneMoves);
+
+    let oneChoiceTwo = document.createElement("p");
+    oneChoiceTwo.textContent = handTwo;
+
+    const secondMovePlayerOne = document.getElementById("player-one-choices")
+    secondMovePlayerOne.appendChild(oneChoiceTwo)
   }
 
   pickPlayerOneChoiceThree = (handThree) => {
@@ -623,6 +642,12 @@ pickPlayerOneChoiceOne = (handOne) => {
 
     playerOneMoves.push(handThree)
     console.log(playerOneMoves);
+
+    let oneChoiceThree = document.createElement("p");
+    oneChoiceThree.textContent = handThree;
+
+    const thirdMovePlayerOne = document.getElementById("player-one-choices")
+    thirdMovePlayerOne.appendChild(oneChoiceThree)
   }
 }
 
@@ -667,10 +692,10 @@ function pickComputerChoiceOne() {
   compareResultsPVC(playerOneMoves, computerMoves);
 
   document.getElementById("play-pvc-new-round").style.display = "block";
-  
 
 
-  
+
+
 };
 
 // compare the playerOneMoves and playerTwoMoves arrays once they are full and adjust scoring
@@ -1015,3 +1040,16 @@ function lockAnswers() {
   }
 
 };
+
+function viewSource() {
+  ;
+  var source = "<html>";
+  source += document.getElementsByTagName('html')[0].innerHTML;
+  source += "</html>";
+  source = source.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  source = "<pre>" + source + "</pre>";
+  sourceWindow = window.open('', 'Source of page', 'height=800,width=800,scrollbars=1,resizable=1');
+  sourceWindow.document.write(source);
+  sourceWindow.document.close();
+  if (window.focus) sourceWindow.focus();
+}
