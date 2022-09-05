@@ -326,19 +326,117 @@ function startPVC() {
   <br>
   
   <section>
-      <div id="score-chart">
-          <div id="player-one-score">
-              <p id="p-one-name">P1:</p>
-              <div class="red-line-breaker"></div>
-              <h1 id="score-one"> 0 </h1>
-          </div>
-          <div class="red-line-breaker"></div>
-          <div id="player-two-score">
-              <p id="p-two-name">P2</p>
-              <div class="red-line-breaker"></div>
-              <h1 id="score-two"> 0 </h1>
-          </div>
+      
+    <div id="score-board">
+
+      <div class="score-chart">
+        <h3>SCOREBOARD</h3>
+        <p id="p-one-name" contenteditable="true">Player One <i class="fa-solid fa-lock-open" onclick="setPOneName();"></i></p>
+        <h1 id="score-one"> 0 </h1>
       </div>
+
+
+
+      <div class="score-chart">
+        <p id="p-two-name">Computer</p>
+        <h1 id="score-two"> 0 </h1>
+      </div>
+    </div>
+  
+  
+      <!--  the code below builds the box where player one can click to select from various move types and lock in their choices -->
+      <div id="move-selection">
+          <div id="player-one-moves">
+              <h3 class="player-header">Player One</h3>
+              <div id=player-one-move-one>
+                  <h2 class="choice-header">First Choice:</h2>
+  
+                  <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceOne('paper')"></i>
+                  <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceOne('scissors')"></i>
+                  <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceOne('rock')"></i>
+              </div>
+  
+              <div class="red-line-breaker"></div>
+  
+              <div id="player-one-move-two">
+                  <h2 class="choice-header">Second Choice:</h2>
+  
+                  <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceTwo('paper')"></i>
+                  <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceTwo('scissors')"></i>
+                  <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceTwo('rock')"></i>
+              </div>
+  
+              <div class="red-line-breaker"></div>
+  
+              <div id="player-one-move-three">
+                  <h2 class="choice-header">Third Choice:</h2>
+  
+                  <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceThree('paper')"></i>
+                  <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
+                  <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i>
+              </div>
+  
+              <div class="red-line-breaker"></div>
+
+              <!-- the code below will lock the input for player one and update the HTML to display player two -->
+              <div id="lock-pc-choices" onclick="pickComputerChoiceOne();">Check the results!<i
+                  class="fa-solid fa-lock-open"></i>
+              </div>
+              <div id="play-pvc-new-round" onclick="startPVCNewRound();">Play again!
+              </div>
+
+              <!-- this division creats a small colored bar at the bottom -->
+              <div id="grad-player-one"></div>
+      </div>
+  </section>
+  
+  <!-- this code will reset the HTML content of the page to that of the original Main Menu content -->
+  <div id="reset-button" onclick="resetGame();">Main Menu</div>
+  
+  
+  
+  <!-- Linking to javascript game logic -->
+  <script src="assets/js/script.js"></script>`;
+
+  console.log('Starting Player VS Computer.');
+}
+
+function startPVCNewRound() {
+  // get the body of the page
+  let startBody = document.body;
+
+  // Set the body's innerHTML to player vs computer choice selection
+  startBody.innerHTML = `<!-- title division -->
+  <div id="landing-title">
+      <h2>
+          Rock, Paper, Scissors,
+      </h2>
+      <h1>
+          Nucleur Bomb!
+      </h1>
+  
+      <div id="gradient1"></div>
+  </div>
+  
+  <br>
+  
+  <section>
+      
+    <div id="score-board">
+
+      <div class="score-chart">
+        <h3>SCOREBOARD</h3>
+        <p id="p-one-name" contenteditable="true">Player One <i class="fa-solid fa-lock-open" onclick="setPOneName();"></i></p>
+        <h1 id="score-one"> 0 </h1>
+      </div>
+
+
+
+      <div class="score-chart">
+        <p id="p-two-name">Computer</p>
+        <h1 id="score-two"> 0 </h1>
+      </div>
+    </div>
   
   
       <!--  the code below builds the box where player one can click to select from various move types and lock in their choices -->
@@ -541,11 +639,18 @@ function pickComputerChoiceOne() {
   let computerHandTwo = options[Math.floor(Math.random() * options.length)];
   let computerHandThree = options[Math.floor(Math.random() * options.length)];
 
+  document.getElementById("lock-pc-choices").style.display = "none";
+
   computerMoves.push(computerHandOne, computerHandTwo, computerHandThree)
   console.log(computerMoves)
 
   compareResultsPVC(playerOneMoves, computerMoves);
 
+  document.getElementById("play-pvc-new-round").style.display = "block";
+  
+
+
+  
 };
 
 // compare the playerOneMoves and playerTwoMoves arrays once they are full and adjust scoring

@@ -196,6 +196,23 @@ body {
     font-weight: 200;
 }
 
+#lock-pc-choices {
+    font-size: 20px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-weight: 200;
+}
+
+#play-pvc-new-round {
+    font-size: 20px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-weight: 200;
+    display: none;
+}
+
 .lock-answer i {
     color: teal;
     text-shadow: -1px 0 azure, 0 1px azure, 1px 0 azure, 0 -1px azure;
