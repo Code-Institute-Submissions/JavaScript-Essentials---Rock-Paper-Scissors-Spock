@@ -140,6 +140,21 @@ function startPVP() {
 </div>
 </section>
 
+<div id="paterns-two">
+                <div id="firstplayers-chosen-moves">
+                  <h3>Player One's hand:  </h3>
+                  <div id="first-players-move"></div>
+                  <div id="second-players-move"></div>
+                  <div id="third-players-move"></div>
+                </div>
+                <div id="secondplayers-chosen-moves">
+                  <h3>Player Two's hand:  </h3>
+                  <div id="first-second-move"></div>
+                  <div id="second-second-move"></div>
+                  <div id="third-second-move"></div>
+                </div>
+    </div>
+
 <!-- this code will reset the HTML content of the page to that of the original Main Menu content -->
 <div id="reset-button" onclick="resetGame();">Main Menu</div>
 
@@ -287,6 +302,21 @@ function startPVPNewRound() {
     </div>
 </section>
 
+<div id="paterns-two">
+                <div id="firstplayers-chosen-moves">
+                  <h3>Player One's hand:  </h3>
+                  <div id="first-players-move"></div>
+                  <div id="second-players-move"></div>
+                  <div id="third-players-move"></div>
+                </div>
+                <div id="secondplayers-chosen-moves">
+                  <h3>Player Two's hand:  </h3>
+                  <div id="first-second-move"></div>
+                  <div id="second-second-move"></div>
+                  <div id="third-second-move"></div>
+                </div>
+    </div>
+
 <!-- this code will reset the HTML content of the page to that of the original Main Menu content -->
 <div id="reset-button" onclick="resetGame();">Main Menu</div>
 
@@ -394,7 +424,7 @@ function startPVC() {
   </section>
 
   <div id="paterns">
-                <div id="firstpayers-chosen-moves">
+                <div id="firstplayers-chosen-moves">
                   <h3>Your hand:  </h3>
                   <div id="first-players-move"></div>
                   <div id="second-players-move"></div>
@@ -517,10 +547,20 @@ function startPVCNewRound() {
       </div>
   </section>
 
-  <div id="chosen-moves">
-    <div id="player-one-choices"><h1>Your hand:</h1></div>
-    <div id="computer-choices"><h2>Computers hand:</h2></div>
-  </div>
+  <div id="paterns">
+                <div id="firstplayers-chosen-moves">
+                  <h3>Your hand:  </h3>
+                  <div id="first-players-move"></div>
+                  <div id="second-players-move"></div>
+                  <div id="third-players-move"></div>
+                </div>
+                <div id="computers-chosen-moves">
+                  <h3>Opponents Hand:  </h3>
+                  <div id="first-computers-move"></div>
+                  <div id="second-computers-move"></div>
+                  <div id="third-computers-move"></div>
+                </div>
+    </div>
   
   <!-- this code will reset the HTML content of the page to that of the original Main Menu content -->
   <div id="reset-button" onclick="resetGame();">Main Menu</div>
@@ -667,12 +707,18 @@ pickPlayerTwoChoiceOne = (handOne) => {
   playerTwoMoves.push(handOne)
   console.log(playerTwoMoves);
 
+  let fillOne = document.getElementById("first-second-move");
+  fillOne.innerHTML = `<h3>${handOne}, </h3>`
+
   pickPlayerTwoChoiceTwo = (handTwo) => {
     let hideChoiceTwo = document.getElementById("player-two-move-two")
     hideChoiceTwo.style.display = "none";
 
     playerTwoMoves.push(handTwo)
     console.log(playerTwoMoves);
+
+    let fillTwo = document.getElementById("second-second-move");
+    fillTwo.innerHTML = `<h3>${handTwo}, </h3>`
   }
 
   pickPlayerTwoChoiceThree = (handThree) => {
@@ -681,6 +727,9 @@ pickPlayerTwoChoiceOne = (handOne) => {
 
     playerTwoMoves.push(handThree)
     console.log(playerTwoMoves);
+
+    let fillThree = document.getElementById("third-second-move");
+    fillThree.innerHTML = `<h3>${handThree}, </h3>`
 
     // call the function to compare the arrays and log the winner 
     compareResultsPVP(playerOneMoves, playerTwoMoves);
@@ -718,6 +767,9 @@ function pickComputerChoiceOne() {
 
 // compare the playerOneMoves and playerTwoMoves arrays once they are full and adjust scoring
 const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
+
+  let showIt = document.getElementById("paterns-two")
+  showIt.style.display = "flex"
 
   // Draw cases round 1 (array index [0])
   if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "paper") {

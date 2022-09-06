@@ -338,12 +338,25 @@ section {
   height: 150px;
   width: 70%;
   border: solid 3px black;
-  background-color: #FF5F1F;
+  background-color: red;
   margin: 0 auto;
   margin-top: 10px;
 }
 
-#firstpayers-chosen-moves {
+#paterns-two {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 150px;
+    width: 70%;
+    border: solid 3px black;
+    background-color: #FF5F1F;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+
+#firstplayers-chosen-moves {
     display: flex;
     text-align: center;
     height: 80%;
@@ -352,6 +365,14 @@ section {
 }
 
 #computers-chosen-moves {
+    display: flex;
+    text-align: center;
+    height: 80%;
+    margin: 10px;
+    font-size: 25px;
+}
+
+#secondplayers-chosen-moves {
     display: flex;
     text-align: center;
     height: 80%;
