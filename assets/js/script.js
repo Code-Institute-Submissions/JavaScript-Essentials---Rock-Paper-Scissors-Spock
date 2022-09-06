@@ -389,7 +389,24 @@ function startPVC() {
               <div id="grad-player-one"></div>
               <button type ="button" onclick="viewSource()">View Source</button>
       </div>
+
+      
   </section>
+
+  <div id="paterns">
+                <div id="firstpayers-chosen-moves">
+                  <h3>Your hand:  </h3>
+                  <div id="first-players-move"></div>
+                  <div id="second-players-move"></div>
+                  <div id="third-players-move"></div>
+                </div>
+                <div id="computers-chosen-moves">
+                  <h3>Opponents Hand:  </h3>
+                  <div id="first-computers-move"></div>
+                  <div id="second-computers-move"></div>
+                  <div id="third-computers-move"></div>
+                </div>
+    </div>
   
   <!-- this code will reset the HTML content of the page to that of the original Main Menu content -->
   <div id="reset-button" onclick="resetGame();">Main Menu</div>
@@ -616,11 +633,9 @@ pickPlayerOneChoiceOne = (handOne) => {
   playerOneMoves.push(handOne)
   console.log(playerOneMoves);
 
-  let oneChoiceOne = document.createElement("p");
-  oneChoiceOne.textContent = handOne;
+  let fillOne = document.getElementById("first-players-move");
+  fillOne.innerHTML = `<h3>${handOne}, </h3>`
 
-  const firstMovePlayerOne = document.getElementById("player-one-choices")
-  firstMovePlayerOne.appendChild(oneChoiceOne)
 
   pickPlayerOneChoiceTwo = (handTwo) => {
     let hideChoiceTwo = document.getElementById("player-one-move-two")
@@ -629,11 +644,8 @@ pickPlayerOneChoiceOne = (handOne) => {
     playerOneMoves.push(handTwo)
     console.log(playerOneMoves);
 
-    let oneChoiceTwo = document.createElement("p");
-    oneChoiceTwo.textContent = handTwo;
-
-    const secondMovePlayerOne = document.getElementById("player-one-choices")
-    secondMovePlayerOne.appendChild(oneChoiceTwo)
+    let fillTwo = document.getElementById("second-players-move");
+    fillTwo.innerHTML = `<h3> ${handTwo}, </h3>`
   }
 
   pickPlayerOneChoiceThree = (handThree) => {
@@ -643,11 +655,8 @@ pickPlayerOneChoiceOne = (handOne) => {
     playerOneMoves.push(handThree)
     console.log(playerOneMoves);
 
-    let oneChoiceThree = document.createElement("p");
-    oneChoiceThree.textContent = handThree;
-
-    const thirdMovePlayerOne = document.getElementById("player-one-choices")
-    thirdMovePlayerOne.appendChild(oneChoiceThree)
+    let fillThree = document.getElementById("third-players-move");
+    fillThree.innerHTML = `<h3>${handThree}. </h3>`
   }
 }
 
@@ -688,6 +697,15 @@ function pickComputerChoiceOne() {
 
   computerMoves.push(computerHandOne, computerHandTwo, computerHandThree)
   console.log(computerMoves)
+
+  let fillComputerOne = document.getElementById("first-computers-move");
+  fillComputerOne.innerHTML = `<h3>${computerHandOne}.</h3>`
+
+  let fillComputerTwo = document.getElementById("second-computers-move");
+  fillComputerTwo.innerHTML = `<h3>${computerHandTwo}.</h3>`
+
+  let fillComputerThree = document.getElementById("third-computers-move");
+  fillComputerThree.innerHTML = `<h3>${computerHandThree}.</h3>`
 
   compareResultsPVC(playerOneMoves, computerMoves);
 

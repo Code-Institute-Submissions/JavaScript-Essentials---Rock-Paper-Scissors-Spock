@@ -327,3 +327,34 @@ section {
     height: 20%;
     margin: 0 auto;
 }
+
+/* styling for the chosen moves divsion */
+
+#paterns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 150px;
+  width: 70%;
+  border: solid 3px black;
+  background-color: #FF5F1F;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+#firstpayers-chosen-moves {
+    display: flex;
+    text-align: center;
+    height: 80%;
+    margin: 10px;
+    font-size: 25px;
+}
+
+#computers-chosen-moves {
+    display: flex;
+    text-align: center;
+    height: 80%;
+    margin: 10px;
+    font-size: 25px;
+}
