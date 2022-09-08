@@ -18,7 +18,7 @@ function setPTwoName() {
 }
 
 function startPVP() {
-  var audioSelect = new Audio('../audio/select.mp3');
+  var audioSelect = new Audio('select.mp3');
   audioSelect.play();
   // get the body of the page
   let startBody = document.body;
