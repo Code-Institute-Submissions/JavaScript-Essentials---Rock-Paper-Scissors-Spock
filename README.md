@@ -1,9 +1,14 @@
 
-cheat code
-Quick fire game mode (3 lives)
-game manuals
-Media queries
+Maybe: Quick fire game mode (3 lives)
+       Cheat Code
 
-annotation
-testing and validation
-readme
+Important :game manuals
+           Media queries
+           remaining annotation (most CSS any new JS)
+           testing and validation (CSS, JS)
+           readme
+
+
+
+
+
