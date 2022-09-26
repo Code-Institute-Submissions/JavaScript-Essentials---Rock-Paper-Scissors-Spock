@@ -6,17 +6,20 @@ let playerOneMoves = []
 let playerTwoMoves = []
 let computerMoves = []
 
+// the code below is a function that will replace the 'Player One' text with the text input recorded from the game scoreboard 
 function setPOneName() {
   let playerOneName = document.getElementById("p-one-name").innerText
   document.getElementsByClassName("player-header")[0].innerText = playerOneName
 
 }
 
+// the code below is a function that will replace the 'Player Two' text with the text input recorded from the game scoreboard 
 function setPTwoName() {
   let playerTwoName = document.getElementById("p-two-name").innerText
   document.getElementsByClassName("player-header")[1].innerText = playerTwoName
 }
 
+// the code below is the logic to begin a Player vs player game
 function startPVP() {
   var audioSelect = new Audio('select.mp3');
   audioSelect.play();
@@ -169,16 +172,19 @@ function startPVP() {
   console.log('Starting Player VS Player.')
 }
 
+// the code below shall begin a new round of the player vs player gametype whilst carrying the scores of the previous game and the chosen player names forward
 function startPVPNewRound() {
   // get the body of the page
   let startBody = document.body;
 
+  // ensuring the arrays are emptied for the new round 
   playerOneMoves.length = 0
   playerTwoMoves.length = 0
 
   console.log(playerOneMoves)
   console.log(playerOneMoves)
 
+  // gather the chosen player names to be carried into new games
   let playerOneOldName = document.getElementById("p-one-name").innerText
   let playerTwoOldName = document.getElementById("p-two-name").innerText
 
@@ -329,6 +335,7 @@ function startPVPNewRound() {
 
   console.log('Starting next round...');
 
+  // update the player names once the html content has been replaced
   nameHeaders[0].innerText = playerOneOldName
   nameHeaders[1].innerText = playerTwoOldName
   document.getElementById("p-one-name").innerText = playerOneOldName
@@ -338,6 +345,7 @@ function startPVPNewRound() {
   document.getElementById('score-two').innerText = playerTwoOldScore;
 }
 
+// the code below is the logic to begin a Player vs computer game
 function startPVC() {
   // get the body of the page
   let startBody = document.body;
@@ -451,6 +459,7 @@ function startPVC() {
   console.log('Starting Player VS Computer.');
 }
 
+// the code below shall begin a new round of the player vs computer gametype whilst carrying the scores of the previous game and the chosen player names forward
 function startPVCNewRound() {
 
   playerOneMoves.length = 0
@@ -580,6 +589,8 @@ function startPVCNewRound() {
   console.log('Starting Player VS Computer.');
 }
 
+
+// the code below shall open a game manual with intructions on how to operate the Player vs Player Game Mode
 function openPVPManual() {
   // get the body of the page
   let startBody = document.body;
@@ -668,6 +679,7 @@ function openPVPManual() {
 <script src="assets/js/script.js"></script>`
 }
 
+// the code block below is the logic for building an array from player one's chosen move type ie rock, paper, or scissors 
 pickPlayerOneChoiceOne = (handOne) => {
   let hideChoiceOne = document.getElementById("player-one-move-one")
   hideChoiceOne.style.display = "none";
@@ -702,6 +714,7 @@ pickPlayerOneChoiceOne = (handOne) => {
   }
 }
 
+// the code block below is the logic for building an array from player two's chosen move type ie rock, paper, or scissors
 pickPlayerTwoChoiceOne = (handOne) => {
   let hideChoiceOne = document.getElementById("player-two-move-one")
   hideChoiceOne.style.display = "none";
@@ -738,6 +751,7 @@ pickPlayerTwoChoiceOne = (handOne) => {
   }
 }
 
+// the code block below is the logic for building an array of 3 randomly generated moves from either rock, paper, or scissors for the computer
 function pickComputerChoiceOne() {
   let options = ["rock", "paper", "scissors"];
   let computerHandOne = options[Math.floor(Math.random() * options.length)];
@@ -758,6 +772,7 @@ function pickComputerChoiceOne() {
   let fillComputerThree = document.getElementById("third-computers-move");
   fillComputerThree.innerHTML = `<h3>${computerHandThree}.</h3>`
 
+  // this line of code fires the function to compare the arrays and log the winner of the game
   compareResultsPVC(playerOneMoves, computerMoves);
 
   document.getElementById("play-pvc-new-round").style.display = "block";
@@ -1066,7 +1081,7 @@ const compareResultsPVC = (playerOneMoves, computerMoves) => {
   }
 };
 
-
+// the code blocks below will increment the score counters for player one, player two or the computer depending on which is fired 
 function incrementPlayerOneScore() {
 
   let oldScoreOne = parseInt(document.getElementById('score-one').innerText);
@@ -1088,6 +1103,8 @@ function incrementComputerScore() {
 
 }
 
+
+// the code block below will reset the game entirely, returning to the main menu and clearing any arrays, scores or player names
 function resetGame() {
   playerOneMoves = []
   playerTwoMoves = []
@@ -1113,6 +1130,7 @@ function lockAnswers() {
 
 };
 
+// ignore this - to be removed
 function viewSource() {
   ;
   var source = "<html>";
