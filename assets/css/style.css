@@ -264,7 +264,7 @@ i:hover {
 
 .score-chart {
     width: 300px;
-    height: 150px;
+    height: 140px;
     border: 2px solid black;
     display: block;
     font-size: 25px;
@@ -283,14 +283,16 @@ i:hover {
 
 #score-one {
     margin: -15px;
-    padding-top: 25px;
+    margin-top: 5px;
+    /* padding-top: 25px; */
     background-color: azure;
     border: solid black 2px;
 }
 
 #score-two {
     margin: -15px;
-    padding-top: 25px;
+    margin-top: 5px;
+    /* padding-top: 25px; */
     background-color: azure;
     border: solid black 2px;
 }
@@ -300,6 +302,7 @@ i:hover {
     background-color: rgb(202, 105, 238);
     color: white;
     margin-top: 5px;
+    margin-bottom: 4px;
 }
 
 #p-two-name {
@@ -307,6 +310,7 @@ i:hover {
     background-color: rgb(202, 105, 238);
     color: white;
     margin-top: 5px;
+    margin-bottom: 4px;
 }
 
 section {
@@ -318,6 +322,7 @@ section {
 
 #score-board i {
     font-size: 20px;
+    color: azure;
 }
 
 #chosen-moves {
@@ -364,6 +369,10 @@ section {
     font-size: 25px;
 }
 
+#firstplayers-chosen-moves h3 {
+    margin-left: 10px;
+}
+
 #computers-chosen-moves {
     display: flex;
     text-align: center;
@@ -378,4 +387,8 @@ section {
     height: 80%;
     margin: 10px;
     font-size: 25px;
+}
+
+#secondplayers-chosen-moves h3 {
+    margin-left: 10px;
 }

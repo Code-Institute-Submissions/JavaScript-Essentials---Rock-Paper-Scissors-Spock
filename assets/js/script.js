@@ -52,14 +52,16 @@ function startPVP() {
 
   <div class="score-chart">
   <h3>SCOREBOARD</h3>
-      <p id="p-one-name" contenteditable="true">Player One <i class="fa-solid fa-lock-open" onclick="setPOneName();"></i></p>
+      <p id="p-one-name" contenteditable="true">PLAYERONE</p> 
+      <i id="p-one-name-lock" class="fa-solid fa-lock-open" onclick="setPOneName();"></i>
       <h1 id="score-one"> 0 </h1>
   </div>
 
 
 
   <div class="score-chart">
-    <p id="p-two-name" contenteditable="true">Player Two <i class="fa-solid fa-lock-open" onclick="setPTwoName();"></i></p>
+    <p id="p-two-name" contenteditable="true">PLAYERTWO</p>
+    <i id="p-two-name-lock" class="fa-solid fa-lock-open" onclick="setPTwoName();"></i>
     <h1 id="score-two"> 0 </h1>
   </div>
 </div>
@@ -151,13 +153,15 @@ function startPVP() {
 
 <div id="paterns-two">
                 <div id="firstplayers-chosen-moves">
-                  <h3>Player One's hand:  </h3>
+                  <h3>P1:</h3>
+                  <br>
                   <div id="first-players-move"></div>
                   <div id="second-players-move"></div>
                   <div id="third-players-move"></div>
                 </div>
                 <div id="secondplayers-chosen-moves">
-                  <h3>Player Two's hand:  </h3>
+                  <h3>P2:</h3>
+                  <br>
                   <div id="first-second-move"></div>
                   <div id="second-second-move"></div>
                   <div id="third-second-move"></div>
@@ -318,13 +322,15 @@ function startPVPNewRound() {
 
 <div id="paterns-two">
                 <div id="firstplayers-chosen-moves">
-                  <h3>Player One's hand:  </h3>
+                  <h3>P1</h3>
+                  <br>
                   <div id="first-players-move"></div>
                   <div id="second-players-move"></div>
                   <div id="third-players-move"></div>
                 </div>
                 <div id="secondplayers-chosen-moves">
-                  <h3>Player Two's hand:  </h3>
+                  <h3>P2</h3>
+                  <br>
                   <div id="first-second-move"></div>
                   <div id="second-second-move"></div>
                   <div id="third-second-move"></div>
@@ -706,7 +712,7 @@ pickPlayerOneChoiceOne = (handOne) => {
   console.log(playerOneMoves);
 
   let fillOne = document.getElementById("first-players-move");
-  fillOne.innerHTML = `<h3>${handOne}, </h3>`
+  fillOne.innerHTML = `<h3>${handOne.toUpperCase()}, </h3>`
 
 
   pickPlayerOneChoiceTwo = (handTwo) => {
@@ -721,7 +727,7 @@ pickPlayerOneChoiceOne = (handOne) => {
     console.log(playerOneMoves);
 
     let fillTwo = document.getElementById("second-players-move");
-    fillTwo.innerHTML = `<h3> ${handTwo}, </h3>`
+    fillTwo.innerHTML = `<h3> ${handTwo.toUpperCase()}, </h3>`
   }
 
   pickPlayerOneChoiceThree = (handThree) => {
@@ -736,7 +742,7 @@ pickPlayerOneChoiceOne = (handOne) => {
     console.log(playerOneMoves);
 
     let fillThree = document.getElementById("third-players-move");
-    fillThree.innerHTML = `<h3>${handThree}. </h3>`
+    fillThree.innerHTML = `<h3>${handThree.toUpperCase()}. </h3>`
   }
 }
 
@@ -752,7 +758,7 @@ pickPlayerTwoChoiceOne = (handOne) => {
   console.log(playerTwoMoves);
 
   let fillOne = document.getElementById("first-second-move");
-  fillOne.innerHTML = `<h3>${handOne}, </h3>`
+  fillOne.innerHTML = `<h3>${handOne.toUpperCase()}, </h3>`
 
   pickPlayerTwoChoiceTwo = (handTwo) => {
     var audioSelect = new Audio('assets/audio/select.mp3');
@@ -765,7 +771,7 @@ pickPlayerTwoChoiceOne = (handOne) => {
     console.log(playerTwoMoves);
 
     let fillTwo = document.getElementById("second-second-move");
-    fillTwo.innerHTML = `<h3>${handTwo}, </h3>`
+    fillTwo.innerHTML = `<h3>${handTwo.toUpperCase()}, </h3>`
   }
 
   pickPlayerTwoChoiceThree = (handThree) => {
@@ -779,7 +785,7 @@ pickPlayerTwoChoiceOne = (handOne) => {
     console.log(playerTwoMoves);
 
     let fillThree = document.getElementById("third-second-move");
-    fillThree.innerHTML = `<h3>${handThree}, </h3>`
+    fillThree.innerHTML = `<h3>${handThree.toUpperCase()}, </h3>`
 
     // call the function to compare the arrays and log the winner 
     compareResultsPVP(playerOneMoves, playerTwoMoves);
@@ -802,13 +808,13 @@ function pickComputerChoiceOne() {
   console.log(computerMoves)
 
   let fillComputerOne = document.getElementById("first-computers-move");
-  fillComputerOne.innerHTML = `<h3>${computerHandOne}.</h3>`
+  fillComputerOne.innerHTML = `<h3>${computerHandOne.toUpperCase()}.</h3>`
 
   let fillComputerTwo = document.getElementById("second-computers-move");
-  fillComputerTwo.innerHTML = `<h3>${computerHandTwo}.</h3>`
+  fillComputerTwo.innerHTML = `<h3>${computerHandTwo.toUpperCase()}.</h3>`
 
   let fillComputerThree = document.getElementById("third-computers-move");
-  fillComputerThree.innerHTML = `<h3>${computerHandThree}.</h3>`
+  fillComputerThree.innerHTML = `<h3>${computerHandThree.toUpperCase()}.</h3>`
 
   // this line of code fires the function to compare the arrays and log the winner of the game
   compareResultsPVC(playerOneMoves, computerMoves);
