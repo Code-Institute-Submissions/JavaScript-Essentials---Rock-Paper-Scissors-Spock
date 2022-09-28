@@ -194,6 +194,7 @@ body {
     text-align: center;
     line-height: 60px;
     font-weight: 200;
+    display: none;
 }
 
 #lock-pc-choices {

@@ -224,12 +224,12 @@ function startPVPNewRound() {
 
     <div class="score-chart">
       <h3>SCOREBOARD</h3>
-      <p id="p-one-name" contenteditable="true">Player One <i class="fa-solid fa-lock-open" onclick="setPOneName();"></i></p>
+      <p id="p-one-name">Player One <i class="fa-solid fa-lock-open" onclick="setPOneName();"></i></p>
       <h1 id="score-one"> 0 </h1>
     </div>
 
     <div class="score-chart">
-      <p id="p-two-name" contenteditable="true">Player Two <i class="fa-solid fa-lock-open" onclick="setPTwoName();"></i></p>
+      <p id="p-two-name">Player Two <i class="fa-solid fa-lock-open" onclick="setPTwoName();"></i></p>
       <h1 id="score-two"> 0 </h1>
     </div>
   </div>
@@ -743,7 +743,11 @@ pickPlayerOneChoiceOne = (handOne) => {
 
     let fillThree = document.getElementById("third-players-move");
     fillThree.innerHTML = `<h3>${handThree.toUpperCase()}. </h3>`
-  }
+
+    let showLockAnswers = document.getElementsByClassName("lock-answers");
+    console-log(showLockAnswers)
+    showLockAnswers[0].style.display = "block";
+    }
 }
 
 // the code block below is the logic for building an array from player two's chosen move type ie rock, paper, or scissors
