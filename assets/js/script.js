@@ -25,8 +25,8 @@ function setPTwoName() {
 
 // the code below is the logic to begin a Player vs player game
 function startPVP() {
-  var audioSelect = new Audio('assets/audio/start.wav');
-  audioSelect.play();
+  var audioStart = new Audio('assets/audio/start.wav');
+  audioStart.play();
   // get the body of the page
   let startBody = document.body;
 
@@ -178,8 +178,8 @@ function startPVP() {
 
 // the code below shall begin a new round of the player vs player gametype whilst carrying the scores of the previous game and the chosen player names forward
 function startPVPNewRound() {
-  var audioSelect = new Audio('assets/audio/start.wav');
-  audioSelect.play();
+  var audioStart = new Audio('assets/audio/start.wav');
+  audioStart.play();
   // get the body of the page
   let startBody = document.body;
 
@@ -353,8 +353,8 @@ function startPVPNewRound() {
 
 // the code below is the logic to begin a Player vs computer game
 function startPVC() {
-  var audioSelect = new Audio('assets/audio/start.wav');
-  audioSelect.play();
+  var audioStart = new Audio('assets/audio/start.wav');
+  audioStart.play();
   // get the body of the page
   let startBody = document.body;
 
@@ -469,8 +469,8 @@ function startPVC() {
 
 // the code below shall begin a new round of the player vs computer gametype whilst carrying the scores of the previous game and the chosen player names forward
 function startPVCNewRound() {
-  var audioSelect = new Audio('assets/audio/start.wav');
-  audioSelect.play();
+  var audioStart = new Audio('assets/audio/start.wav');
+  audioStart.play();
 
   playerOneMoves.length = 0
   computerMoves.length = 0
@@ -602,8 +602,8 @@ function startPVCNewRound() {
 
 // the code below shall open a game manual with intructions on how to operate the Player vs Player Game Mode
 function openPVPManual() {
-  var audioSelect = new Audio('assets/audio/start.wav');
-  audioSelect.play();
+  var audioBook = new Audio('assets/audio/book.wav');
+  audioBook.play();
   // get the body of the page
   let startBody = document.body;
 
@@ -689,6 +689,8 @@ function openPVPManual() {
 
 <!-- Linking to javascript game logic -->
 <script src="assets/js/script.js"></script>`
+
+window.scrollTo(0, 0);
 }
 
 // the code block below is the logic for building an array from player one's chosen move type ie rock, paper, or scissors 
@@ -782,8 +784,8 @@ pickPlayerTwoChoiceOne = (handOne) => {
     // call the function to compare the arrays and log the winner 
     compareResultsPVP(playerOneMoves, playerTwoMoves);
 
-    var audioSelect = new Audio('assets/audio/win.wav');
-    audioSelect.play();
+    var audioWin = new Audio('assets/audio/win.wav');
+    audioWin.play();
   }
 }
 
