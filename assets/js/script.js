@@ -8,6 +8,8 @@ let computerMoves = []
 
 // the code below is a function that will replace the 'Player One' text with the text input recorded from the game scoreboard 
 function setPOneName() {
+  var audioSelect = new Audio('select.mp3');
+  audioSelect.play();
   let playerOneName = document.getElementById("p-one-name").innerText
   document.getElementsByClassName("player-header")[0].innerText = playerOneName
 
@@ -15,6 +17,8 @@ function setPOneName() {
 
 // the code below is a function that will replace the 'Player Two' text with the text input recorded from the game scoreboard 
 function setPTwoName() {
+  var audioSelect = new Audio('select.mp3');
+  audioSelect.play();
   let playerTwoName = document.getElementById("p-two-name").innerText
   document.getElementsByClassName("player-header")[1].innerText = playerTwoName
 }
@@ -174,6 +178,8 @@ function startPVP() {
 
 // the code below shall begin a new round of the player vs player gametype whilst carrying the scores of the previous game and the chosen player names forward
 function startPVPNewRound() {
+  var audioSelect = new Audio('select.mp3');
+  audioSelect.play();
   // get the body of the page
   let startBody = document.body;
 
@@ -347,6 +353,8 @@ function startPVPNewRound() {
 
 // the code below is the logic to begin a Player vs computer game
 function startPVC() {
+  var audioSelect = new Audio('select.mp3');
+  audioSelect.play();
   // get the body of the page
   let startBody = document.body;
 
@@ -461,6 +469,8 @@ function startPVC() {
 
 // the code below shall begin a new round of the player vs computer gametype whilst carrying the scores of the previous game and the chosen player names forward
 function startPVCNewRound() {
+  var audioSelect = new Audio('select.mp3');
+  audioSelect.play();
 
   playerOneMoves.length = 0
   computerMoves.length = 0
@@ -592,6 +602,8 @@ function startPVCNewRound() {
 
 // the code below shall open a game manual with intructions on how to operate the Player vs Player Game Mode
 function openPVPManual() {
+  var audioSelect = new Audio('select.mp3');
+  audioSelect.play();
   // get the body of the page
   let startBody = document.body;
 
@@ -681,6 +693,8 @@ function openPVPManual() {
 
 // the code block below is the logic for building an array from player one's chosen move type ie rock, paper, or scissors 
 pickPlayerOneChoiceOne = (handOne) => {
+  var audioSelect = new Audio('select.mp3');
+  audioSelect.play();
   let hideChoiceOne = document.getElementById("player-one-move-one")
   hideChoiceOne.style.display = "none";
 
@@ -692,6 +706,8 @@ pickPlayerOneChoiceOne = (handOne) => {
 
 
   pickPlayerOneChoiceTwo = (handTwo) => {
+    var audioSelect = new Audio('select.mp3');
+    audioSelect.play();
     let hideChoiceTwo = document.getElementById("player-one-move-two")
     hideChoiceTwo.style.display = "none";
 
@@ -703,6 +719,8 @@ pickPlayerOneChoiceOne = (handOne) => {
   }
 
   pickPlayerOneChoiceThree = (handThree) => {
+    var audioSelect = new Audio('select.mp3');
+    audioSelect.play();
     let hideChoiceTwo = document.getElementById("player-one-move-three")
     hideChoiceTwo.style.display = "none";
 
