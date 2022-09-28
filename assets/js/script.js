@@ -740,6 +740,9 @@ pickPlayerOneChoiceOne = (handOne) => {
 
 // the code block below is the logic for building an array from player two's chosen move type ie rock, paper, or scissors
 pickPlayerTwoChoiceOne = (handOne) => {
+  var audioSelect = new Audio('assets/audio/select.mp3');
+  audioSelect.play();
+
   let hideChoiceOne = document.getElementById("player-two-move-one")
   hideChoiceOne.style.display = "none";
 
@@ -750,6 +753,9 @@ pickPlayerTwoChoiceOne = (handOne) => {
   fillOne.innerHTML = `<h3>${handOne}, </h3>`
 
   pickPlayerTwoChoiceTwo = (handTwo) => {
+    var audioSelect = new Audio('assets/audio/select.mp3');
+    audioSelect.play();
+
     let hideChoiceTwo = document.getElementById("player-two-move-two")
     hideChoiceTwo.style.display = "none";
 
@@ -761,6 +767,9 @@ pickPlayerTwoChoiceOne = (handOne) => {
   }
 
   pickPlayerTwoChoiceThree = (handThree) => {
+    var audioSelect = new Audio('assets/audio/select.mp3');
+    audioSelect.play();
+
     let hideChoiceThree = document.getElementById("player-two-move-three")
     hideChoiceThree.style.display = "none";
 
@@ -772,6 +781,9 @@ pickPlayerTwoChoiceOne = (handOne) => {
 
     // call the function to compare the arrays and log the winner 
     compareResultsPVP(playerOneMoves, playerTwoMoves);
+
+    var audioSelect = new Audio('assets/audio/win.wav');
+    audioSelect.play();
   }
 }
 
@@ -798,6 +810,8 @@ function pickComputerChoiceOne() {
 
   // this line of code fires the function to compare the arrays and log the winner of the game
   compareResultsPVC(playerOneMoves, computerMoves);
+  var audioSelect = new Audio('assets/audio/win.wav');
+  audioSelect.play();
 
   document.getElementById("play-pvc-new-round").style.display = "block";
 
@@ -808,6 +822,8 @@ function pickComputerChoiceOne() {
 
 // compare the playerOneMoves and playerTwoMoves arrays once they are full and adjust scoring
 const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
+  var audioSelect = new Audio('assets/audio/win.wav');
+  audioSelect.play();
 
   let showIt = document.getElementById("paterns-two")
   showIt.style.display = "flex"
@@ -1130,6 +1146,9 @@ function incrementComputerScore() {
 
 // the code block below will reset the game entirely, returning to the main menu and clearing any arrays, scores or player names
 function resetGame() {
+  var audioSelect = new Audio('assets/audio/return.wav');
+  audioSelect.play();
+
   playerOneMoves = []
   playerTwoMoves = []
   computerMoves = []
