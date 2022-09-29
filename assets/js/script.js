@@ -74,9 +74,10 @@ function startPVP() {
         <div id=player-one-move-one>
             <h2 class="choice-header">First Choice:</h2>
 
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceOne('rock')"></i>
             <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceOne('paper')"></i>
             <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceOne('scissors')"></i>
-            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceOne('rock')"></i>                       
+                                   
         </div>
 
         <div class="red-line-breaker"></div>
@@ -84,9 +85,10 @@ function startPVP() {
         <div id="player-one-move-two">
             <h2 class="choice-header">Second Choice:</h2>
 
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceTwo('rock')"></i> 
             <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceTwo('paper')"></i>
             <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceTwo('scissors')"></i>
-            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceTwo('rock')"></i>                       
+                                  
         </div>
 
         <div class="red-line-breaker"></div>
@@ -94,9 +96,10 @@ function startPVP() {
         <div id="player-one-move-three">
             <h2 class="choice-header">Third Choice:</h2>
 
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i> 
             <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceThree('paper')"></i>
             <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
-            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i>                       
+                                  
         </div>
 
         <div class="red-line-breaker"></div>
@@ -115,9 +118,10 @@ function startPVP() {
         <div id="player-two-move-one">
             <h2 class="choice-header">First Choice:</h2>
 
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceOne('rock')"></i>
             <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceOne('paper')"></i>
             <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceOne('scissors')"></i>
-            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceOne('rock')"></i>                       
+                                   
         </div>
 
         <div class="orange-line-breaker"></div>
@@ -125,9 +129,10 @@ function startPVP() {
         <div id="player-two-move-two">
             <h2 class="choice-header">Second Choice:</h2>
 
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceTwo('rock')"></i>
             <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceTwo('paper')"></i>
             <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceTwo('scissors')"></i>
-            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceTwo('rock')"></i>                       
+                                   
         </div>
 
         <div class="orange-line-breaker"></div>
@@ -135,9 +140,10 @@ function startPVP() {
         <div id="player-two-move-three">
             <h2 class="choice-header">Third Choice:</h2>
 
+            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceThree('rock')"></i> 
             <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceThree('paper')"></i>
             <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceThree('scissors')"></i>
-            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceThree('rock')"></i>                       
+                                  
         </div>
 
         <div class="orange-line-breaker"></div>
@@ -241,20 +247,22 @@ function startPVPNewRound() {
             <h3 class="player-header">Player One</h3>
             <div id=player-one-move-one>
                 <h2 class="choice-header">First Choice:</h2>
-
+                
+                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceOne('rock')"></i>
                 <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceOne('paper')"></i>
                 <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceOne('scissors')"></i>
-                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceOne('rock')"></i>
+                
             </div>
 
             <div class="red-line-breaker"></div>
 
             <div id="player-one-move-two">
                 <h2 class="choice-header">Second Choice:</h2>
-
+                
+                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceTwo('rock')"></i>
                 <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceTwo('paper')"></i>
                 <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceTwo('scissors')"></i>
-                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceTwo('rock')"></i>
+                
             </div>
 
             <div class="red-line-breaker"></div>
@@ -262,9 +270,10 @@ function startPVPNewRound() {
             <div id="player-one-move-three">
                 <h2 class="choice-header">Third Choice:</h2>
 
+                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i>
                 <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceThree('paper')"></i>
                 <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
-                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i>
+                
             </div>
 
             <div class="red-line-breaker"></div>
@@ -284,9 +293,10 @@ function startPVPNewRound() {
             <div id="player-two-move-one">
                 <h2 class="choice-header">First Choice:</h2>
 
+                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceOne('rock')"></i>
                 <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceOne('paper')"></i>
                 <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceOne('scissors')"></i>
-                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceOne('rock')"></i>
+                
             </div>
 
             <div class="orange-line-breaker"></div>
@@ -294,9 +304,10 @@ function startPVPNewRound() {
             <div id="player-two-move-two">
                 <h2 class="choice-header">Second Choice:</h2>
 
+                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceTwo('rock')"></i>
                 <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceTwo('paper')"></i>
                 <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceTwo('scissors')"></i>
-                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceTwo('rock')"></i>
+                
             </div>
 
             <div class="orange-line-breaker"></div>
@@ -304,9 +315,10 @@ function startPVPNewRound() {
             <div id="player-two-move-three">
                 <h2 class="choice-header">Third Choice:</h2>
 
+                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceThree('rock')"></i>
                 <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceThree('paper')"></i>
                 <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceThree('scissors')"></i>
-                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceThree('rock')"></i>
+                
             </div>
 
             <div class="orange-line-breaker"></div>
@@ -633,7 +645,7 @@ function openPVPManual() {
           Step 1.
       </h3>
       <p>
-          Set the name for Player One and Player Two via the scoreboard, the text 'P1:/P2:' can be edited. Once you
+          Set the name for Player One and Player Two via the scoreboard, the text 'PLAYERONE / PLAYERTWO' can be edited. Once you
           have chosen your names,
           click on the small padlock icon shown in the image to lock them in. Your Player Names can only be chosen in
           the first game, so choose wisely!
@@ -650,6 +662,7 @@ function openPVPManual() {
           from. An icon representing a fist relates to the 'Rock' option, an icon representing a paper plane will
           choose the 'Paper' option, the pair of scissors is self explanatory.
       </p>
+      <img src="assets/images/step-two-choices.png" alt="an image of the move selection box in the game">
   </div>
   <br>
   <div class="pvp-step">
@@ -661,6 +674,7 @@ function openPVPManual() {
           Player One's hands are locked in, click the padlock icon within the hand selection window as shown in the
           image. This will begin the turn for Player Two.
       </p>
+      <img src="assets/images/step-three-lockin.png" alt="an image showing the 'lock in' function in the game">
   </div>
   <br>
   <div class="pvp-step">
@@ -669,7 +683,7 @@ function openPVPManual() {
       </h3>
       <p>
           Player Two must repeat the process of chosing their hand for each of the three rounds. once the final hand
-          is chosen the game shall compare Player One and PLayer Two's decisions and the results shall be displayed in
+          is chosen the game shall compare Player One and Player Two's decisions and the results shall be displayed in
           pop up message boxes. The scoreboard shall update to reflect the scores from the game.
       </p>
   </div>
