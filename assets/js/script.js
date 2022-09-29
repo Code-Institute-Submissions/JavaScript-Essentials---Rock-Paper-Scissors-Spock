@@ -638,6 +638,7 @@ function openPVPManual() {
           click on the small padlock icon shown in the image to lock them in. Your Player Names can only be chosen in
           the first game, so choose wisely!
       </p>
+      <img src="assets/images/step-one-name.png" alt="an image of the scoreboard for the game">
   </div>
   <br>
   <div class="pvp-step">
