@@ -716,6 +716,102 @@ function openPVPManual() {
 window.scrollTo(0, 0);
 }
 
+// the code below shall open a game manual with intructions on how to operate the Player vs Player Game Mode
+function openPVCManual() {
+  var audioBook = new Audio('assets/audio/book.wav');
+  audioBook.play();
+  // get the body of the page
+  let startBody = document.body;
+
+  // Set the body's innerHTML to player vs player iunstruction manual
+  startBody.innerHTML = `<div id="landing-title">
+  <h2>
+      Rock, Paper, Scissors,
+  </h2>
+  <h1>
+      Nucleur Bomb!
+  </h1>
+
+  <div id="gradient1"></div>
+</div>
+
+<br>
+
+<div id="pvp-instructions">
+  <div class="pvp-step">
+      <h3>
+          Step 1.
+      </h3>
+      <p>
+          Set the name for Player One via the scoreboard, the text 'PLAYERONE' can be edited. Once you
+          have chosen your name,
+          click on the small padlock icon shown in the image to lock them in. Your Player Name can only be chosen in
+          the first game, so choose wisely!
+      </p>
+      <img src="assets/images/step-one-name.png" alt="an image of the scoreboard for the game">
+  </div>
+  <br>
+  <div class="pvp-step">
+      <h3>
+          Step 2:
+      </h3>
+      <p>
+          Player One begins by selecting their hands for Rounds One, Two and Three. Their are three icons to choose
+          from. An icon representing a fist relates to the 'Rock' option, an icon representing a paper plane will
+          choose the 'Paper' option, the pair of scissors is self explanatory.
+      </p>
+      <img src="assets/images/step-two-choices.png" alt="an image of the move selection box in the game">
+  </div>
+  <br>
+  <div class="pvp-step">
+      <h3>
+          Step 3:
+      </h3>
+      <p>
+          Once an option is chosen it shall dissapear so pay attention to the options you choose. After all of
+          your choices are locked in, click the padlock icon inside the window as shown in the
+          image. This will then compare your pattern against the computers and determine the winner.
+      </p>
+      <img src="assets/images/step-three-lockin.png" alt="an image showing the 'lock in' function in the game">
+  </div>
+  <br>
+  <div class="pvp-step">
+      <h3>
+          Step 4:
+      </h3>
+      <p>
+          The winner of each round shall appear in handy message boxes and the hand you picked shall appear alongside the computers choices, the points are awarded to the winner of each round.
+      </p>
+      <img src="assets/images/step-pc-compare.png" alt="an image showing the functions for player two">
+  </div>
+  <br>
+  <div class="pvp-step">
+      <h3>
+          Step 5:
+      </h3>
+      <p>
+          Once the results have been calculated and the points awarded on the scoreboard, you can select the text
+          'Play again' to continue a new game with your previous scores and chosen player name carried forward.
+          the game can be played as many times as you desire. 
+      </p>
+      <img src="assets/images/step-pc-newround.png" alt="an image showing the button to start a new round">
+  </div>
+  <br>
+  <div id="start-pvp-button" onclick="startPVC()">Start a game!</div>
+</div>
+
+<br>
+
+<div id="reset-button" onclick="resetGame();">Main Menu</div>
+
+
+
+<!-- Linking to javascript game logic -->
+<script src="assets/js/script.js"></script>`
+
+window.scrollTo(0, 0);
+}
+
 // the code block below is the logic for building an array from player one's chosen move type ie rock, paper, or scissors 
 pickPlayerOneChoiceOne = (handOne) => {
 
