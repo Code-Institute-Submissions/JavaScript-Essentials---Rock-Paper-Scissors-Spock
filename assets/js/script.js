@@ -102,7 +102,7 @@ function startPVP() {
         <div class="red-line-breaker"></div>
 
         <!-- the code below will lock the input for player one and update the HTML to display player two -->
-        <div class="lock-answer" onclick="lockAnswers();">Lock in your choices! <i class="fa-solid fa-lock-open"></i></div>
+        <div id="lock-answer" onclick="lockAnswers();">Lock in your choices! <i class="fa-solid fa-lock-open"></i></div>
 
         <!-- this division creats a small colored bar at the bottom -->
         <div id="grad-player-one"></div>
@@ -143,7 +143,7 @@ function startPVP() {
         <div class="orange-line-breaker"></div>
 
         <!-- the code below will start a new game of PVP -->
-        <div class="lock-answer" onclick="startPVPNewRound();">Play again!</div>
+        <div id="lock-answer-two" onclick="startPVPNewRound();">Play again!</div>
 
         <div id="grad-player-two"></div>
 
@@ -270,7 +270,7 @@ function startPVPNewRound() {
             <div class="red-line-breaker"></div>
 
             <!-- the code below will lock the input for player one and update the HTML to display player two -->
-            <div class="lock-answer" onclick="lockAnswers();">Lock in your choices! <i
+            <div id="lock-answer" onclick="lockAnswers();">Lock in your choices! <i
                     class="fa-solid fa-lock-open"></i></div>
 
             <!-- this division creats a small colored bar at the bottom -->
@@ -312,7 +312,7 @@ function startPVPNewRound() {
             <div class="orange-line-breaker"></div>
 
             <!-- the code below will start a new game of PVP -->
-            <div class="lock-answer" onclick="startPVPNewRound();">Play again!</div>
+            <div id="lock-answer-two" onclick="startPVPNewRound();">Play again!</div>
 
             <div id="grad-player-two"></div>
 
@@ -744,9 +744,9 @@ pickPlayerOneChoiceOne = (handOne) => {
     let fillThree = document.getElementById("third-players-move");
     fillThree.innerHTML = `<h3>${handThree.toUpperCase()}. </h3>`
 
-    let showLockAnswers = document.getElementsByClassName("lock-answers");
-    console-log(showLockAnswers)
-    showLockAnswers[0].style.display = "block";
+    let showLockAnswers = document.getElementById("lock-answer");
+    console.log(showLockAnswers)
+    showLockAnswers.style.display = "block";
     }
 }
 
@@ -796,6 +796,10 @@ pickPlayerTwoChoiceOne = (handOne) => {
 
     var audioWin = new Audio('assets/audio/win.wav');
     audioWin.play();
+
+    showLockAnswers = document.getElementById("lock-answer-two");
+    console.log(showLockAnswers)
+    showLockAnswers.style.display = "block";
   }
 }
 

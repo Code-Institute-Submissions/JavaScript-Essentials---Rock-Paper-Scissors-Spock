@@ -188,7 +188,16 @@ body {
     background-color: red;
 }
 
-.lock-answer {
+#lock-answer {
+    font-size: 20px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-weight: 200;
+    display: none;
+}
+
+#lock-answer-two {
     font-size: 20px;
     height: 60px;
     text-align: center;
