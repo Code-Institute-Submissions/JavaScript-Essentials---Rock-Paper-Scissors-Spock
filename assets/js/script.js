@@ -686,6 +686,7 @@ function openPVPManual() {
           is chosen the game shall compare Player One and Player Two's decisions and the results shall be displayed in
           pop up message boxes. The scoreboard shall update to reflect the scores from the game.
       </p>
+      <img src="assets/images/step-four-nextplayer.png" alt="an image showing the functions for player two">
   </div>
   <br>
   <div class="pvp-step">
@@ -697,6 +698,7 @@ function openPVPManual() {
           'Play again' to continue a new game with your previous scores and chosen player names carried forward.
           the game can be played as many times as you desire. 
       </p>
+      <img src="assets/images/step-five-newround.png" alt="an image showing the button to start a new round">
   </div>
   <br>
   <div id="start-pvp-button" onclick="startPVP()">Start a game!</div>
