@@ -440,7 +440,69 @@ section {
 
 /* media querie: index page on screens between 768px and 1024px wide (tablets, ipads) */
 @media (min-width: 768px) and (max-width: 1024px) {
+    #landing-title {
+        height: 520px;
+    }
+
+    section {
+        margin-left: 25px;
+    }
+
+    #score-board {
+        width: 10px;
+    }
+
+    #player-one-moves {
+        width: 450px;
+    }
+
+    #player-two-moves-show {
+        width: 450px;
+    }
     
+    .score-chart {
+        width: 175px;
+        height: 140px;
+    }
+
+    #paterns {
+        width: 90%;
+        display: block;
+        height: 170px;
+    }
+
+    #paterns-two {
+        width: 90%;
+    }
+
+    #firstplayers-chosen-moves {
+        height: 45%;
+        font-size: 20px;
+    }
+
+    #secondplayers-chosen-moves {
+        height: 45%;
+        font-size: 20px;
+    }
+
+    #computers-chosen-moves {
+        font-size: 20px;
+        margin: 20px;
+        height: 45%;
+
+    }
+
+    img {
+        width: 75%;
+    }
+
+    #move-selection {
+        width: 800px;
+    }
+
+    .player-header {
+        overflow: auto;
+    }
 }
 
 /* media querie: index page on screens between 481px and 767px wide (tablets, mobiles in landscape) */
