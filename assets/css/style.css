@@ -507,6 +507,112 @@ section {
 
 /* media querie: index page on screens between 481px and 767px wide (tablets, mobiles in landscape) */
 @media (min-width: 481px) and (max-width: 767px) {
+
+    body {
+        font-size: 30px;
+    }
+
+    #landing-title {
+        height: 365px;
+    }
+
+    #landing-title h2 {
+        font-size: 60px;
+    }
+
+    #landing-title h1 {
+        font-size: 70px;
+    }
+
+    #gradient-one {
+        margin-top: -60px;
+    }
+
+    #gradient-two {
+        margin-top: 20px;
+    }
+
+    #gradient-three {
+        margin-top: 20px;
+    }
+
+    #gradient-five {
+        margin-top: 20px;
+    }
+
+    section {
+        width: 90%;
+        margin-left: 25px;
+        display: inline;
+    }
+
+    #score-board {
+        width: 10px;
+        margin-top: -50px;
+    }
+
+    #player-one-moves {
+        width: 375px;
+    }
+
+    #player-two-moves-show {
+        width: 375px;
+    }
+    
+    .score-chart {
+        width: 440px;
+        height: 140px;
+    }
+
+    #move-selection {
+        padding-left: 0px;
+        height: 900px;
+    }
+
+    #paterns {
+        width: 90%;
+        display: block;
+        height: 170px;
+    }
+
+    #paterns-two {
+        width: 90%;
+        margin-top: -395px;
+
+    }
+
+    #firstplayers-chosen-moves {
+        height: 45%;
+        font-size: 20px;
+    }
+
+    #secondplayers-chosen-moves {
+        height: 45%;
+        font-size: 20px;
+    }
+
+    #computers-chosen-moves {
+        font-size: 20px;
+        margin: 20px;
+        height: 45%;
+
+    }
+
+    img {
+        width: 75%;
+    }
+
+    #move-selection {
+        width: 400px;
+    }
+
+    .player-header {
+        overflow: auto;
+    }
+
+    #reset-button {
+        margin-top: 25px;
+    }
     
 }
 
