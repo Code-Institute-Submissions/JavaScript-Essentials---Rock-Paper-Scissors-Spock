@@ -625,35 +625,49 @@ section {
 /* media querie: index page on screens between 320px and 480px wide (smartphones, mobiles) */
 @media (min-width: 320px) and (max-width: 480px) {
     body {
-        font-size: 30px;
+        font-size: 18px;
     }
 
     #landing-title {
-        height: 365px;
+        height: 245px;
     }
 
     #landing-title h2 {
-        font-size: 60px;
+        font-size: 35px;
     }
 
     #landing-title h1 {
-        font-size: 70px;
+        font-size: 50px;
+        margin-top: -35px;
+    }
+
+    .main-button {
+        font-size: 20px;
+    }
+
+    .choice-header {
+        font-size: 20px;
+        text-align: center;
     }
 
     #gradient-one {
-        margin-top: -60px;
+        margin-top: -38px;
     }
 
     #gradient-two {
-        margin-top: 20px;
+        margin-top: 41px;
     }
 
     #gradient-three {
-        margin-top: 20px;
+        margin-top: 0px;
+    }
+
+    #gradient-four {
+        margin-top: 41px;
     }
 
     #gradient-five {
-        margin-top: 20px;
+        margin-top: 41px;
     }
 
     section {
@@ -664,20 +678,52 @@ section {
 
     #score-board {
         width: 10px;
-        margin-top: -50px;
+        margin-top: -30px;
+    }
+
+    .player-header {
+        font-size: 35px;
     }
 
     #player-one-moves {
-        width: 375px;
+        width: 260px;
+    }
+
+    #player-one-moves i {
+        font-size: 60px;
+    }
+
+    #lock-answer i {
+        font-size: 30px;
+    }
+
+    #lock-pc-choices i {
+        font-size: 30px;
     }
 
     #player-two-moves-show {
-        width: 375px;
+        width: 260px;
+    }
+
+    #player-two-moves-show i {
+        font-size: 60px;
     }
     
     .score-chart {
-        width: 440px;
-        height: 140px;
+        width: 285px;
+        height: 105px;
+    }
+
+    #score-board i {
+        margin-right: -245px;
+    }
+
+    #p-one-name {
+        margin-bottom: -30px;
+    }
+
+    #p-two-name {
+        margin-bottom: -30px;
     }
 
     #move-selection {
@@ -689,12 +735,12 @@ section {
         width: 90%;
         display: block;
         height: 170px;
-        margin-top: -20px;
+        margin-top: 20px;
     }
 
     #paterns-two {
         width: 90%;
-        margin-top: -395px;
+        margin-top: -440px;
 
     }
 
