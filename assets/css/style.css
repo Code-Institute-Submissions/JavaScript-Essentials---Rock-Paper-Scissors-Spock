@@ -402,3 +402,53 @@ section {
 #secondplayers-chosen-moves h3 {
     margin-left: 10px;
 }
+
+/* media querie: index page on screens between 1025px and 1280px wide (laptops, desktops) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    #landing-title {
+        height: 395px;
+    }
+
+    #gradient-one {
+        margin-top: -95px;
+    }
+
+    section {
+        margin-left: 265px;
+    }
+
+    #score-board {
+        width: 10px;
+    }
+    
+    .score-chart {
+        width: 175px;
+    }
+
+    img {
+        width: 75%;
+    }
+
+    #move-selection {
+        width: 800px;
+    }
+
+    .player-header {
+        overflow: auto;
+    }
+}
+
+/* media querie: index page on screens between 768px and 1024px wide (tablets, ipads) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+}
+
+/* media querie: index page on screens between 481px and 767px wide (tablets, mobiles in landscape) */
+@media (min-width: 481px) and (max-width: 767px) {
+    
+}
+
+/* media querie: index page on screens between 320px and 480px wide (smartphones, mobiles) */
+@media (min-width: 320px) and (max-width: 480px) {
+    
+}
