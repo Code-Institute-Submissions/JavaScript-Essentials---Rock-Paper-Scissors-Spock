@@ -859,8 +859,10 @@ pickPlayerOneChoiceOne = (handOne) => {
 
     let showLockAnswers = document.getElementById("lock-answer");
     console.log(showLockAnswers)
+
     showLockAnswers.style.display = "block";
-    }
+    
+  }
 }
 
 // the code block below is the logic for building an array from player two's chosen move type ie rock, paper, or scissors
@@ -955,7 +957,12 @@ const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
   audioSelect.play();
 
   let showIt = document.getElementById("paterns-two")
-  showIt.style.display = "flex"
+
+  if (window.screen.height <= 1025 || window.screen.width <= 481) {
+    showIt.style.display = "inline-block"
+  } else {
+    showIt.style.display = "flex"
+  }
 
   // Draw cases round 1 (array index [0])
   if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "paper") {
