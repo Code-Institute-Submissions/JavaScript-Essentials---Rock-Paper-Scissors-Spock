@@ -25,6 +25,8 @@ function setPTwoName() {
 
 // the code below is the logic to begin a Player vs player game
 function startPVP() {
+
+  // play audio courtesy of https://freesound.org/ when starting a game
   var audioStart = new Audio('assets/audio/start.wav');
   audioStart.play();
   // get the body of the page
@@ -80,6 +82,8 @@ function startPVP() {
                                    
         </div>
 
+        <p class="selections">  ROCK | PAPER | SCISSORS</p>
+
         <div class="red-line-breaker"></div>
 
         <div id="player-one-move-two">
@@ -91,6 +95,8 @@ function startPVP() {
                                   
         </div>
 
+        <p class="selections">  ROCK | PAPER | SCISSORS</p>
+
         <div class="red-line-breaker"></div>
 
         <div id="player-one-move-three">
@@ -101,6 +107,8 @@ function startPVP() {
             <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
                                   
         </div>
+
+        <p class="selections">  ROCK | PAPER | SCISSORS</p>
 
         <div class="red-line-breaker"></div>
 
@@ -124,6 +132,8 @@ function startPVP() {
                                    
         </div>
 
+        <p class="selections">  ROCK | PAPER | SCISSORS</p>
+
         <div class="orange-line-breaker"></div>
 
         <div id="player-two-move-two">
@@ -135,6 +145,8 @@ function startPVP() {
                                    
         </div>
 
+        <p class="selections">  ROCK | PAPER | SCISSORS</p>
+
         <div class="orange-line-breaker"></div>
 
         <div id="player-two-move-three">
@@ -145,6 +157,8 @@ function startPVP() {
             <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceThree('scissors')"></i>
                                   
         </div>
+
+        <p class="selections">  ROCK | PAPER | SCISSORS</p>
 
         <div class="orange-line-breaker"></div>
 
@@ -254,6 +268,8 @@ function startPVPNewRound() {
                 
             </div>
 
+            <p class="selections">  ROCK | PAPER | SCISSORS</p>
+
             <div class="red-line-breaker"></div>
 
             <div id="player-one-move-two">
@@ -265,6 +281,8 @@ function startPVPNewRound() {
                 
             </div>
 
+            <p class="selections">  ROCK | PAPER | SCISSORS</p>
+
             <div class="red-line-breaker"></div>
 
             <div id="player-one-move-three">
@@ -275,6 +293,8 @@ function startPVPNewRound() {
                 <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
                 
             </div>
+
+            <p class="selections">  ROCK | PAPER | SCISSORS</p>
 
             <div class="red-line-breaker"></div>
 
@@ -299,6 +319,8 @@ function startPVPNewRound() {
                 
             </div>
 
+            <p class="selections">  ROCK | PAPER | SCISSORS</p>
+
             <div class="orange-line-breaker"></div>
 
             <div id="player-two-move-two">
@@ -310,6 +332,8 @@ function startPVPNewRound() {
                 
             </div>
 
+            <p class="selections">  ROCK | PAPER | SCISSORS</p>
+
             <div class="orange-line-breaker"></div>
 
             <div id="player-two-move-three">
@@ -320,6 +344,8 @@ function startPVPNewRound() {
                 <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceThree('scissors')"></i>
                 
             </div>
+
+            <p class="selections">  ROCK | PAPER | SCISSORS</p>
 
             <div class="orange-line-breaker"></div>
 
@@ -421,6 +447,8 @@ function startPVC() {
                   <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceOne('scissors')"></i>
                   <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceOne('rock')"></i>
               </div>
+
+              <p class="selections">  ROCK | PAPER | SCISSORS</p>
   
               <div class="red-line-breaker"></div>
   
@@ -431,6 +459,8 @@ function startPVC() {
                   <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceTwo('scissors')"></i>
                   <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceTwo('rock')"></i>
               </div>
+
+              <p class="selections">  ROCK | PAPER | SCISSORS</p>
   
               <div class="red-line-breaker"></div>
   
@@ -441,6 +471,8 @@ function startPVC() {
                   <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
                   <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i>
               </div>
+
+              <p class="selections">  ROCK | PAPER | SCISSORS</p>
   
               <div class="red-line-breaker"></div>
 
@@ -550,6 +582,8 @@ function startPVCNewRound() {
                   <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceOne('scissors')"></i>
                   <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceOne('rock')"></i>
               </div>
+
+              <p class="selections">  ROCK | PAPER | SCISSORS</p>
   
               <div class="red-line-breaker"></div>
   
@@ -560,6 +594,8 @@ function startPVCNewRound() {
                   <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceTwo('scissors')"></i>
                   <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceTwo('rock')"></i>
               </div>
+
+              <p class="selections">  ROCK | PAPER | SCISSORS</p>
   
               <div class="red-line-breaker"></div>
   
@@ -570,6 +606,8 @@ function startPVCNewRound() {
                   <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
                   <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i>
               </div>
+
+              <p class="selections">  ROCK | PAPER | SCISSORS</p>
   
               <div class="red-line-breaker"></div>
 
@@ -953,11 +991,14 @@ function pickComputerChoiceOne() {
 
 // compare the playerOneMoves and playerTwoMoves arrays once they are full and adjust scoring
 const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
+
+  // play audio on button press
   var audioSelect = new Audio('assets/audio/win.wav');
   audioSelect.play();
 
   let showIt = document.getElementById("paterns-two")
 
+  // change the display style of the pattern comparison based on the current screen size
   if (window.screen.height <= 1025 || window.screen.width <= 481) {
     showIt.style.display = "inline-block"
   } else {
@@ -1294,6 +1335,7 @@ function resetGame() {
   console.log('Returning to the Main Menu...');
 }
 
+// the code below will switch from the player one game area to player two, logging alerts to the player. for the PVP game mode
 function lockAnswers() {
   const hiddenAnswers = document.getElementById("player-one-moves");
   const showAnswers = document.getElementById("player-two-moves");

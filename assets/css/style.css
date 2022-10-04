@@ -105,6 +105,8 @@ body {
     background-color: #FF5F1F;
 }
 
+/* game manual styling */
+
 #pvp-instructions {
     text-align: center;
     border: 2px azure solid;
@@ -267,6 +269,12 @@ i:hover {
 
 }
 
+.selections {
+    font-size: 15px;
+    margin-right: -18px;
+}
+
+/* scorechart styling */
 #score-board {
     display: block;
     width: 100px;
@@ -291,10 +299,19 @@ i:hover {
     margin: -2px;
 }
 
+#p-one-name:hover {
+    color: gold;
+    font-size: 30px;
+}
+
+#p-two-name:hover {
+    color: gold;
+    font-size: 30px;
+}
+
 #score-one {
     margin: -15px;
     margin-top: 5px;
-    /* padding-top: 25px; */
     background-color: azure;
     border: solid black 2px;
 }
@@ -302,7 +319,6 @@ i:hover {
 #score-two {
     margin: -15px;
     margin-top: 5px;
-    /* padding-top: 25px; */
     background-color: azure;
     border: solid black 2px;
 }
@@ -335,6 +351,7 @@ section {
     color: azure;
 }
 
+/* styling for the pattern comparison tool box */
 #chosen-moves {
     background-color: red;
     border: solid 3px azure;
@@ -342,6 +359,7 @@ section {
     height: 20%;
     margin: 0 auto;
 }
+
 
 /* styling for the chosen moves divsion */
 
