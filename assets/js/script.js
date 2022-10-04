@@ -56,7 +56,7 @@ function startPVP() {
   <h3>SCOREBOARD</h3>
       <p id="p-one-name" contenteditable="true">PLAYERONE</p> 
       <i id="p-one-name-lock" class="fa-solid fa-lock-open" onclick="setPOneName();"></i>
-      <h1 id="score-one"> 0 </h1>
+      <h2 id="score-one"> 0 </h2>
   </div>
 
 
@@ -64,7 +64,7 @@ function startPVP() {
   <div class="score-chart">
     <p id="p-two-name" contenteditable="true">PLAYERTWO</p>
     <i id="p-two-name-lock" class="fa-solid fa-lock-open" onclick="setPTwoName();"></i>
-    <h1 id="score-two"> 0 </h1>
+    <h2 id="score-two"> 0 </h2>
   </div>
 </div>
 
@@ -245,12 +245,12 @@ function startPVPNewRound() {
     <div class="score-chart">
       <h3>SCOREBOARD</h3>
       <p id="p-one-name">Player One <i class="fa-solid fa-lock-open" onclick="setPOneName();"></i></p>
-      <h1 id="score-one"> 0 </h1>
+      <h2 id="score-one"> 0 </h2>
     </div>
 
     <div class="score-chart">
       <p id="p-two-name">Player Two <i class="fa-solid fa-lock-open" onclick="setPTwoName();"></i></p>
-      <h1 id="score-two"> 0 </h1>
+      <h2 id="score-two"> 0 </h2>
     </div>
   </div>
 
@@ -424,14 +424,14 @@ function startPVC() {
       <div class="score-chart">
         <h3>SCOREBOARD</h3>
         <p id="p-one-name" contenteditable="true">Player One <i class="fa-solid fa-lock-open" onclick="setPOneName();"></i></p>
-        <h1 id="score-one"> 0 </h1>
+        <h2 id="score-one"> 0 </h2>
       </div>
 
 
 
       <div class="score-chart">
         <p id="p-two-name">Computer</p>
-        <h1 id="score-two"> 0 </h1>
+        <h2 id="score-two"> 0 </h2>
       </div>
     </div>
   
@@ -486,6 +486,7 @@ function startPVC() {
               <!-- this division creats a small colored bar at the bottom -->
               <div id="grad-player-one"></div>
               <button type ="button" onclick="viewSource()">View Source</button>
+          </div>
       </div>
 
       
@@ -559,14 +560,14 @@ function startPVCNewRound() {
       <div class="score-chart">
         <h3>SCOREBOARD</h3>
         <p id="p-one-name" contenteditable="true">Player One <i class="fa-solid fa-lock-open" onclick="setPOneName();"></i></p>
-        <h1 id="score-one"> 0 </h1>
+        <h2 id="score-one"> 0 </h2>
       </div>
 
 
 
       <div class="score-chart">
         <p id="p-two-name">Computer</p>
-        <h1 id="score-two"> 0 </h1>
+        <h2 id="score-two"> 0 </h2>
       </div>
     </div>
   
@@ -621,6 +622,7 @@ function startPVCNewRound() {
               <!-- this division creats a small colored bar at the bottom -->
               <div id="grad-player-one"></div>
               <button type ="button" onclick="viewSource()">View Source</button>
+          </div>
       </div>
   </section>
 

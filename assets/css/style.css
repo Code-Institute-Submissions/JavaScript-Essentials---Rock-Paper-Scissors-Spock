@@ -293,6 +293,10 @@ i:hover {
     background-color: red;
 }
 
+.score-chart h2 {
+    font-family: 'Inconsolata', cursive, sans-serif;
+}
+
 .score-chart h3 {
     color: white;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
