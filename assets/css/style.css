@@ -566,7 +566,7 @@ section {
 
     #move-selection {
         padding-left: 0px;
-        height: 900px;
+        height: 60%;
     }
 
     #paterns {
@@ -578,8 +578,6 @@ section {
 
     #paterns-two {
         width: 90%;
-        margin-top: -395px;
-
     }
 
     #firstplayers-chosen-moves {
@@ -693,8 +691,12 @@ section {
         font-size: 60px;
     }
 
+    #lock-answer {
+        font-size: 18px;
+    }
+
     #lock-answer i {
-        font-size: 30px;
+        font-size: 25px;
     }
 
     #lock-pc-choices i {
@@ -728,7 +730,7 @@ section {
 
     #move-selection {
         padding-left: 0px;
-        height: 900px;
+        height: 60%;
     }
 
     #paterns {
@@ -739,19 +741,30 @@ section {
     }
 
     #paterns-two {
-        width: 90%;
-        margin-top: -440px;
-
+        width: 100%;
+        margin-left: -5px;
     }
 
     #firstplayers-chosen-moves {
         height: 45%;
-        font-size: 15px;
+        font-size: 12px;
+    }
+
+    #firstplayers-chosen-moves:hover {
+        color: gold;
+        font-size: 13px;
+
     }
 
     #secondplayers-chosen-moves {
         height: 45%;
-        font-size: 20px;
+        font-size: 12px;
+    }
+
+    #secondplayers-chosen-moves:hover {
+        color: gold;
+        font-size: 13px;
+
     }
 
     #computers-chosen-moves {
