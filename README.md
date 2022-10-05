@@ -35,8 +35,8 @@ Below is a detailed explanantion of the various features built into the website,
 
 - __Score Chart__
 
-  - The gallery area of the landing page acts almost as a 'Plan B' perhaps the user was interested in the initail content, but not particularly in the Gobekli Tepe Temple itself. Perhaps they are a student or teacher researching the topic of Ancient Temples. Well Gobekli Tepe was a great place to start, being the oldest known temple in the world. The gallery shows images of this temple giving users more context and encouraging their imaginations. Along with the images is a second Call-to-action button, which when clicked, shall navigate users to the timeline page of the website. On this page they can find addiitonal information and visual representations of the following 8 oldest temples in the world. Each icon on the timeline is an anchor that will open that temples relevant wikipedia page in a second tab.
-  - As stated above, the images provide the usr with more context on the subject of focus, Gobekli Tepe. The images of both night and day, various angles and notable discoveries at the sight of Gobekli Tepe feed the users imagination as they begin to construct a mental-picture of the sight. This should draw them further into the content of the webpage, the call to action then locks on to this intrigue and directs it towards the timeline page. If this project was developed further, this timeline would work as an interective learning resource for students, teachers and amateur historians alike. From this area you can find some basic information on various temples and visual representations of them all, which act as links to the relevant wikipedia entries. These could be developed into links for various seperate webpages built into the website itself, featuring content similar to that of the landing page instead of directing the user away to a potential competitor. These seperate pages could have intergration with travel estores, allowing the user to search local holidays, flights and excursions at each of these historical sights. A additional opportunity to build in a commission stream of some kind. 
+  - The score chart will appear in both the PVP and P VS Computer game types, in PVP Player One and Player Two can use this scoreboard to change and set their player name for the game. These names can be carried into new games. The scoreboard also efficiently records and reflects the scores in points for the two players. In the P VS Computer game type, only the name for player one can be altered, the scoreboard will instead reflect the scores for the Computer
+  - This is a crucial tool for the gameplay. This records the winners of each of the three rounds in each overall game, then awards points up to a maximum of three to the winning party. Players can predetermine the end goal, such as first to 10 points, this scoreboard allows for these points to be recorded. 
   
 ![Image gallery](https://github.com/WHLW27/HTML-Essentials-Portfolio-Project/blob/main/assets/images/readme/gallery.png)
 
@@ -56,7 +56,7 @@ Below is a detailed explanantion of the various features built into the website,
 
 - __Play Again / Main Menu Buttons__
 
-  - at the bottom of the game area are two buttons, one of them sits inside the playing window, this option will fire up the next game whilst carrying the previous scores and chosen player names forward. The other button 'Main Menu' shall reset the game and return players to the landing screen, main game menu.
+  - At the bottom of the game area are two buttons, one of them sits inside the playing window, this option will fire up the next game whilst carrying the previous scores and chosen player names forward. The other button 'Main Menu' shall reset the game and return players to the landing screen, main game menu.
   - The play again button will give players the option to carry on the scoring, perhaps they are playing first to 10 points? A maximum of 3 points can be awarded per round so this option carries forward any chosen player names and current scores into fresh games.
   - The main menu button will allow players to return to the main menu, whilst resetting the player names, current scores and chosen paterns. Effectively resetting the game itself whilst providing straightforward site navigation. 
 
@@ -64,15 +64,15 @@ Below is a detailed explanantion of the various features built into the website,
 
 - __PVP Game Manual__
 
-  - This page features a grid of 8 tablets, each of these tablets features the image of a particular book relevant to Gobekli Tepe. Hovering the mouse over the image will make a slightly larger black box appear, with text content giving information on the book and a reference to purchasing the book online. Clicking the tablets will open a new browser window on an online store, such as amazon, where the user can purchase the book. 
-  - Users may find this are valuable having viewed the content on the landing page and finding the topic of interest. Users can reach this page from the landing page, either through the navigation or through the 'Call to Action' button described above. This page allows users to find additional reading on the subject of Gobekli Tepe and enables the purchase of goods. 
+  - This area of the site features a game manual for the Player vs Player game type, it explains the various functions and concepts within the game, such as the patern comparison, the scoring, how to operate the game, it explains how to carry over scores and set the player names.  
+  - This guide covers the PVP game type and its operation in entriety which is invaluable to thos finding difficulty understanding the game at first, this would likely be of most use to an older audience of those less versed in digital technology.
 
 ![Articles.html book section](https://github.com/WHLW27/HTML-Essentials-Portfolio-Project/blob/main/assets/images/readme/articles.png)
 
 - __PVSPC Game Manual__
 
-  - This page features a grid of 8 tablets, each of these tablets features the image of a particular book relevant to Gobekli Tepe. Hovering the mouse over the image will make a slightly larger black box appear, with text content giving information on the book and a reference to purchasing the book online. Clicking the tablets will open a new browser window on an online store, such as amazon, where the user can purchase the book. 
-  - Users may find this are valuable having viewed the content on the landing page and finding the topic of interest. Users can reach this page from the landing page, either through the navigation or through the 'Call to Action' button described above. This page allows users to find additional reading on the subject of Gobekli Tepe and enables the purchase of goods. 
+  - This area of the site features a game manual for the Player vs Computer game type, it explains the various functions and concepts within the game, such as the patern comparison, the scoring, how to operate the game, it explains how to carry over scores and set the player name.  
+  - This guide covers the P VS Computer game type and its operation in entriety which is invaluable to thos finding difficulty understanding the game at first, this would likely be of most use to an older audience of those less versed in digital technology.
 
 ![Articles.html book section](https://github.com/WHLW27/HTML-Essentials-Portfolio-Project/blob/main/assets/images/readme/articles.png)
 
