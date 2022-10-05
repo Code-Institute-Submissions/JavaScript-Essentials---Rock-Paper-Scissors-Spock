@@ -9,6 +9,8 @@ let computerMoves = [];
 // below is the code for a toggle which is used in the nukeGame functionality to determine which party has nuked the game
 let playerTwoToggle = "False";
 
+let gameToggle = ""
+
 // below are the counters for player one and player two that iuncrement by 1 each time a nuke is fired, players can fire a maximum of 3 nukes
 let nukeCounterOne = 0;
 let nukeCounterTwo = 0;
@@ -38,6 +40,10 @@ function startPVP() {
   audioStart.play();
   // get the body of the page
   let startBody = document.body;
+
+  playerTwoToggle = "False";
+
+  gameToggle = "PVP"
 
   // Set the body's innerHTML to player vs player choice selection
   startBody.innerHTML = `
@@ -219,6 +225,8 @@ function startPVPNewRound() {
   playerTwoMoves.length = 0;
 
   playerTwoToggle = "False";
+
+  gameToggle = "PVP"
 
   console.log(playerOneMoves);
   console.log(playerOneMoves);
@@ -411,6 +419,10 @@ function startPVC() {
   // get the body of the page
   let startBody = document.body;
 
+  playerTwoToggle = "Computer";
+
+  gameToggle = "PVPC"
+
   // Set the body's innerHTML to player vs computer choice selection
   startBody.innerHTML = `<!-- title division -->
   <div id="landing-title">
@@ -537,6 +549,10 @@ function startPVCNewRound() {
 
   console.log(playerOneMoves);
   console.log(computerMoves);
+
+  playerTwoToggle = "Computer";
+
+  gameToggle = "PVPC"
 
   let playerOnePCOldName = document.getElementById("p-one-name").innerText;
 
@@ -889,6 +905,18 @@ function nukeGame() {
     alert("You're all out of Nukes!");
     var audioEmpty = new Audio('assets/audio/empty.wav');
     audioEmpty.play();
+  } else if (playerTwoToggle === "Computer" && nukeCounterOne < 3) {
+    var audioNuke = new Audio('assets/audio/nuke.mp3');
+    audioNuke.play();
+    incrementPlayerOneScore();
+    alert("You nuked the game! You have been awarded 1 Point.");
+    incrementNukeCounterOne();
+    console.log(nukeCounterOne);
+    startPVCNewRound();
+  } else if (playerTwoToggle === "Computer" && nukeCounterOne === 3) {
+    alert("You're all out of Nukes!");
+    var audioEmpty = new Audio('assets/audio/empty.wav');
+    audioEmpty.play();
   }
 
   function incrementNukeCounterOne() {
@@ -909,6 +937,9 @@ pickPlayerOneChoiceOne = (handOne) => {
   let hideChoiceOne = document.getElementById("player-one-move-one");
   hideChoiceOne.style.display = "none";
 
+  let hideInputOne = document.getElementsByClassName("selections");
+  hideInputOne[0].style.display = "none"
+
   playerOneMoves.push(handOne);
   console.log(playerOneMoves);
 
@@ -923,6 +954,9 @@ pickPlayerOneChoiceOne = (handOne) => {
 
     let hideChoiceTwo = document.getElementById("player-one-move-two");
     hideChoiceTwo.style.display = "none";
+
+    let hideInputTwo = document.getElementsByClassName("selections");
+    hideInputTwo[1].style.display = "none"
 
     playerOneMoves.push(handTwo);
     console.log(playerOneMoves);
@@ -939,17 +973,27 @@ pickPlayerOneChoiceOne = (handOne) => {
     let hideChoiceTwo = document.getElementById("player-one-move-three");
     hideChoiceTwo.style.display = "none";
 
+    let hideInputThree = document.getElementsByClassName("selections");
+    hideInputThree[2].style.display = "none"
+
     playerOneMoves.push(handThree);
     console.log(playerOneMoves);
 
     let fillThree = document.getElementById("third-players-move");
     fillThree.innerHTML = `<h3>${handThree.toUpperCase()}. </h3>`;
 
-    let showLockAnswers = document.getElementById("lock-answer");
-    console.log(showLockAnswers);
 
-    showLockAnswers.style.display = "block";
+    if (gameToggle === "PVP") {
+      let showLockAnswers = document.getElementById("lock-answer");
+      console.log(showLockAnswers);
 
+      showLockAnswers.style.display = "block";
+    } else if (gameToggle === "PVPC") {
+      let showLockAnswers = document.getElementById("lock-pc-choices");
+      console.log(showLockAnswers);
+
+      showLockAnswers.style.display = "block";
+    }
   };
 };
 
@@ -960,6 +1004,9 @@ pickPlayerTwoChoiceOne = (handOne) => {
 
   let hideChoiceOne = document.getElementById("player-two-move-one");
   hideChoiceOne.style.display = "none";
+
+  let hideInputOne = document.getElementsByClassName("selections");
+  hideInputOne[3].style.display = "none"
 
   playerTwoMoves.push(handOne);
   console.log(playerTwoMoves);
@@ -974,6 +1021,9 @@ pickPlayerTwoChoiceOne = (handOne) => {
     let hideChoiceTwo = document.getElementById("player-two-move-two");
     hideChoiceTwo.style.display = "none";
 
+    let hideInputTwo = document.getElementsByClassName("selections");
+    hideInputTwo[4].style.display = "none"
+
     playerTwoMoves.push(handTwo);
     console.log(playerTwoMoves);
 
@@ -987,6 +1037,9 @@ pickPlayerTwoChoiceOne = (handOne) => {
 
     let hideChoiceThree = document.getElementById("player-two-move-three");
     hideChoiceThree.style.display = "none";
+
+    let hideInputThree = document.getElementsByClassName("selections");
+    hideInputThree[5].style.display = "none"
 
     playerTwoMoves.push(handThree);
     console.log(playerTwoMoves);
@@ -1378,6 +1431,13 @@ function resetGame() {
   playerOneMoves = [];
   playerTwoMoves = [];
   computerMoves = [];
+
+  nukeCounterOne = 0;
+  nukeCounterTwo = 0;
+
+  playerTwoToggle = "False";
+
+  gameToggle = "";
 
   let startBody = document.body;
   startBody.innerHTML = mainMenu;
