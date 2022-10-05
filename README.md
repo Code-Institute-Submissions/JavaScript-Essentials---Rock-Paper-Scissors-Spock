@@ -13,8 +13,9 @@ Below is a detailed explanantion of the various features built into the website,
 
 - __Main Menu__
 
-  - The naviagtion bar appears on all three pages, the styling is identical across the site to provide familiarity to the user. The title of the website itself is a link to the landing page, a common choice that helps users find their way when lost. The bar is repsonsive, the page you are hovering over shall highlight a bright shade of yellow and appear underlined.
-  - This feature allows users to comfortably and quickly navigate across the various pages, no matter their device type or current location. 
+  - When first landing on the website, you'll see a clear and simple Main menu taking the form of a selection of buttons. This iteration of the game features two game types which can be accessed by selecting the relevant button on the screen. These being the PVP (Player vs Player) Game type, P VS Computer (Player vs Computer) Game Type. This menu sits beneath the banner featuring the games title. This banner carries across all areas of the game.
+  - Beneath the two game type options are Manuals featuring helpful information on how to navigate through either game type. 
+  - This area gives master access to all areas of the game, those external locations also root back to this menu, allowing for smooth and seamless navigation throughout.  
 
 ![Navigation Bar and page title](https://github.com/WHLW27/HTML-Essentials-Portfolio-Project/blob/main/assets/images/readme/navbar.png)
 
@@ -114,23 +115,20 @@ Regarding the Div's that build the various timeline 'panels'. I had difficulty m
   - From the source section drop-down menu, select the Main Branch
   - Once the Main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-The live link can be found here - https://whlw27.github.io/HTML-Essentials-Portfolio-Project/
-
+The live link can be found here - https://whlw27.github.io/JavaScript-Essentials---Rock-Paper-Scissors-Spock/
 
 ## Credits  
 
+### Revision 
+
+- Additional guidance on Javascript and further explanantion on topics not covered in depth in the course was found on https://www.w3schools.com/
+- Additional self-lead projects and study on Javascript was found on https://www.codecademy.com/learn via the PRO subscription
+
 ### Content 
 
-- The text for the Home page was taken from https://www.smithsonianmag.com/history/gobekli-tepe-the-worlds-first-temple-83613665/ and https://whc.unesco.org/en/list/1572/
-- The video content on the homepage is from youtube via the National History channel https://www.youtube.com/watch?v=A3aBN2QGn6w
-- Guidance on how to build the timeline structure https://www.w3schools.com/howto/howto_css_timeline.asp
-- Guidance on the :after Psuedo class was found https://developer.mozilla.org/en-US/docs/Web/CSS/::after
 - The icons across the website were taken from [Font Awesome](https://fontawesome.com/)
 - The website fonts are courtesy of Google Fonts https://fonts.google.com/about
 
-### Media
+### Media 
 
-- The images used for the landing page gallery were taken from wikimedia - https://commons.wikimedia.org/wiki/Category:G%C3%B6bekli_Tepe
-- The images used for the timeline were taken from wikimedia, found by searching the full name of the temple - https://commons.wikimedia.org/
-- The images used for the background of the timeline and the articles page were taken from https://www.wallpaperflare.com/search?wallpaper=desert
-- The images used for the books on the articles page were taking from their rlevant shop postings at https://amazon.co.uk and https://www.abebooks.co.uk/ 
+- Audio featured in the game was sourced from https://freesound.org/
