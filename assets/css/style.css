@@ -32,6 +32,15 @@ body {
     font-size: 100px;
 }
 
+#landing-title>h1:after{
+    content:'Nucleur Bomb!';
+    
+}
+#landing-title>h1:hover:after{
+    content:'Launch!';
+    font-size: 125px;
+}
+
 /* colored gradient bars */
 #gradient-one {
     background-color: #FF5F1F;

@@ -53,7 +53,7 @@ function startPVP() {
         Rock, Paper, Scissors,
     </h2>
     <h1 onclick="nukeGame();">
-        Nucleur Bomb!
+        
     </h1>
 
     <div id="gradient1"></div>
@@ -248,7 +248,7 @@ function startPVPNewRound() {
         Rock, Paper, Scissors,
     </h2>
     <h1 onclick="nukeGame();">
-        Nucleur Bomb!
+        
     </h1>
 
     <div id="gradient1"></div>
@@ -430,7 +430,7 @@ function startPVC() {
           Rock, Paper, Scissors,
       </h2>
       <h1 onclick="nukeGame();">
-          Nucleur Bomb!
+          
       </h1>
   
       <div id="gradient1"></div>
@@ -570,7 +570,7 @@ function startPVCNewRound() {
           Rock, Paper, Scissors,
       </h2>
       <h1 onclick="nukeGame();">
-          Nucleur Bomb!
+          
       </h1>
   
       <div id="gradient1"></div>
@@ -885,7 +885,7 @@ function nukeGame() {
     var audioNuke = new Audio('assets/audio/nuke.mp3');
     audioNuke.play();
     incrementPlayerOneScore();
-    alert("Player One nuked the game! You have been awarded 1 Point.");
+    alert("Player One nuked the game!\nYou have been awarded 1 Point.");
     incrementNukeCounterOne();
     console.log(nukeCounterOne);
     startPVPNewRound();
@@ -893,7 +893,7 @@ function nukeGame() {
     var audioNuke = new Audio('assets/audio/nuke.mp3');
     audioNuke.play();
     incrementPlayerTwoScore();
-    alert("Player Two nuked the game! You have been awarded 1 Point.");
+    alert("Player Two nuked the game!\nYou have been awarded 1 Point.");
     incrementNukeCounterTwo();
     console.log(nukeCounterTwo);
     startPVPNewRound();
@@ -909,7 +909,7 @@ function nukeGame() {
     var audioNuke = new Audio('assets/audio/nuke.mp3');
     audioNuke.play();
     incrementPlayerOneScore();
-    alert("You nuked the game! You have been awarded 1 Point.");
+    alert("You nuked the game!\nYou have been awarded 1 Point.");
     incrementNukeCounterOne();
     console.log(nukeCounterOne);
     startPVCNewRound();
@@ -1111,15 +1111,15 @@ const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
   // Draw cases round 1 (array index [0])
   if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "paper") {
     console.log("Round 1 is... A draw!");
-    alert("Round 1 is... A draw!");
+    alert("Round 1 is...\nA draw!");
   }
   if (playerOneMoves[0] == "rock" && playerTwoMoves[0] == "rock") {
     console.log("Round 1 is... A draw!");
-    alert("Round 1 is... A draw!");
+    alert("Round 1 is...\nA draw!");
   }
   if (playerOneMoves[0] == "scissors" && playerTwoMoves[0] == "scissors") {
     console.log("Round 1 is... A draw!");
-    alert("Round 1 is... A draw!");
+    alert("Round 1 is...\nA draw!");
   }
 
   // Player One winning cases round 1 (array index [0])
@@ -1159,15 +1159,15 @@ const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
   // draw cases, check round two (array index [1])
   if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "paper") {
     console.log("Round 2 is... A draw!");
-    alert("Round 2 is... A draw!");
+    alert("Round 2 is...\nA draw!");
   }
   if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "rock") {
     console.log("Round 2 is... A draw!");
-    alert("Round 2 is... A draw!");
+    alert("Round 2 is...\nA draw!");
   }
   if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "scissors") {
     console.log("Round 2 is... A draw!");
-    alert("Round 2 is... A draw!");
+    alert("Round 2 is...\nA draw!");
   }
 
   // player one wins, check round two (array index [1])
@@ -1207,15 +1207,15 @@ const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
   //draw cases, check round three (array index [2])
   if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "paper") {
     console.log("Round 3 is... A draw!");
-    alert("Round 3 is... A draw!");
+    alert("Round 3 is...\nA draw!");
   }
   if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "rock") {
     console.log("Round 3 is... A draw!");
-    alert("Round 3 is... A draw!");
+    alert("Round 3 is...\nA draw!");
   }
   if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "scissors") {
     console.log("Round 3 is... A draw!");
-    alert("Round 3 is... A draw!");
+    alert("Round 3 is...\nA draw!");
   }
 
   //player one wins, check round three (array index [2])
@@ -1263,11 +1263,11 @@ const compareResultsPVC = (playerOneMoves, computerMoves) => {
   }
   if (playerOneMoves[0] == "rock" && computerMoves[0] == "rock") {
     console.log("Round 1 is... A draw!");
-    alert("Round 1 is... A draw!");
+    alert("Round 1 is...\nA draw!");
   }
   if (playerOneMoves[0] == "scissors" && computerMoves[0] == "scissors") {
     console.log("Round 1 is... A draw!");
-    alert("Round 1 is... A draw!");
+    alert("Round 1 is...\nA draw!");
   }
 
   // Player One winning cases round 1 (array index [0])
@@ -1307,15 +1307,15 @@ const compareResultsPVC = (playerOneMoves, computerMoves) => {
   // draw cases, check round two (array index [1])
   if (playerOneMoves[1] == "paper" && computerMoves[1] == "paper") {
     console.log("Round 2 is... A draw!");
-    alert("Round 2 is... A draw!");
+    alert("Round 2 is...\nA draw!");
   }
   if (playerOneMoves[1] == "rock" && computerMoves[1] == "rock") {
     console.log("Round 2 is... A draw!");
-    alert("Round 2 is... A draw!");
+    alert("Round 2 is...\nA draw!");
   }
   if (playerOneMoves[1] == "scissors" && computerMoves[1] == "scissors") {
-    console.log("Round 2 is... A draw!");
-    alert("Round 2 is... A draw!");
+    console.log("Round 2 is.. A draw!");
+    alert("Round 2 is...\nA draw!");
   }
 
   // player one wins, check round two (array index [1])
@@ -1355,15 +1355,15 @@ const compareResultsPVC = (playerOneMoves, computerMoves) => {
   //draw cases, check round three (array index [2])
   if (playerOneMoves[2] == "paper" && computerMoves[2] == "paper") {
     console.log("Round 3 is... A draw!");
-    alert("Round 3 is... A draw!");
+    alert("Round 3 is...\nA draw!");
   }
   if (playerOneMoves[2] == "rock" && computerMoves[2] == "rock") {
     console.log("Round 3 is... A draw!");
-    alert("Round 3 is... A draw!");
+    alert("Round 3 is...\nA draw!");
   }
   if (playerOneMoves[2] == "scissors" && computerMoves[2] == "scissors") {
     console.log("Round 3 is... A draw!");
-    alert("Round 3 is... A draw!");
+    alert("Round 3 is...\nA draw!");
   }
 
   //player one wins, check round three (array index [2])
@@ -1453,7 +1453,7 @@ function lockAnswers() {
     hiddenAnswers.style.display = "none";
     showAnswers.id = "player-two-moves-show";
     console.log("Player One choices locked");
-    alert("Click OK to hide your choices, then hand the controls to Player Two!");
+    alert("Click OK to hide your choices,\nthen hand the controls to Player Two!");
     playerTwoToggle = "True";
     console.log(playerTwoToggle);
   } else {
