@@ -21,15 +21,15 @@ Below is a detailed explanantion of the various features built into the website,
 
 - __PVP Game Type__
 
-  - This section shows some text either side of an iframe dispalying a video courtesy of the National Geogrpahic Youtube channel. The video is a snip from an episode of Ancient Aliens focusing on Gobekli Tepe. Either side of the video are boxes of text containing some more factual information sourced from online resources. 
-  - The user will find this area valuable as it contians a broad range of information on Gobekli Tepe and introudces some theories and hypothesis surrounding the temples history. This may work well to capture the users interest. This video works well to introduce the Temple from a more 'alternative history' perspective, where as the text content is a more academic, factual resource. Providing both the hard facts and the fun.
+  - The player vs Player game type features a playing window in which the player will select from one of three options, from rock, paper or scissors. This action is completed three times over to build a patern of 3 objects. The player then locks in the chosen options and passes the controls to player two, who will repeat the process. These paterns are compared, winners are declared through alerts and points (up to a max of three) are awarded via the scoreboard to the winnning party. Players can then begin a new game, with player names and scores from the previous game carried forward. 
+  - Users chosing to face each other in the game will be drawn to this game type, allowing for a 2 player game mode, thus emulating the real world equivalent of Rock, Paper , Scissors. acheiving this function could be seen as the primary directive of the project. 
 
 ![Landing page video Content](https://github.com/WHLW27/HTML-Essentials-Portfolio-Project/blob/main/assets/images/readme/landingcontent.png)
 
 - __PVPC Game Type__
 
-  - The first call to action is a button that asks the user a rhetorical question, are they interested? If the answer is yes the user will click this button, at which point they will be taken to the articles page of the site, from this area they can research and potentially purchase a book.
-  - This button has value in capturing the user, drawing them further into the site. If this site was built to receive some kind of commission via users purchasing a book through the links on the articles page, this would be a very important feature, enabling that commission stream. If this project was developed further, this call to action could take the user to our own online store. 
+  - The player vs Computer game type features a playing window in which the player will select from one of three options, from rock, paper or scissors. This action is completed three times over to build a patern of 3 objects. The player then locks in the chosen options, which cues the computer to randomly generate a patern of its own. These paterns are compared, winners are declared through alerts and points (up to a max of three) are awarded via the scoreboard to the winnning party. The Player can then begin a new game, with their chosen name and scores from the previous game carried forward. 
+  - Users chosing to face the computer in a game of chance will be drawn to this game type, allowing for a single player game mode. Providing game modes to cater for individuals and for pairs and perhaps groups to some extent, expands the reach of the project, and gives the game use in all relevant circumstances. 
 
 ![Additonal reading](https://github.com/WHLW27/HTML-Essentials-Portfolio-Project/blob/main/assets/images/readme/ctaone.png)
 
@@ -42,8 +42,8 @@ Below is a detailed explanantion of the various features built into the website,
 
 - __Playing Area__ 
 
-  - In this section of the page, which is featured across the whole website, the user can find 3 useful links. A link that will load the wikipedia database of the oldest known buildings in the world, a link that will open the amazon store's search results for Gobekli Tepe and a final link that will load the youtube search results again for Gobekli Tepe. All three links open in a seperate tab and are designed to point the user in the direction of additional external resources.
-  - The value in these links is that users can digest the content of the project, then be placed in some of the best locations to find additional information on the topic of focus, Gobeklit Tepe and ancient structures. Students and Teachers would find this section of most use, if the website was compared to a disseration, the footer would be the 'foot notes' providing the user with external resource to provide additional context to their understanding of the topic. 
+  - The playing area could be viewed as the primary area of the site, its in this section that players will ccreat their paterns, the heart of the game itself is contain within this tool, as without it the game could not operate. This tool is responsive, and interactive and encourages the game play loop. the styles of the Player One and Player Two windows in the PVP Game Type are different to illustrate the change in control. New games are also activated via this tool.
+  - As mentioned above, this tool is the heart of the game itself, no matter which game type you chose, whether player one or player two, you will be acquainted with this tool. Without it the gameplay loop would not exist and players would not be able to operate the games functions outside of the main menu. Therefore this tool could be seen to be the most valuable feature of all. 
 
 ![Footer](https://github.com/WHLW27/HTML-Essentials-Portfolio-Project/blob/main/assets/images/readme/footer.png)
 
