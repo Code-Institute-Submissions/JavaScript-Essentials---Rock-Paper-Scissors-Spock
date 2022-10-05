@@ -6,6 +6,13 @@ let playerOneMoves = [];
 let playerTwoMoves = [];
 let computerMoves = [];
 
+// below is the code for a toggle which is used in the nukeGame functionality to determine which party has nuked the game
+let playerTwoToggle = "False";
+
+// below are the counters for player one and player two that iuncrement by 1 each time a nuke is fired, players can fire a maximum of 3 nukes
+let nukeCounterOne = 0;
+let nukeCounterTwo = 0;
+
 // the code below is a function that will replace the 'Player One' text with the text input recorded from the game scoreboard 
 function setPOneName() {
   var audioSelect = new Audio('assets/audio/select.mp3');
@@ -39,7 +46,7 @@ function startPVP() {
     <h2>
         Rock, Paper, Scissors,
     </h2>
-    <h1>
+    <h1 onclick="nukeGame();">
         Nucleur Bomb!
     </h1>
 
@@ -211,6 +218,8 @@ function startPVPNewRound() {
   playerOneMoves.length = 0;
   playerTwoMoves.length = 0;
 
+  playerTwoToggle = "False";
+
   console.log(playerOneMoves);
   console.log(playerOneMoves);
 
@@ -230,7 +239,7 @@ function startPVPNewRound() {
     <h2>
         Rock, Paper, Scissors,
     </h2>
-    <h1>
+    <h1 onclick="nukeGame();">
         Nucleur Bomb!
     </h1>
 
@@ -408,7 +417,7 @@ function startPVC() {
       <h2>
           Rock, Paper, Scissors,
       </h2>
-      <h1>
+      <h1 onclick="nukeGame();">
           Nucleur Bomb!
       </h1>
   
@@ -544,7 +553,7 @@ function startPVCNewRound() {
       <h2>
           Rock, Paper, Scissors,
       </h2>
-      <h1>
+      <h1 onclick="nukeGame();">
           Nucleur Bomb!
       </h1>
   
@@ -657,7 +666,6 @@ function startPVCNewRound() {
   console.log('Starting Player VS Computer.');
 }
 
-
 // the code below shall open a game manual with intructions on how to operate the Player vs Player Game Mode
 function openPVPManual() {
   var audioBook = new Audio('assets/audio/book.wav');
@@ -753,7 +761,7 @@ function openPVPManual() {
 <!-- Linking to javascript game logic -->
 <script src="assets/js/script.js"></script>`;
 
-window.scrollTo(0, 0);
+  window.scrollTo(0, 0);
 }
 
 // the code below shall open a game manual with intructions on how to operate the Player vs Player Game Mode
@@ -849,7 +857,47 @@ function openPVCManual() {
 <!-- Linking to javascript game logic -->
 <script src="assets/js/script.js"></script>`;
 
-window.scrollTo(0, 0);
+  window.scrollTo(0, 0);
+}
+
+// the code below is a function that is called when a player selects the bright yellow 'nucleur' text in the title of the Game, it shall increment the relevant players score by 1 and force a new game to begin
+function nukeGame() {
+  console.log("You blew it up! Damn you all to hell");
+  alert("NUKE INCOMING!");
+
+  if (playerTwoToggle === "False" && nukeCounterOne < 3) {
+    var audioNuke = new Audio('assets/audio/nuke.mp3');
+    audioNuke.play();
+    incrementPlayerOneScore();
+    alert("Player One nuked the game! You have been awarded 1 Point.");
+    incrementNukeCounterOne();
+    console.log(nukeCounterOne);
+    startPVPNewRound();
+  } else if (playerTwoToggle === "True" && nukeCounterTwo < 3) {
+    var audioNuke = new Audio('assets/audio/nuke.mp3');
+    audioNuke.play();
+    incrementPlayerTwoScore();
+    alert("Player Two nuked the game! You have been awarded 1 Point.");
+    incrementNukeCounterTwo();
+    console.log(nukeCounterTwo);
+    startPVPNewRound();
+  } else if (playerTwoToggle === "False" && nukeCounterOne === 3) {
+    alert("You're all out of Nukes!");
+    var audioEmpty = new Audio('assets/audio/empty.wav');
+    audioEmpty.play();
+  } else if (playerTwoToggle === "True" && nukeCounterTwo === 3) {
+    alert("You're all out of Nukes!");
+    var audioEmpty = new Audio('assets/audio/empty.wav');
+    audioEmpty.play();
+  }
+
+  function incrementNukeCounterOne() {
+    nukeCounterOne++;
+  }
+
+  function incrementNukeCounterTwo() {
+    nukeCounterTwo++;
+  }
 }
 
 // the code block below is the logic for building an array from player one's chosen move type ie rock, paper, or scissors 
@@ -901,7 +949,7 @@ pickPlayerOneChoiceOne = (handOne) => {
     console.log(showLockAnswers);
 
     showLockAnswers.style.display = "block";
-    
+
   };
 };
 
@@ -1322,7 +1370,6 @@ function incrementComputerScore() {
 
 }
 
-
 // the code block below will reset the game entirely, returning to the main menu and clearing any arrays, scores or player names
 function resetGame() {
   var audioSelect = new Audio('assets/audio/return.wav');
@@ -1347,6 +1394,8 @@ function lockAnswers() {
     showAnswers.id = "player-two-moves-show";
     console.log("Player One choices locked");
     alert("Click OK to hide your choices, then hand the controls to Player Two!");
+    playerTwoToggle = "True";
+    console.log(playerTwoToggle);
   } else {
     hiddenAnswers.style.display = "block";
   }
@@ -1355,7 +1404,7 @@ function lockAnswers() {
 
 // ignore this - to be removed
 function viewSource() {
-  
+
   var source = "<html>";
   source += document.getElementsByTagName('html')[0].innerHTML;
   source += "</html>";
