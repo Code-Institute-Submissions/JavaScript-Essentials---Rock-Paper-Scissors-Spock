@@ -9,7 +9,7 @@ let computerMoves = [];
 // below is the code for a toggle which is used in the nukeGame functionality to determine which party has nuked the game
 let playerTwoToggle = "False";
 
-let gameToggle = ""
+let gameToggle = "";
 
 // below are the counters for player one and player two that iuncrement by 1 each time a nuke is fired, players can fire a maximum of 3 nukes
 let nukeCounterOne = 0;
@@ -43,7 +43,7 @@ function startPVP() {
 
   playerTwoToggle = "False";
 
-  gameToggle = "PVP"
+  gameToggle = "PVP";
 
   // Set the body's innerHTML to player vs player choice selection
   startBody.innerHTML = `
@@ -126,7 +126,7 @@ function startPVP() {
         <div class="red-line-breaker"></div>
 
         <!-- the code below will lock the input for player one and update the HTML to display player two -->
-        <div id="lock-answer" onclick="lockAnswers();">Lock in your choices! <i class="fa-solid fa-lock-open"></i></div>
+        <div id="lock-answer" onclick="lockAnswers();">Change Players!</div>
 
         <!-- this division creats a small colored bar at the bottom -->
         <div id="grad-player-one"></div>
@@ -235,7 +235,7 @@ function startPVPNewRound() {
 
   playerTwoToggle = "False";
 
-  gameToggle = "PVP"
+  gameToggle = "PVP";
 
   console.log(playerOneMoves);
   console.log(playerOneMoves);
@@ -327,8 +327,7 @@ function startPVPNewRound() {
             <div class="red-line-breaker"></div>
 
             <!-- the code below will lock the input for player one and update the HTML to display player two -->
-            <div id="lock-answer" onclick="lockAnswers();">Lock in your choices! <i
-                    class="fa-solid fa-lock-open"></i></div>
+            <div id="lock-answer" onclick="lockAnswers();">Change Players!</div>
 
             <!-- this division creats a small colored bar at the bottom -->
             <div id="grad-player-one"></div>
@@ -441,7 +440,7 @@ function startPVC() {
 
   playerTwoToggle = "Computer";
 
-  gameToggle = "PVPC"
+  gameToggle = "PVPC";
 
   // Set the body's innerHTML to player vs computer choice selection
   startBody.innerHTML = `<!-- title division -->
@@ -523,8 +522,7 @@ function startPVC() {
               <div class="red-line-breaker"></div>
 
               <!-- the code below will lock the input for player one and update the HTML to display player two -->
-              <div id="lock-pc-choices" onclick="pickComputerChoiceOne();">Check the results!<i
-                  class="fa-solid fa-lock-open"></i>
+              <div id="lock-pc-choices" onclick="pickComputerChoiceOne();">Check the results!
               </div>
               <div id="play-pvc-new-round" onclick="startPVCNewRound();">Play again!
               </div>
@@ -586,7 +584,7 @@ function startPVCNewRound() {
 
   playerTwoToggle = "Computer";
 
-  gameToggle = "PVPC"
+  gameToggle = "PVPC";
 
   let playerOnePCOldName = document.getElementById("p-one-name").innerText;
 
@@ -618,7 +616,7 @@ function startPVCNewRound() {
 
       <div class="score-chart">
         <h3>SCOREBOARD</h3>
-        <p id="p-one-name" contenteditable="true">Player One</p>
+        <p id="p-one-name">Player One</p>
         <i id="p-one-name-lock" class="fa-solid fa-lock"></i>
         <h2 id="score-one"> 0 </h2>
       </div>
@@ -675,8 +673,7 @@ function startPVCNewRound() {
               <div class="red-line-breaker"></div>
 
               <!-- the code below will lock the input for player one and update the HTML to display player two -->
-              <div id="lock-pc-choices" onclick="pickComputerChoiceOne();">Check the results!<i
-                  class="fa-solid fa-lock-open"></i>
+              <div id="lock-pc-choices" onclick="pickComputerChoiceOne();">Check the results!
               </div>
               <div id="play-pvc-new-round" onclick="startPVCNewRound();">Play again!
               </div>
@@ -927,8 +924,10 @@ function nukeGame() {
   console.log("You blew it up! Damn you all to hell");
   alert("NUKE INCOMING!");
 
+  var audioNuke = new Audio('assets/audio/nuke.mp3');
+  var audioEmpty = new Audio('assets/audio/empty.wav');
+
   if (playerTwoToggle === "False" && nukeCounterOne < 3) {
-    var audioNuke = new Audio('assets/audio/nuke.mp3');
     audioNuke.play();
     incrementPlayerOneScore();
     alert("Player One nuked the game!\nYou have been awarded 1 Point.");
@@ -936,7 +935,6 @@ function nukeGame() {
     console.log(nukeCounterOne);
     startPVPNewRound();
   } else if (playerTwoToggle === "True" && nukeCounterTwo < 3) {
-    var audioNuke = new Audio('assets/audio/nuke.mp3');
     audioNuke.play();
     incrementPlayerTwoScore();
     alert("Player Two nuked the game!\nYou have been awarded 1 Point.");
@@ -945,14 +943,11 @@ function nukeGame() {
     startPVPNewRound();
   } else if (playerTwoToggle === "False" && nukeCounterOne === 3) {
     alert("You're all out of Nukes!");
-    var audioEmpty = new Audio('assets/audio/empty.wav');
     audioEmpty.play();
   } else if (playerTwoToggle === "True" && nukeCounterTwo === 3) {
     alert("You're all out of Nukes!");
-    var audioEmpty = new Audio('assets/audio/empty.wav');
     audioEmpty.play();
   } else if (playerTwoToggle === "Computer" && nukeCounterOne < 3) {
-    var audioNuke = new Audio('assets/audio/nuke.mp3');
     audioNuke.play();
     incrementPlayerOneScore();
     alert("You nuked the game!\nYou have been awarded 1 Point.");
@@ -961,7 +956,6 @@ function nukeGame() {
     startPVCNewRound();
   } else if (playerTwoToggle === "Computer" && nukeCounterOne === 3) {
     alert("You're all out of Nukes!");
-    var audioEmpty = new Audio('assets/audio/empty.wav');
     audioEmpty.play();
   }
 

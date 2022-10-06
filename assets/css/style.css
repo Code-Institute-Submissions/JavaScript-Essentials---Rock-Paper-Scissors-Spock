@@ -82,6 +82,16 @@ body {
     margin: 10px;
 }
 
+#start-pvp-button {
+    font-family: 'Silkscreen', cursive, sans-serif;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+#start-pvp-button:hover {
+    color: gold;
+    font-size: larger;
+}
+
 /* colored gradient bars for the game type buttons */
 #gradient-two {
     background-color: #FF5F1F;
@@ -207,6 +217,13 @@ body {
     line-height: 60px;
     font-weight: 200;
     display: none;
+    font-family: 'Silkscreen', cursive, sans-serif;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+#lock-answer:hover {
+    color: gold;
+    font-size: 30px;
 }
 
 #lock-answer-two {
@@ -232,15 +249,29 @@ body {
     line-height: 60px;
     font-weight: 200;
     display: none;
+    font-family: 'Silkscreen', cursive, sans-serif;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+#lock-pc-choices:hover {
+    color: gold;
+    font-size: 30px;
 }
 
 #play-pvc-new-round {
+    font-family: 'Silkscreen', cursive, sans-serif;
     font-size: 20px;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
     height: 60px;
     text-align: center;
     line-height: 60px;
     font-weight: 200;
     display: none;
+}
+
+#play-pvc-new-round:hover {
+    font-size: 23px;
+    color: gold;
 }
 
 .lock-answer i {
