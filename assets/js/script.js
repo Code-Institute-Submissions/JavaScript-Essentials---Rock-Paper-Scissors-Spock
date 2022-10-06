@@ -261,12 +261,14 @@ function startPVPNewRound() {
 
     <div class="score-chart">
       <h3>SCOREBOARD</h3>
-      <p id="p-one-name">Player One <i class="fa-solid fa-lock-open" onclick="setPOneName();"></i></p>
+      <p id="p-one-name">Player One</p>
+      <i id="p-one-name-lock" class="fa-solid fa-lock"></i>
       <h2 id="score-one"> 0 </h2>
     </div>
 
     <div class="score-chart">
-      <p id="p-two-name">Player Two <i class="fa-solid fa-lock-open" onclick="setPTwoName();"></i></p>
+      <p id="p-two-name">Player Two</p>
+      <i id="p-two-name-lock" class="fa-solid fa-lock"></i>
       <h2 id="score-two"> 0 </h2>
     </div>
   </div>
@@ -444,7 +446,8 @@ function startPVC() {
 
       <div class="score-chart">
         <h3>SCOREBOARD</h3>
-        <p id="p-one-name" contenteditable="true">Player One <i class="fa-solid fa-lock-open" onclick="setPOneName();"></i></p>
+        <p id="p-one-name" contenteditable="true">Player One</p>
+        <i class="fa-solid fa-lock-open" onclick="setPOneName();"></i>
         <h2 id="score-one"> 0 </h2>
       </div>
 
@@ -452,6 +455,7 @@ function startPVC() {
 
       <div class="score-chart">
         <p id="p-two-name">Computer</p>
+        <i class="fa-solid fa-robot"></i>
         <h2 id="score-two"> 0 </h2>
       </div>
     </div>
@@ -509,7 +513,6 @@ function startPVC() {
 
               <!-- this division creats a small colored bar at the bottom -->
               <div id="grad-player-one"></div>
-              <button type ="button" onclick="viewSource()">View Source</button>
           </div>
       </div>
 
@@ -518,13 +521,13 @@ function startPVC() {
 
   <div id="paterns">
                 <div id="firstplayers-chosen-moves">
-                  <h3>Your hand:  </h3>
+                  <h3>You:</h3>
                   <div id="first-players-move"></div>
                   <div id="second-players-move"></div>
                   <div id="third-players-move"></div>
                 </div>
                 <div id="computers-chosen-moves">
-                  <h3>Opponents Hand:  </h3>
+                  <h3>PC:</h3>
                   <div id="first-computers-move"></div>
                   <div id="second-computers-move"></div>
                   <div id="third-computers-move"></div>
@@ -587,7 +590,8 @@ function startPVCNewRound() {
 
       <div class="score-chart">
         <h3>SCOREBOARD</h3>
-        <p id="p-one-name" contenteditable="true">Player One <i class="fa-solid fa-lock-open" onclick="setPOneName();"></i></p>
+        <p id="p-one-name" contenteditable="true">Player One</p>
+        <i id="p-one-name-lock" class="fa-solid fa-lock"></i>
         <h2 id="score-one"> 0 </h2>
       </div>
 
@@ -595,6 +599,7 @@ function startPVCNewRound() {
 
       <div class="score-chart">
         <p id="p-two-name">Computer</p>
+        <i class="fa-solid fa-robot"></i>
         <h2 id="score-two"> 0 </h2>
       </div>
     </div>
@@ -650,7 +655,6 @@ function startPVCNewRound() {
 
               <!-- this division creats a small colored bar at the bottom -->
               <div id="grad-player-one"></div>
-              <button type ="button" onclick="viewSource()">View Source</button>
           </div>
       </div>
   </section>

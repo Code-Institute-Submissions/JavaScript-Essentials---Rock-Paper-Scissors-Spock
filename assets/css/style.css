@@ -209,12 +209,19 @@ body {
 }
 
 #lock-answer-two {
+    font-family: 'Silkscreen', cursive, sans-serif;
     font-size: 20px;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
     height: 60px;
     text-align: center;
     line-height: 60px;
     font-weight: 200;
     display: none;
+}
+
+#lock-answer-two:hover {
+    font-size: 23px;
+    color: gold;
 }
 
 #lock-pc-choices {
@@ -473,7 +480,7 @@ section {
 /* media querie: index page on screens between 768px and 1024px wide (tablets, ipads) */
 @media (min-width: 768px) and (max-width: 1024px) {
     #landing-title {
-        height: 520px;
+        height: 420px;
     }
 
     section {
@@ -580,7 +587,8 @@ section {
 
     #score-board {
         width: 10px;
-        margin-top: -50px;
+        margin-top: -55px;
+        margin-left: 10px;
     }
 
     #player-one-moves {
@@ -594,6 +602,7 @@ section {
     .score-chart {
         width: 440px;
         height: 140px;
+        float: none;
     }
 
     #move-selection {
@@ -619,15 +628,41 @@ section {
 
     #secondplayers-chosen-moves {
         height: 45%;
-        font-size: 20px;
+        font-size: 15px;
     }
 
-    #computers-chosen-moves {
-        font-size: 15px;
-        margin: 20px;
-        height: 45%;
-        margin-top: -20px;
+    #firstplayers-chosen-moves:hover {
+        color: gold;
+        font-size: 17px;
 
+    }
+
+    #secondplayers-chosen-moves:hover {
+        color: gold;
+        font-size: 17px;
+
+    }
+
+    #computers-chosen-moves:hover {
+        color: orange;
+        font-size: 17px;
+
+    }
+
+    #player-one-moves i {
+        font-size: 80px;
+    }
+
+    #player-two-moves-show i {
+        font-size: 80px;
+    }
+
+    #lock-answer i {
+        font-size: 25px;
+    }
+
+    #lock-pc-choices i {
+        font-size: 30px;
     }
 
     img {
@@ -745,7 +780,8 @@ section {
     
     .score-chart {
         width: 285px;
-        height: 105px;
+        height: 110px;
+        float: none;
     }
 
     #score-board i {
@@ -753,7 +789,7 @@ section {
     }
 
     #p-one-name {
-        margin-bottom: -5px;
+        margin-bottom: -30px;
     }
 
     #p-two-name {
@@ -766,7 +802,7 @@ section {
     }
 
     #paterns {
-        width: 90%;
+        width: 100%;
         display: block;
         height: 170px;
         margin-top: 20px;
@@ -800,11 +836,23 @@ section {
     }
 
     #computers-chosen-moves {
-        font-size: 15px;
+        font-size: 12px;
         margin: 20px;
         height: 45%;
         margin-top: -20px;
 
+    }
+
+    #computers-chosen-moves:hover {
+        color: orange;
+        font-size: 13px;
+
+    }
+    
+
+    #hidden-code:hover:after{
+        content:'Launch!';
+        font-size: 70px;
     }
 
     img {

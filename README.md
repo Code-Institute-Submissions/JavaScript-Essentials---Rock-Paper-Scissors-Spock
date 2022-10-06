@@ -62,6 +62,13 @@ Below is a detailed explanantion of the various features built into the website,
 
 ![Articles.html book section](https://github.com/WHLW27/HTML-Essentials-Portfolio-Project/blob/main/assets/images/readme/articles.png)
 
+- __Hidden Cheat Option__
+
+  - When inside one of the two seperate game types, player vs player or player vs computer, players have access to a hidden cheat. Hovering over the text in the title of the page 'Nucleur Bomb!' shall update the text to show 'Launch!', by clicking this area of the screen a sequence of events shall occur. Messages appear through alert boxes notifying the players that a Nuke is incomming, an audio file shall play and the active player shall receive exactly 1 point, the round well then end and a new game shall be started. Players can use this option a maximum of 3 times each to provide some balancing. 
+  - This feature is what defines the game in its own form, pulling away from the standard format of Rock, Paper, Scissors and adding some additional flare. Given that this feature is hidden it will be rewarding for players who discover it. Overall this provides the game with more depth and character.
+
+![Articles.html book section](https://github.com/WHLW27/HTML-Essentials-Portfolio-Project/blob/main/assets/images/readme/articles.png)
+
 - __PVP Game Manual__
 
   - This area of the site features a game manual for the Player vs Player game type, it explains the various functions and concepts within the game, such as the patern comparison, the scoring, how to operate the game, it explains how to carry over scores and set the player names.  
