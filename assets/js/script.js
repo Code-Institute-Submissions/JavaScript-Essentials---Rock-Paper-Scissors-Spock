@@ -978,7 +978,7 @@ pickPlayerOneChoiceOne = (handOne) => {
   hideChoiceOne.style.display = "none";
 
   let hideInputOne = document.getElementsByClassName("selections");
-  hideInputOne[0].style.display = "none"
+  hideInputOne[0].style.display = "none";
 
   playerOneMoves.push(handOne);
   console.log(playerOneMoves);
@@ -996,7 +996,7 @@ pickPlayerOneChoiceOne = (handOne) => {
     hideChoiceTwo.style.display = "none";
 
     let hideInputTwo = document.getElementsByClassName("selections");
-    hideInputTwo[1].style.display = "none"
+    hideInputTwo[1].style.display = "none";
 
     playerOneMoves.push(handTwo);
     console.log(playerOneMoves);
@@ -1014,7 +1014,7 @@ pickPlayerOneChoiceOne = (handOne) => {
     hideChoiceTwo.style.display = "none";
 
     let hideInputThree = document.getElementsByClassName("selections");
-    hideInputThree[2].style.display = "none"
+    hideInputThree[2].style.display = "none";
 
     playerOneMoves.push(handThree);
     console.log(playerOneMoves);
@@ -1046,7 +1046,7 @@ pickPlayerTwoChoiceOne = (handOne) => {
   hideChoiceOne.style.display = "none";
 
   let hideInputOne = document.getElementsByClassName("selections");
-  hideInputOne[3].style.display = "none"
+  hideInputOne[3].style.display = "none";
 
   playerTwoMoves.push(handOne);
   console.log(playerTwoMoves);
@@ -1062,7 +1062,7 @@ pickPlayerTwoChoiceOne = (handOne) => {
     hideChoiceTwo.style.display = "none";
 
     let hideInputTwo = document.getElementsByClassName("selections");
-    hideInputTwo[4].style.display = "none"
+    hideInputTwo[4].style.display = "none";
 
     playerTwoMoves.push(handTwo);
     console.log(playerTwoMoves);
@@ -1079,7 +1079,7 @@ pickPlayerTwoChoiceOne = (handOne) => {
     hideChoiceThree.style.display = "none";
 
     let hideInputThree = document.getElementsByClassName("selections");
-    hideInputThree[5].style.display = "none"
+    hideInputThree[5].style.display = "none";
 
     playerTwoMoves.push(handThree);
     console.log(playerTwoMoves);
@@ -1508,18 +1508,4 @@ function lockAnswers() {
     hiddenAnswers.style.display = "block";
   }
 
-}
-
-// ignore this - to be removed
-function viewSource() {
-
-  var source = "<html>";
-  source += document.getElementsByTagName('html')[0].innerHTML;
-  source += "</html>";
-  source = source.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  source = "<pre>" + source + "</pre>";
-  sourceWindow = window.open('', 'Source of page', 'height=800,width=800,scrollbars=1,resizable=1');
-  sourceWindow.document.write(source);
-  sourceWindow.document.close();
-  if (window.focus) sourceWindow.focus();
 }
