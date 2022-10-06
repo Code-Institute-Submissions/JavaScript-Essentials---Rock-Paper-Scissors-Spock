@@ -32,12 +32,13 @@ body {
     font-size: 100px;
 }
 
-#hidden-code:after{
-    content:'Nucleur Bomb!';
-    
+#hidden-code:after {
+    content: 'Nucleur Bomb!';
+
 }
-#hidden-code:hover:after{
-    content:'Launch!';
+
+#hidden-code:hover:after {
+    content: 'Launch!';
     font-size: 125px;
 }
 
@@ -384,17 +385,27 @@ section {
 
 /* styling for the chosen moves divsion */
 
+#patern-window-pvp {
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+#patern-window-pvc {
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
 #paterns {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 150px;
-  width: 70%;
-  border: solid 3px black;
-  background-color: red;
-  margin: 0 auto;
-  margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 150px;
+    width: 70%;
+    border: solid 3px black;
+    background-color: red;
+    margin: 0 auto;
+    margin-top: 10px;
 }
 
 #paterns-two {
@@ -402,13 +413,45 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 150px;
-    width: 70%;
+    height: 75px;
+    width: 575px;
+    line-height: 1px;
     border: solid 3px black;
-    background-color: #FF5F1F;
+    background-color: red;
     margin: 0 auto;
     margin-top: 10px;
-  }
+}
+
+#paterns-three {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 75px;
+    width: 575px;
+    line-height: 1px;
+    border: solid 3px black;
+    background-color: red;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+#results {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 60px;
+    width: 400px;
+    border: dotted 3px black;
+    background-color: #FF5F1F;
+    font-size: 30px;
+    font-family: 'Silkscreen', cursive, sans-serif;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    color: azure;
+    margin: 0 auto;
+    margin-top: 10px;
+}
 
 #firstplayers-chosen-moves {
     display: flex;
@@ -456,10 +499,20 @@ section {
         margin-left: 265px;
     }
 
+    #patern-window-pvp {
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+
+    #patern-window-pvc {
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+
     #score-board {
         width: 10px;
     }
-    
+
     .score-chart {
         width: 175px;
     }
@@ -498,7 +551,7 @@ section {
     #player-two-moves-show {
         width: 450px;
     }
-    
+
     .score-chart {
         width: 175px;
         height: 140px;
@@ -510,8 +563,33 @@ section {
         height: 170px;
     }
 
+    #patern-window-pvp {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    #patern-window-pvc {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
     #paterns-two {
-        width: 90%;
+        width: 420px;
+        height: 65px;
+        line-height: 1px;
+    }
+
+    #paterns-three {
+        width: 420px;
+        height: 65px;
+        line-height: 1px;
+        margin-bottom: 10px;
+    }
+
+    #results {
+        width: 355px;
+        height: 70px;
+        line-height: 1px;
     }
 
     #firstplayers-chosen-moves {
@@ -598,7 +676,7 @@ section {
     #player-two-moves-show {
         width: 375px;
     }
-    
+
     .score-chart {
         width: 440px;
         height: 140px;
@@ -617,8 +695,32 @@ section {
         margin-top: -20px;
     }
 
+    #patern-window-pvp {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    #patern-window-pvc {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
     #paterns-two {
-        width: 90%;
+        width: 355px;
+        height: 50px;
+        line-height: 1px;
+    }
+
+    #paterns-three {
+        width: 355px;
+        height: 50px;
+        line-height: 1px;
+    }
+
+    #results {
+        width: 355px;
+        height: 70px;
+        line-height: 1px;
     }
 
     #firstplayers-chosen-moves {
@@ -684,7 +786,7 @@ section {
     #reset-button {
         margin-top: 25px;
     }
-    
+
 }
 
 /* media querie: index page on screens between 320px and 480px wide (smartphones, mobiles) */
@@ -712,7 +814,7 @@ section {
 
     .choice-header {
         font-size: 20px;
-        
+
     }
 
     #gradient-one {
@@ -777,7 +879,7 @@ section {
     #player-two-moves-show i {
         font-size: 60px;
     }
-    
+
     .score-chart {
         width: 285px;
         height: 110px;
@@ -801,16 +903,34 @@ section {
         height: 60%;
     }
 
-    #paterns {
-        width: 100%;
-        display: block;
-        height: 170px;
-        margin-top: 20px;
+    #patern-window-pvp {
+        margin-left: -5px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    #patern-window-pvc {
+        margin-left: -5px;
+        margin-top: 0px;
+        margin-bottom: 0px;
     }
 
     #paterns-two {
-        width: 100%;
-        margin-left: -5px;
+        width: 285px;
+        height: 50px;
+        line-height: 1px;
+    }
+
+    #paterns-three {
+        width: 285px;
+        height: 50px;
+        line-height: 1px;
+    }
+
+    #results {
+        width: 285px;
+        height: 70px;
+        line-height: 1px;
     }
 
     #firstplayers-chosen-moves {
@@ -848,10 +968,10 @@ section {
         font-size: 13px;
 
     }
-    
 
-    #hidden-code:hover:after{
-        content:'Launch!';
+
+    #hidden-code:hover:after {
+        content: 'Launch!';
         font-size: 70px;
     }
 

@@ -184,6 +184,11 @@ function startPVP() {
 </div>
 </section>
 
+<div id="patern-window-pvp">
+<div id="results">
+  <h3>Results</h3>
+  </div>
+
 <div id="paterns-two">
                 <div id="firstplayers-chosen-moves">
                   <h3>P1:</h3>
@@ -192,6 +197,9 @@ function startPVP() {
                   <div id="second-players-move"></div>
                   <div id="third-players-move"></div>
                 </div>
+    </div>
+
+    <div id="paterns-three">
                 <div id="secondplayers-chosen-moves">
                   <h3>P2:</h3>
                   <br>
@@ -200,6 +208,7 @@ function startPVP() {
                   <div id="third-second-move"></div>
                 </div>
     </div>
+</div>
 
 <!-- this code will reset the HTML content of the page to that of the original Main Menu content -->
 <div id="reset-button" onclick="resetGame();">Main Menu</div>
@@ -377,22 +386,31 @@ function startPVPNewRound() {
     </div>
 </section>
 
+<div id="patern-window-pvp">
+<div id="results">
+  <h3>Results</h3>
+  </div>
+
 <div id="paterns-two">
                 <div id="firstplayers-chosen-moves">
-                  <h3>P1</h3>
+                  <h3>P1:</h3>
                   <br>
                   <div id="first-players-move"></div>
                   <div id="second-players-move"></div>
                   <div id="third-players-move"></div>
                 </div>
+    </div>
+
+    <div id="paterns-three">
                 <div id="secondplayers-chosen-moves">
-                  <h3>P2</h3>
+                  <h3>P2:</h3>
                   <br>
                   <div id="first-second-move"></div>
                   <div id="second-second-move"></div>
                   <div id="third-second-move"></div>
                 </div>
     </div>
+</div>
 
 <!-- this code will reset the HTML content of the page to that of the original Main Menu content -->
 <div id="reset-button" onclick="resetGame();">Main Menu</div>
@@ -519,19 +537,29 @@ function startPVC() {
       
   </section>
 
-  <div id="paterns">
-                <div id="firstplayers-chosen-moves">
-                  <h3>You:</h3>
-                  <div id="first-players-move"></div>
-                  <div id="second-players-move"></div>
-                  <div id="third-players-move"></div>
-                </div>
-                <div id="computers-chosen-moves">
-                  <h3>PC:</h3>
-                  <div id="first-computers-move"></div>
-                  <div id="second-computers-move"></div>
-                  <div id="third-computers-move"></div>
-                </div>
+    <div id="patern-window-pvc">
+    <div id="results">
+      <h3>Results</h3>
+      </div>
+    
+    <div id="paterns-two">
+                    <div id="firstplayers-chosen-moves">
+                      <h3>P1:</h3>
+                      <br>
+                      <div id="first-players-move"></div>
+                      <div id="second-players-move"></div>
+                      <div id="third-players-move"></div>
+                    </div>
+        </div>
+    
+        <div id="paterns-three">
+                    <div id="computers-chosen-moves">
+                      <h3>PC:</h3>
+                      <div id="first-computers-move"></div>
+                      <div id="second-computers-move"></div>
+                      <div id="third-computers-move"></div>
+                    </div>
+        </div>
     </div>
   
   <!-- this code will reset the HTML content of the page to that of the original Main Menu content -->
@@ -659,19 +687,29 @@ function startPVCNewRound() {
       </div>
   </section>
 
-  <div id="paterns">
-                <div id="firstplayers-chosen-moves">
-                  <h3>Your hand:  </h3>
-                  <div id="first-players-move"></div>
-                  <div id="second-players-move"></div>
-                  <div id="third-players-move"></div>
-                </div>
-                <div id="computers-chosen-moves">
-                  <h3>Opponents Hand:  </h3>
-                  <div id="first-computers-move"></div>
-                  <div id="second-computers-move"></div>
-                  <div id="third-computers-move"></div>
-                </div>
+  <div id="patern-window-pvc">
+    <div id="results">
+      <h3>Results</h3>
+      </div>
+    
+    <div id="paterns-two">
+                    <div id="firstplayers-chosen-moves">
+                      <h3>P1:</h3>
+                      <br>
+                      <div id="first-players-move"></div>
+                      <div id="second-players-move"></div>
+                      <div id="third-players-move"></div>
+                    </div>
+        </div>
+    
+        <div id="paterns-three">
+                    <div id="computers-chosen-moves">
+                      <h3>PC:</h3>
+                      <div id="first-computers-move"></div>
+                      <div id="second-computers-move"></div>
+                      <div id="third-computers-move"></div>
+                    </div>
+        </div>
     </div>
   
   <!-- this code will reset the HTML content of the page to that of the original Main Menu content -->
@@ -1095,6 +1133,14 @@ function pickComputerChoiceOne() {
 
   document.getElementById("play-pvc-new-round").style.display = "block";
 
+  let showItOne = document.getElementById("paterns-two");
+  showItOne.style.display = "flex";
+  
+  let showItTwo = document.getElementById("paterns-three");
+  showItTwo.style.display = "flex";
+
+  let showResults = document.getElementById("results");
+  showResults.style.display = "flex";
 
 
 
@@ -1107,14 +1153,14 @@ const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
   var audioSelect = new Audio('assets/audio/win.wav');
   audioSelect.play();
 
-  let showIt = document.getElementById("paterns-two");
+  let showItOne = document.getElementById("paterns-two");
+  showItOne.style.display = "flex";
+  
+  let showItTwo = document.getElementById("paterns-three");
+  showItTwo.style.display = "flex";
 
-  // change the display style of the pattern comparison based on the current screen size
-  if (window.screen.height <= 1025 || window.screen.width <= 481) {
-    showIt.style.display = "inline-block";
-  } else {
-    showIt.style.display = "flex";
-  }
+  let showResults = document.getElementById("results");
+  showResults.style.display = "flex";
 
   // Draw cases round 1 (array index [0])
   if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "paper") {
