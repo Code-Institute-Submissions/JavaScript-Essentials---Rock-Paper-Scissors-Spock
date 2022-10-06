@@ -52,7 +52,7 @@ function startPVP() {
     <h2>
         Rock, Paper, Scissors,
     </h2>
-    <h1 onclick="nukeGame();">
+    <h1 id="hidden-code" onclick="nukeGame();">
         
     </h1>
 
@@ -89,8 +89,8 @@ function startPVP() {
         <div id=player-one-move-one>
             <h2 class="choice-header">First Choice:</h2>
 
-            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceOne('rock')"></i>
-            <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceOne('paper')"></i>
+            <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerOneChoiceOne('rock')"></i>
+            <i class="fa-regular fa-note-sticky" onclick="pickPlayerOneChoiceOne('paper')"></i>
             <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceOne('scissors')"></i>
                                    
         </div>
@@ -102,8 +102,8 @@ function startPVP() {
         <div id="player-one-move-two">
             <h2 class="choice-header">Second Choice:</h2>
 
-            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceTwo('rock')"></i> 
-            <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceTwo('paper')"></i>
+            <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerOneChoiceTwo('rock')"></i> 
+            <i class="fa-regular fa-note-sticky" onclick="pickPlayerOneChoiceTwo('paper')"></i>
             <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceTwo('scissors')"></i>
                                   
         </div>
@@ -115,8 +115,8 @@ function startPVP() {
         <div id="player-one-move-three">
             <h2 class="choice-header">Third Choice:</h2>
 
-            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i> 
-            <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceThree('paper')"></i>
+            <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerOneChoiceThree('rock')"></i> 
+            <i class="fa-regular fa-note-sticky" onclick="pickPlayerOneChoiceThree('paper')"></i>
             <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
                                   
         </div>
@@ -139,8 +139,8 @@ function startPVP() {
         <div id="player-two-move-one">
             <h2 class="choice-header">First Choice:</h2>
 
-            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceOne('rock')"></i>
-            <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceOne('paper')"></i>
+            <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerTwoChoiceOne('rock')"></i>
+            <i class="fa-regular fa-note-sticky" onclick="pickPlayerTwoChoiceOne('paper')"></i>
             <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceOne('scissors')"></i>
                                    
         </div>
@@ -152,8 +152,8 @@ function startPVP() {
         <div id="player-two-move-two">
             <h2 class="choice-header">Second Choice:</h2>
 
-            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceTwo('rock')"></i>
-            <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceTwo('paper')"></i>
+            <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerTwoChoiceTwo('rock')"></i>
+            <i class="fa-regular fa-note-sticky" onclick="pickPlayerTwoChoiceTwo('paper')"></i>
             <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceTwo('scissors')"></i>
                                    
         </div>
@@ -165,8 +165,8 @@ function startPVP() {
         <div id="player-two-move-three">
             <h2 class="choice-header">Third Choice:</h2>
 
-            <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceThree('rock')"></i> 
-            <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceThree('paper')"></i>
+            <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerTwoChoiceThree('rock')"></i> 
+            <i class="fa-regular fa-note-sticky" onclick="pickPlayerTwoChoiceThree('paper')"></i>
             <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceThree('scissors')"></i>
                                   
         </div>
@@ -247,7 +247,7 @@ function startPVPNewRound() {
     <h2>
         Rock, Paper, Scissors,
     </h2>
-    <h1 onclick="nukeGame();">
+    <h1 id="hidden-code" onclick="nukeGame();">
         
     </h1>
 
@@ -279,8 +279,8 @@ function startPVPNewRound() {
             <div id=player-one-move-one>
                 <h2 class="choice-header">First Choice:</h2>
                 
-                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceOne('rock')"></i>
-                <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceOne('paper')"></i>
+                <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerOneChoiceOne('rock')"></i>
+                <i class="fa-regular fa-note-sticky" onclick="pickPlayerOneChoiceOne('paper')"></i>
                 <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceOne('scissors')"></i>
                 
             </div>
@@ -292,8 +292,8 @@ function startPVPNewRound() {
             <div id="player-one-move-two">
                 <h2 class="choice-header">Second Choice:</h2>
                 
-                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceTwo('rock')"></i>
-                <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceTwo('paper')"></i>
+                <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerOneChoiceTwo('rock')"></i>
+                <i class="fa-regular fa-note-sticky" onclick="pickPlayerOneChoiceTwo('paper')"></i>
                 <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceTwo('scissors')"></i>
                 
             </div>
@@ -305,8 +305,8 @@ function startPVPNewRound() {
             <div id="player-one-move-three">
                 <h2 class="choice-header">Third Choice:</h2>
 
-                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i>
-                <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceThree('paper')"></i>
+                <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerOneChoiceThree('rock')"></i>
+                <i class="fa-regular fa-note-sticky" onclick="pickPlayerOneChoiceThree('paper')"></i>
                 <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
                 
             </div>
@@ -330,8 +330,8 @@ function startPVPNewRound() {
             <div id="player-two-move-one">
                 <h2 class="choice-header">First Choice:</h2>
 
-                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceOne('rock')"></i>
-                <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceOne('paper')"></i>
+                <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerTwoChoiceOne('rock')"></i>
+                <i class="fa-regular fa-note-sticky" onclick="pickPlayerTwoChoiceOne('paper')"></i>
                 <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceOne('scissors')"></i>
                 
             </div>
@@ -343,8 +343,8 @@ function startPVPNewRound() {
             <div id="player-two-move-two">
                 <h2 class="choice-header">Second Choice:</h2>
 
-                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceTwo('rock')"></i>
-                <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceTwo('paper')"></i>
+                <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerTwoChoiceTwo('rock')"></i>
+                <i class="fa-regular fa-note-sticky" onclick="pickPlayerTwoChoiceTwo('paper')"></i>
                 <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceTwo('scissors')"></i>
                 
             </div>
@@ -356,8 +356,8 @@ function startPVPNewRound() {
             <div id="player-two-move-three">
                 <h2 class="choice-header">Third Choice:</h2>
 
-                <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerTwoChoiceThree('rock')"></i>
-                <i class="fa-solid fa-paper-plane" onclick="pickPlayerTwoChoiceThree('paper')"></i>
+                <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerTwoChoiceThree('rock')"></i>
+                <i class="fa-regular fa-note-sticky" onclick="pickPlayerTwoChoiceThree('paper')"></i>
                 <i class="fa-solid fa-scissors" onclick="pickPlayerTwoChoiceThree('scissors')"></i>
                 
             </div>
@@ -429,7 +429,7 @@ function startPVC() {
       <h2>
           Rock, Paper, Scissors,
       </h2>
-      <h1 onclick="nukeGame();">
+      <h1 id="hidden-code" onclick="nukeGame();">
           
       </h1>
   
@@ -464,9 +464,10 @@ function startPVC() {
               <div id=player-one-move-one>
                   <h2 class="choice-header">First Choice:</h2>
   
-                  <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceOne('paper')"></i>
+                  <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerOneChoiceOne('rock')"></i>
+                  <i class="fa-regular fa-note-sticky" onclick="pickPlayerOneChoiceOne('paper')"></i>
                   <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceOne('scissors')"></i>
-                  <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceOne('rock')"></i>
+                  
               </div>
 
               <p class="selections">  ROCK | PAPER | SCISSORS</p>
@@ -476,9 +477,10 @@ function startPVC() {
               <div id="player-one-move-two">
                   <h2 class="choice-header">Second Choice:</h2>
   
-                  <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceTwo('paper')"></i>
+                  <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerOneChoiceTwo('rock')"></i>
+                  <i class="fa-regular fa-note-sticky" onclick="pickPlayerOneChoiceTwo('paper')"></i>
                   <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceTwo('scissors')"></i>
-                  <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceTwo('rock')"></i>
+                  
               </div>
 
               <p class="selections">  ROCK | PAPER | SCISSORS</p>
@@ -488,9 +490,10 @@ function startPVC() {
               <div id="player-one-move-three">
                   <h2 class="choice-header">Third Choice:</h2>
   
-                  <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceThree('paper')"></i>
+                  <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerOneChoiceThree('rock')"></i>
+                  <i class="fa-regular fa-note-sticky" onclick="pickPlayerOneChoiceThree('paper')"></i>
                   <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
-                  <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i>
+                  
               </div>
 
               <p class="selections">  ROCK | PAPER | SCISSORS</p>
@@ -569,7 +572,7 @@ function startPVCNewRound() {
       <h2>
           Rock, Paper, Scissors,
       </h2>
-      <h1 onclick="nukeGame();">
+      <h1 id="hidden-code" onclick="nukeGame();">
           
       </h1>
   
@@ -604,9 +607,9 @@ function startPVCNewRound() {
               <div id=player-one-move-one>
                   <h2 class="choice-header">First Choice:</h2>
   
-                  <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceOne('paper')"></i>
+                  <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerOneChoiceOne('rock')"></i>
+                  <i class="fa-regular fa-note-sticky" onclick="pickPlayerOneChoiceOne('paper')"></i>
                   <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceOne('scissors')"></i>
-                  <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceOne('rock')"></i>
               </div>
 
               <p class="selections">  ROCK | PAPER | SCISSORS</p>
@@ -616,9 +619,9 @@ function startPVCNewRound() {
               <div id="player-one-move-two">
                   <h2 class="choice-header">Second Choice:</h2>
   
-                  <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceTwo('paper')"></i>
+                  <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerOneChoiceTwo('rock')"></i>
+                  <i class="fa-regular fa-note-sticky" onclick="pickPlayerOneChoiceTwo('paper')"></i>
                   <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceTwo('scissors')"></i>
-                  <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceTwo('rock')"></i>
               </div>
 
               <p class="selections">  ROCK | PAPER | SCISSORS</p>
@@ -628,9 +631,10 @@ function startPVCNewRound() {
               <div id="player-one-move-three">
                   <h2 class="choice-header">Third Choice:</h2>
   
-                  <i class="fa-solid fa-paper-plane" onclick="pickPlayerOneChoiceThree('paper')"></i>
+                  <i class="fa-solid fa-hill-rockslide" onclick="pickPlayerOneChoiceThree('rock')"></i>
+                  <i class="fa-regular fa-note-sticky" onclick="pickPlayerOneChoiceThree('paper')"></i>
                   <i class="fa-solid fa-scissors" onclick="pickPlayerOneChoiceThree('scissors')"></i>
-                  <i class="fa-regular fa-hand-back-fist" onclick="pickPlayerOneChoiceThree('rock')"></i>
+                  
               </div>
 
               <p class="selections">  ROCK | PAPER | SCISSORS</p>

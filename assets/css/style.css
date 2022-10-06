@@ -32,11 +32,11 @@ body {
     font-size: 100px;
 }
 
-#landing-title>h1:after{
+#hidden-code:after{
     content:'Nucleur Bomb!';
     
 }
-#landing-title>h1:hover:after{
+#hidden-code:hover:after{
     content:'Launch!';
     font-size: 125px;
 }
@@ -159,8 +159,8 @@ body {
 
 .choice-header {
     font-size: 30px;
-    text-align: left;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    text-align: center;
+    /* text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; */
     margin-left: 10px;
 }
 
@@ -281,7 +281,7 @@ i:hover {
 
 .selections {
     font-size: 15px;
-    margin-right: -18px;
+    margin-right: -28px;
 }
 
 /* scorechart styling */
@@ -677,7 +677,7 @@ section {
 
     .choice-header {
         font-size: 20px;
-        text-align: center;
+        
     }
 
     #gradient-one {
@@ -753,7 +753,7 @@ section {
     }
 
     #p-one-name {
-        margin-bottom: -30px;
+        margin-bottom: -5px;
     }
 
     #p-two-name {
