@@ -17,7 +17,7 @@ Below is a detailed explanantion of the various features built into the website,
   - Beneath the two game type options are Manuals featuring helpful information on how to navigate through either game type. 
   - This area gives master access to all areas of the game, those external locations also root back to this menu, allowing for smooth and seamless navigation throughout.  
 
-![Navigation Bar and page title](https://github.com/WHLW27/HTML-Essentials-Portfolio-Project/blob/main/assets/images/readme/navbar.png)
+![Navigation Bar and page title](https://github.com/WHLW27/JavaScript-Essentials---Rock-Paper-Scissors-Spock/blob/main/assets/images/readme/main-menu.png)
 
 - __PVP Game Type__
 
