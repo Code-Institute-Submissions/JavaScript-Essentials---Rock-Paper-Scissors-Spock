@@ -994,18 +994,18 @@ function nukeGame() {
       }, 5000);
 
     } else if (playerTwoToggle === "False" && nukeCounterOne === 3) {
-      messageBox.innerHTML = `<h3 id="message-header">OOPS!</h3><p id="inner-message">You're out of ammo!</p>`
+      messageBox.innerHTML = `<h3 id="message-header">OOPS!</h3><p id="inner-message">You're out of ammo!</p>`;
       audioEmpty.play();
 
       setTimeout(() => {
-        messageBox.style.display = "none"
+        messageBox.style.display = "none";
       }, 3000);
     } else if (playerTwoToggle === "True" && nukeCounterTwo === 3) {
-      messageBox.innerHTML = `<h3 id="message-header">OOPS!</h3><p id="inner-message">You're out of ammo!</p>`
+      messageBox.innerHTML = `<h3 id="message-header">OOPS!</h3><p id="inner-message">You're out of ammo!</p>`;
       audioEmpty.play();
 
       setTimeout(() => {
-        messageBox.style.display = "none"
+        messageBox.style.display = "none";
       }, 3000);
     } else if (playerTwoToggle === "Computer" && nukeCounterOne < 3) {
       audioNuke.play();
@@ -1026,11 +1026,11 @@ function nukeGame() {
         startPVCNewRound();
       }, 5000);
     } else if (playerTwoToggle === "Computer" && nukeCounterOne === 3) {
-      amessageBox.innerHTML = `<h3 id="message-header">OOPS!</h3><p id="inner-message">You're out of ammo!</p>`
+      messageBox.innerHTML = `<h3 id="message-header">OOPS!</h3><p id="inner-message">You're out of ammo!</p>`;
       audioEmpty.play();
 
       setTimeout(() => {
-        messageBox.style.display = "none"
+        messageBox.style.display = "none";
       }, 3000);
     }
   }, 3000);
@@ -1614,7 +1614,7 @@ function resetGame() {
   startBody.innerHTML = mainMenu;
 }
 
-// the code below will switch from the player one game area to player two, logging alerts to the player. for the PVP game mode
+// the code below will switch from the player one game area to player two. for the PVP game mode
 function lockAnswers() {
   const hiddenAnswers = document.getElementById("player-one-moves");
   const showAnswers = document.getElementById("player-two-moves");
