@@ -17,14 +17,17 @@ Below is a detailed explanantion of the various features built into the website,
   - Beneath the two game type options are Manuals featuring helpful information on how to navigate through either game type. 
   - This area gives master access to all areas of the game, those external locations also root back to this menu, allowing for smooth and seamless navigation throughout.  
 
-![Navigation Bar and page title](https://github.com/WHLW27/JavaScript-Essentials---Rock-Paper-Scissors-Spock/blob/main/assets/images/readme/main-menu.png)
+![Main Menu](https://github.com/WHLW27/JavaScript-Essentials---Rock-Paper-Scissors-Spock/blob/main/assets/images/readme/main-menu.png)
 
 - __PVP Game Type__
 
   - The player vs Player game type features a playing window in which the player will select from one of three options, from rock, paper or scissors. This action is completed three times over to build a patern of 3 objects. The player then locks in the chosen options and passes the controls to player two, who will repeat the process. These paterns are compared, winners are declared through alerts and points (up to a max of three) are awarded via the scoreboard to the winnning party. Players can then begin a new game, with player names and scores from the previous game carried forward. 
   - Users chosing to face each other in the game will be drawn to this game type, allowing for a 2 player game mode, thus emulating the real world equivalent of Rock, Paper , Scissors. acheiving this function could be seen as the primary directive of the project. 
 
-![Landing page video Content](https://github.com/WHLW27/HTML-Essentials-Portfolio-Project/blob/main/assets/images/readme/landingcontent.png)
+![PVP Game Type](https://github.com/WHLW27/JavaScript-Essentials---Rock-Paper-Scissors-Spock/blob/main/assets/images/readme/pvp-one.png)
+![PVP Game Type](https://github.com/WHLW27/JavaScript-Essentials---Rock-Paper-Scissors-Spock/blob/main/assets/images/readme/pvp-two.png)
+![PVP Game Type](https://github.com/WHLW27/JavaScript-Essentials---Rock-Paper-Scissors-Spock/blob/main/assets/images/readme/pvp-three.png)
+
 
 - __PVPC Game Type__
 
