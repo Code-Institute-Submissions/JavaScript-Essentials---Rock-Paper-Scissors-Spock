@@ -6,9 +6,6 @@ let playerOneMoves = [];
 let playerTwoMoves = [];
 let computerMoves = [];
 
-
-// let messageHeader = document.getElementById("message-header").innerText;
-
 // below is the code for a toggle which is used in the nukeGame functionality to determine which party has nuked the game
 let playerTwoToggle = "False";
 
@@ -188,9 +185,16 @@ function startPVP() {
 </section>
 
 <div id="floating-message"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        <h3 id="message-header">
-        <p id="inner-message">
-        </p></h3></div>
+        </div>
+
+<div id="floating-message-two"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+
+<div id="floating-message-three"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+
+
+
 
 <div id="patern-window-pvp">
 <div id="results">
@@ -389,9 +393,13 @@ function startPVPNewRound() {
 </section>
 
 <div id="floating-message"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        <h3 id="message-header">
-        <p id="inner-message">
-        </p></h3></div>
+        </div>
+
+<div id="floating-message-two"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+
+<div id="floating-message-three"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
 
 <div id="patern-window-pvp">
 <div id="results">
@@ -541,6 +549,15 @@ function startPVC() {
       
   </section>
 
+  <div id="floating-message"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+
+<div id="floating-message-two"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+
+<div id="floating-message-three"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+
     <div id="patern-window-pvc">
     <div id="results">
       <h3>Results</h3>
@@ -684,6 +701,15 @@ function startPVCNewRound() {
           </div>
       </div>
   </section>
+
+  <div id="floating-message"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+
+<div id="floating-message-two"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+
+<div id="floating-message-three"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
 
   <div id="patern-window-pvc">
     <div id="results">
@@ -921,7 +947,9 @@ function openPVCManual() {
 // the code below is a function that is called when a player selects the bright yellow 'nucleur' text in the title of the Game, it shall increment the relevant players score by 1 and force a new game to begin
 function nukeGame() {
   let messageBox = document.getElementById("floating-message");
-  messageBox.innerHTML = `<h2 id="big-message">NUKE INCOMMING</h2>`
+  let messageBoxTwo = document.getElementById("floating-message-two");
+  messageBox.style.display = "block";
+  messageBox.innerHTML = `<h2 id="big-message">NUKE INCOMMING</h2>`;
 
   var audioNuke = new Audio('assets/audio/nuke.mp3');
   var audioEmpty = new Audio('assets/audio/empty.wav');
@@ -930,42 +958,84 @@ function nukeGame() {
     if (playerTwoToggle === "False" && nukeCounterOne < 3) {
       audioNuke.play();
       incrementPlayerOneScore();
-      messageBox.innerHTML = `<h3 id="message-header">BOOM!</h3><p id="inner-message">Player One nuked the game! You have been awarded 1 Point.</p>`
+
+      setTimeout(() => {
+        messageBox.innerHTML = `<h3 id="message-header">BOOM!</h3><p id="inner-message">Player One nuked the game! You have been awarded 1 Point.</p>`;
+      }, 3000);
+
       incrementNukeCounterOne();
-      
+
+      setTimeout(() => {
+        messageBoxTwo.style.display = "block";
+        messageBoxTwo.innerHTML = `<h2 id="message-header">NEW GAME STARTING...</h2>`;
+      }, 3000);
+
       setTimeout(() => {
         startPVPNewRound();
       }, 5000);
-      
+
     } else if (playerTwoToggle === "True" && nukeCounterTwo < 3) {
       audioNuke.play();
       incrementPlayerTwoScore();
-      messageBox.innerHTML = `<h3 id="message-header">BOOM!</h3><p id="inner-message">Player Two nuked the game! You have been awarded 1 Point.</p>`
+
+      setTimeout(() => {
+        messageBox.innerHTML = `<h3 id="message-header">BOOM!</h3><p id="inner-message">Player Two nuked the game! You have been awarded 1 Point.</p>`;
+      }, 3000);
+
       incrementNukeCounterTwo();
+
+      setTimeout(() => {
+        messageBoxTwo.style.display = "block";
+        messageBoxTwo.innerHTML = `<h2 id="message-header">NEW GAME STARTING...</h2>`;
+      }, 3000);
+
       setTimeout(() => {
         startPVPNewRound();
       }, 5000);
+
     } else if (playerTwoToggle === "False" && nukeCounterOne === 3) {
-      alert("You're all out of Nukes!");
+      messageBox.innerHTML = `<h3 id="message-header">OOPS!</h3><p id="inner-message">You're out of ammo!</p>`
       audioEmpty.play();
+
+      setTimeout(() => {
+        messageBox.style.display = "none"
+      }, 3000);
     } else if (playerTwoToggle === "True" && nukeCounterTwo === 3) {
-      alert("You're all out of Nukes!");
+      messageBox.innerHTML = `<h3 id="message-header">OOPS!</h3><p id="inner-message">You're out of ammo!</p>`
       audioEmpty.play();
+
+      setTimeout(() => {
+        messageBox.style.display = "none"
+      }, 3000);
     } else if (playerTwoToggle === "Computer" && nukeCounterOne < 3) {
       audioNuke.play();
       incrementPlayerOneScore();
-      messageBox.innerHTML = `<h3 id="message-header">BOOM!</h3><p id="inner-message">You nuked the game! You have been awarded 1 Point.</p>`
-      incrementNukeCounterOne();
+      setTimeout(() => {
+        messageBox.innerHTML = `<h3 id="message-header">BOOM!</h3><p id="inner-message">Player Two nuked the game! You have been awarded 1 Point.</p>`;
+      }, 3000);
+
+      incrementNukeCounterTwo();
+
+      setTimeout(() => {
+        messageBoxTwo.style.display = "block";
+        messageBoxTwo.innerHTML = `<h2 id="message-header">NEW GAME STARTING...</h2>`;
+      }, 3000);
+
+
       setTimeout(() => {
         startPVCNewRound();
       }, 5000);
     } else if (playerTwoToggle === "Computer" && nukeCounterOne === 3) {
-      alert("You're all out of Nukes!");
+      amessageBox.innerHTML = `<h3 id="message-header">OOPS!</h3><p id="inner-message">You're out of ammo!</p>`
       audioEmpty.play();
+
+      setTimeout(() => {
+        messageBox.style.display = "none"
+      }, 3000);
     }
   }, 3000);
 
-  
+
 
   function incrementNukeCounterOne() {
     nukeCounterOne++;
@@ -1127,7 +1197,7 @@ function pickComputerChoiceOne() {
 
   let showItOne = document.getElementById("paterns-two");
   showItOne.style.display = "flex";
-  
+
   let showItTwo = document.getElementById("paterns-three");
   showItTwo.style.display = "flex";
 
@@ -1140,257 +1210,366 @@ function pickComputerChoiceOne() {
 
 // compare the playerOneMoves and playerTwoMoves arrays once they are full and adjust scoring
 const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
+  // get the hidden message box divs
+  let messageBox = document.getElementById("floating-message");
+  let messageBoxTwo = document.getElementById("floating-message-two");
+  let messageBoxThree = document.getElementById("floating-message-three");
+
+  // get the chosen player names
+  let playerOneName = document.getElementById("p-one-name").innerText;
+  let playerTwoName = document.getElementById("p-two-name").innerText;
 
   // play audio on button press
   var audioSelect = new Audio('assets/audio/win.wav');
   audioSelect.play();
 
-  let showItOne = document.getElementById("paterns-two");
+  // delay showing the results comparing chosen paterns
+  setTimeout(() => {
+    let showItOne = document.getElementById("paterns-two");
   showItOne.style.display = "flex";
-  
+
   let showItTwo = document.getElementById("paterns-three");
   showItTwo.style.display = "flex";
 
   let showResults = document.getElementById("results");
   showResults.style.display = "flex";
+  }, 1500);
 
   // Draw cases round 1 (array index [0])
-  if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "paper") {
-    alert("Round 1 is...\nA draw!");
-  }
-  if (playerOneMoves[0] == "rock" && playerTwoMoves[0] == "rock") {
-    alert("Round 1 is...\nA draw!");
-  }
-  if (playerOneMoves[0] == "scissors" && playerTwoMoves[0] == "scissors") {
-    alert("Round 1 is...\nA draw!");
-  }
+  setTimeout(() => {
+    if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "paper") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+    if (playerOneMoves[0] == "rock" && playerTwoMoves[0] == "rock") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+    if (playerOneMoves[0] == "scissors" && playerTwoMoves[0] == "scissors") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+  }, 500);
 
   // Player One winning cases round 1 (array index [0])
-  if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "rock") {
-    alert("Player One wins Round 1!");
-    incrementPlayerOneScore();
-  }
-  if (playerOneMoves[0] == "rock" && playerTwoMoves[0] == "scissors") {
-    alert("Player One wins Round 1!");
-    incrementPlayerOneScore();
-  }
-  if (playerOneMoves[0] == "scissors" && playerTwoMoves[0] == "paper") {
-    alert("Player One wins Round 1!");
-    incrementPlayerOneScore();
-  }
+  setTimeout(() => {
+    if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "rock") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+    if (playerOneMoves[0] == "rock" && playerTwoMoves[0] == "scissors") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+    if (playerOneMoves[0] == "scissors" && playerTwoMoves[0] == "paper") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+  }, 500);
 
   // Player Two winning cases round 1 (array index [0])
-  if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "scissors") {
-    alert("Player Two wins Round 1!");
-    incrementPlayerTwoScore();
-  }
-  if (playerOneMoves[0] == "rock" && playerTwoMoves[0] == "paper") {
-    alert("Player Two wins Round 1!");
-    incrementPlayerTwoScore();
-  }
-  if (playerOneMoves[0] == "scissors" && playerTwoMoves[0] == "rock") {
-    alert("Player Two wins Round 1!");
-    incrementPlayerTwoScore();
-  }
+  setTimeout(() => {
+    if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "scissors") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">${playerTwoName} Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+    if (playerOneMoves[0] == "rock" && playerTwoMoves[0] == "paper") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">${playerTwoName} Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+    if (playerOneMoves[0] == "scissors" && playerTwoMoves[0] == "rock") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">${playerTwoName} Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+  }, 500);
 
   // draw cases, check round two (array index [1])
-  if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "paper") {
-    alert("Round 2 is...\nA draw!");
-  }
-  if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "rock") {
-    alert("Round 2 is...\nA draw!");
-  }
-  if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "scissors") {
-    alert("Round 2 is...\nA draw!");
-  }
+  setTimeout(() => {
+    if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "paper") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+    if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "rock") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+    if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "scissors") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+  }, 750);
 
   // player one wins, check round two (array index [1])
-  if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "rock") {
-    alert("Player One wins Round 2!");
-    incrementPlayerOneScore();
-  }
-  if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "scissors") {
-    alert("Player One wins Round 2!");
-    incrementPlayerOneScore();
-  }
-  if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "paper") {
-    alert("Player One wins Round 2!");
-    incrementPlayerOneScore();
-  }
+  setTimeout(() => {
+    if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "rock") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+    if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "scissors") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+    if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "paper") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+  }, 750);
 
   //player two wins, check round two (array index [1])
-  if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "scissors") {
-    alert("Player Two wins Round 2!");
-    incrementPlayerTwoScore();
-  }
-  if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "paper") {
-    alert("Player Two wins Round 2!");
-    incrementPlayerTwoScore();
-  }
-  if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "rock") {
-    alert("Player Two wins Round 2!");
-    incrementPlayerTwoScore();
-  }
+  setTimeout(() => {
+    if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "scissors") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">${playerTwoName} Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+    if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "paper") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">${playerTwoName} Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+    if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "rock") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">${playerTwoName} Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+  }, 750);
 
   //draw cases, check round three (array index [2])
-  if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "paper") {
-    alert("Round 3 is...\nA draw!");
-  }
-  if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "rock") {
-    alert("Round 3 is...\nA draw!");
-  }
-  if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "scissors") {
-    alert("Round 3 is...\nA draw!");
-  }
+  setTimeout(() => {
+    if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "paper") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+    if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "rock") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+    if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "scissors") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+  }, 1000);
 
   //player one wins, check round three (array index [2])
-  if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "rock") {
-    alert("Player One wins Round 3!");
-    incrementPlayerOneScore();
-  }
-  if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "scissors") {
-    alert("Player One wins Round 3!");
-    incrementPlayerOneScore();
-  }
-  if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "paper") {
-    alert("Player One wins Round 3!");
-    incrementPlayerOneScore();
-  }
+  setTimeout(() => {
+    if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "rock") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+    if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "scissors") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+    if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "paper") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+  }, 1000);
 
   //player two wins, check round three (array index [2])
-  if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "scissors") {
-    alert("Player Two wins Round 3!");
-    incrementPlayerTwoScore();
-  }
-  if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "paper") {
-    alert("Player Two wins Round 3!");
-    incrementPlayerTwoScore();
-  }
-  if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "rock") {
-    alert("Player Two wins Round 3!");
-    incrementPlayerTwoScore();
-  }
+  setTimeout(() => {
+    if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "scissors") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">${playerTwoName} Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+    if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "paper") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">${playerTwoName} Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+    if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "rock") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">${playerTwoName} Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+  }, 1000);
 };
 
 // compare the playerOneMoves and computerMovex arrays once they are full and adjust scoring
 const compareResultsPVC = (playerOneMoves, computerMoves) => {
 
+  // get the hidden message box divs
+  let messageBox = document.getElementById("floating-message");
+  let messageBoxTwo = document.getElementById("floating-message-two");
+  let messageBoxThree = document.getElementById("floating-message-three");
+
+  // get the chosen player names
+  let playerOneName = document.getElementById("p-one-name").innerText;
+
   // Draw cases round 1 (array index [0])
-  if (playerOneMoves[0] == "paper" && computerMoves[0] == "paper") {
-    alert("Round 1 is... A draw!");
-  }
-  if (playerOneMoves[0] == "rock" && computerMoves[0] == "rock") {
-    alert("Round 1 is...\nA draw!");
-  }
-  if (playerOneMoves[0] == "scissors" && computerMoves[0] == "scissors") {
-    alert("Round 1 is...\nA draw!");
-  }
+  setTimeout(() => {
+    if (playerOneMoves[0] == "paper" && computerMoves[0] == "paper") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+    if (playerOneMoves[0] == "rock" && computerMoves[0] == "rock") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+    if (playerOneMoves[0] == "scissors" && computerMoves[0] == "scissors") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+  }, 500);
 
   // Player One winning cases round 1 (array index [0])
-  if (playerOneMoves[0] == "paper" && computerMoves[0] == "rock") {
-    alert("Player One wins Round 1!");
-    incrementPlayerOneScore();
-  }
-  if (playerOneMoves[0] == "rock" && computerMoves[0] == "scissors") {
-    alert("Player One wins Round 1!");
-    incrementPlayerOneScore();
-  }
-  if (playerOneMoves[0] == "scissors" && computerMoves[0] == "paper") {
-    alert("Player One wins Round 1!");
-    incrementPlayerOneScore();
-  }
+  setTimeout(() => {
+    if (playerOneMoves[0] == "paper" && computerMoves[0] == "rock") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+    if (playerOneMoves[0] == "rock" && computerMoves[0] == "scissors") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+    if (playerOneMoves[0] == "scissors" && computerMoves[0] == "paper") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+  }, 500);
 
-  // Player Two winning cases round 1 (array index [0])
-  if (playerOneMoves[0] == "paper" && computerMoves[0] == "scissors") {
-    alert("The Computer wins Round 1!");
-    incrementPlayerTwoScore();
-  }
-  if (playerOneMoves[0] == "rock" && computerMoves[0] == "paper") {
-    alert("The Computer wins Round 1!");
-    incrementPlayerTwoScore();
-  }
-  if (playerOneMoves[0] == "scissors" && computerMoves[0] == "rock") {
-    alert("The Computer wins Round 1!");
-    incrementPlayerTwoScore();
-  }
+  // Computer winning cases round 1 (array index [0])
+  setTimeout(() => {
+    if (playerOneMoves[0] == "paper" && computerMoves[0] == "scissors") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">The Computer Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+    if (playerOneMoves[0] == "rock" && computerMoves[0] == "paper") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">The Computer Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+    if (playerOneMoves[0] == "scissors" && computerMoves[0] == "rock") {
+      messageBox.style.display = "block";
+      messageBox.innerHTML = `<h3 id="message-header">ROUND ONE</h3><p id="inner-message">The Computer Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+  }, 500);
 
   // draw cases, check round two (array index [1])
-  if (playerOneMoves[1] == "paper" && computerMoves[1] == "paper") {
-    alert("Round 2 is...\nA draw!");
-  }
-  if (playerOneMoves[1] == "rock" && computerMoves[1] == "rock") {
-    alert("Round 2 is...\nA draw!");
-  }
-  if (playerOneMoves[1] == "scissors" && computerMoves[1] == "scissors") {
-    alert("Round 2 is...\nA draw!");
-  }
+  setTimeout(() => {
+    if (playerOneMoves[1] == "paper" && computerMoves[1] == "paper") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+    if (playerOneMoves[1] == "rock" && computerMoves[1] == "rock") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+    if (playerOneMoves[1] == "scissors" && computerMoves[1] == "scissors") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+  }, 750);
 
   // player one wins, check round two (array index [1])
-  if (playerOneMoves[1] == "paper" && computerMoves[1] == "rock") {
-    alert("Player One wins Round 2!");
-    incrementPlayerOneScore();
-  }
-  if (playerOneMoves[1] == "rock" && computerMoves[1] == "scissors") {
-    alert("Player One wins Round 2!");
-    incrementPlayerOneScore();
-  }
-  if (playerOneMoves[1] == "scissors" && computerMoves[1] == "paper") {
-    alert("Player One wins Round 2!");
-    incrementPlayerOneScore();
-  }
+  setTimeout(() => {
+    if (playerOneMoves[1] == "paper" && computerMoves[1] == "rock") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+    if (playerOneMoves[1] == "rock" && computerMoves[1] == "scissors") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+    if (playerOneMoves[1] == "scissors" && computerMoves[1] == "paper") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+  }, 750);
 
-  //player two wins, check round two (array index [1])
-  if (playerOneMoves[1] == "paper" && computerMoves[1] == "scissors") {
-    alert("The Computer wins Round 2!");
-    incrementPlayerTwoScore();
-  }
-  if (playerOneMoves[1] == "rock" && computerMoves[1] == "paper") {
-    alert("The Computer wins Round 2!");
-    incrementPlayerTwoScore();
-  }
-  if (playerOneMoves[1] == "scissors" && computerMoves[1] == "rock") {
-    alert("The Computer wins Round 2!");
-    incrementPlayerTwoScore();
-  }
+  //Computer wins check round two (array index [1])
+  setTimeout(() => {
+    if (playerOneMoves[1] == "paper" && computerMoves[1] == "scissors") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">The Computer Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+    if (playerOneMoves[1] == "rock" && computerMoves[1] == "paper") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">The Computer Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+    if (playerOneMoves[1] == "scissors" && computerMoves[1] == "rock") {
+      messageBoxTwo.style.display = "block";
+      messageBoxTwo.innerHTML = `<h3 id="message-header">ROUND TWO</h3><p id="inner-message">The Computer Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+  }, 750);
 
   //draw cases, check round three (array index [2])
-  if (playerOneMoves[2] == "paper" && computerMoves[2] == "paper") {
-    alert("Round 3 is...\nA draw!");
-  }
-  if (playerOneMoves[2] == "rock" && computerMoves[2] == "rock") {
-    alert("Round 3 is...\nA draw!");
-  }
-  if (playerOneMoves[2] == "scissors" && computerMoves[2] == "scissors") {
-    alert("Round 3 is...\nA draw!");
-  }
+  setTimeout(() => {
+    if (playerOneMoves[2] == "paper" && computerMoves[2] == "paper") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+    if (playerOneMoves[2] == "rock" && computerMoves[2] == "rock") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+    if (playerOneMoves[2] == "scissors" && computerMoves[2] == "scissors") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">It's a Draw!</p>`;
+    }
+  }, 1000);
 
   //player one wins, check round three (array index [2])
-  if (playerOneMoves[2] == "paper" && computerMoves[2] == "rock") {
-    alert("Player One wins Round 3!");
-    incrementPlayerOneScore();
-  }
-  if (playerOneMoves[2] == "rock" && computerMoves[2] == "scissors") {
-    alert("Player One wins Round 3!");
-    incrementPlayerOneScore();
-  }
-  if (playerOneMoves[2] == "scissors" && computerMoves[2] == "paper") {
-    alert("Player One wins Round 3!");
-    incrementPlayerOneScore();
-  }
+  setTimeout(() => {
+    if (playerOneMoves[2] == "paper" && computerMoves[2] == "rock") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+    if (playerOneMoves[2] == "rock" && computerMoves[2] == "scissors") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+    if (playerOneMoves[2] == "scissors" && computerMoves[2] == "paper") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">${playerOneName} Wins one point!</p>`;
+      incrementPlayerOneScore();
+    }
+  }, 1000);
 
-  //player two wins, check round three (array index [2])
-  if (playerOneMoves[2] == "paper" && computerMoves[2] == "scissors") {
-    alert("The Computer wins Round 3!");
-    incrementPlayerTwoScore();
-  }
-  if (playerOneMoves[2] == "rock" && computerMoves[2] == "paper") {
-    alert("The Computer wins Round 3!");
-    incrementPlayerTwoScore();
-  }
-  if (playerOneMoves[2] == "scissors" && computerMoves[2] == "rock") {
-    alert("The Computer wins Round 3!");
-    incrementPlayerTwoScore();
-  }
+  //Computer wins check round three (array index [2])
+  setTimeout(() => {
+    if (playerOneMoves[2] == "paper" && computerMoves[2] == "scissors") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">The Computer Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+    if (playerOneMoves[2] == "rock" && computerMoves[2] == "paper") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">The Computer Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+    if (playerOneMoves[2] == "scissors" && computerMoves[2] == "rock") {
+      messageBoxThree.style.display = "block";
+      messageBoxThree.innerHTML = `<h3 id="message-header">ROUND THREE</h3><p id="inner-message">The Computer Wins one point!</p>`;
+      incrementPlayerTwoScore();
+    }
+  }, 1000);
 };
 
 // the code blocks below will increment the score counters for player one, player two or the computer depending on which is fired 

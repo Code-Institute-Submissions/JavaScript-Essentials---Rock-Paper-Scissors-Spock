@@ -7,17 +7,47 @@ body {
 }
 
 /* message box styling */
-/* The alert message box */
 #floating-message {
     padding: 20px;
-    background-color: #f44336; /* Red */
+    background-color: red;
     color: white;
+    margin: 0 auto;
     margin-bottom: 15px;
     text-align: center;
-  }
-  
-  /* The close button */
-  .closebtn {
+    display: none;
+    width: 500px;
+    height: 70px;
+    max-height: 70px;
+}
+
+#floating-message-two {
+    padding: 20px;
+    background-color: #FF5F1F;
+    color: white;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    text-align: center;
+    display: none;
+    width: 500px;
+    height: 70px;
+    max-height: 70px;
+}
+
+#floating-message-three {
+    padding: 20px;
+    background-color: gold;
+    color: white;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-align: center;
+    display: none;
+    width: 500px;
+    height: 70px;
+    max-height: 70px;
+}
+
+/* The close button */
+.closebtn {
     margin-left: 15px;
     color: white;
     font-weight: bold;
@@ -26,30 +56,33 @@ body {
     line-height: 20px;
     cursor: pointer;
     transition: 0.3s;
-  }
-  
-  /* When moving the mouse over the close button */
-  .closebtn:hover {
-    color: black;
-  }
+}
 
-  #message-header {
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
+
+#message-header {
     font-family: 'Silkscreen', cursive, sans-serif;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
     font-size: 30px;
-  }
+    margin: 0;
+}
 
-  #inner-message {
+#inner-message {
     font-family: 'Bebas Neue', cursive, sans-serif;
     font-size: 18px;
-  }
+}
 
-  #big-message {
+#big-message {
     font-family: 'Silkscreen', cursive, sans-serif;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
     color: yellow;
-    font-size: 50px;
-  }
+    font-size: 30px;
+    margin: 0;
+    vertical-align: middle;
+}
 
 /* title styling */
 #landing-title {
@@ -58,6 +91,7 @@ body {
     border-style: dashed;
     border-color: azure;
     opacity: 70%;
+    width: 100%;
 }
 
 #landing-title>h2 {
@@ -955,6 +989,7 @@ section {
     #score-board {
         width: 10px;
         margin-top: -30px;
+        margin-left: 26px;
     }
 
     .player-header {
@@ -1010,6 +1045,7 @@ section {
     #move-selection {
         padding-left: 0px;
         height: 60%;
+        margin-left: 26px;
     }
 
     #patern-window-pvp {
@@ -1102,5 +1138,41 @@ section {
 
     #reset-button {
         margin-top: 25px;
+    }
+
+    #floating-message {
+        width: 270px;
+        margin-left: 15px;
+    }
+
+    #floating-message-two {
+        width: 270px;
+        margin-left: 15px;
+    }
+
+    #floating-message-three {
+        width: 270px;
+        margin-left: 15px;
+    }
+
+    #message-header {
+        font-family: 'Silkscreen', cursive, sans-serif;
+        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+        font-size: 30px;
+        margin: 0;
+    }
+
+    #inner-message {
+        font-family: 'Bebas Neue', cursive, sans-serif;
+        font-size: 18px;
+    }
+
+    #big-message {
+        font-family: 'Silkscreen', cursive, sans-serif;
+        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+        color: yellow;
+        font-size: 30px;
+        margin: 0;
+        vertical-align: middle;
     }
 }
