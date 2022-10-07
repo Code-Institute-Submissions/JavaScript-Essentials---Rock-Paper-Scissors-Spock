@@ -6,6 +6,51 @@ body {
     font-family: 'Inconsolata', monospace, sans-serif;
 }
 
+/* message box styling */
+/* The alert message box */
+#floating-message {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }
+
+  #message-header {
+    font-family: 'Silkscreen', cursive, sans-serif;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    font-size: 30px;
+  }
+
+  #inner-message {
+    font-family: 'Bebas Neue', cursive, sans-serif;
+    font-size: 18px;
+  }
+
+  #big-message {
+    font-family: 'Silkscreen', cursive, sans-serif;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    color: yellow;
+    font-size: 50px;
+  }
+
 /* title styling */
 #landing-title {
     background-color: red;

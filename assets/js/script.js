@@ -6,6 +6,9 @@ let playerOneMoves = [];
 let playerTwoMoves = [];
 let computerMoves = [];
 
+
+// let messageHeader = document.getElementById("message-header").innerText;
+
 // below is the code for a toggle which is used in the nukeGame functionality to determine which party has nuked the game
 let playerTwoToggle = "False";
 
@@ -184,6 +187,11 @@ function startPVP() {
 </div>
 </section>
 
+<div id="floating-message"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <h3 id="message-header">
+        <p id="inner-message">
+        </p></h3></div>
+
 <div id="patern-window-pvp">
 <div id="results">
   <h3>Results</h3>
@@ -218,8 +226,6 @@ function startPVP() {
 <!-- Linking to javascript game logic -->
 <script src="assets/js/script.js"></script>
     `;
-
-  console.log('Starting Player VS Player.');
 }
 
 // the code below shall begin a new round of the player vs player gametype whilst carrying the scores of the previous game and the chosen player names forward
@@ -236,9 +242,6 @@ function startPVPNewRound() {
   playerTwoToggle = "False";
 
   gameToggle = "PVP";
-
-  console.log(playerOneMoves);
-  console.log(playerOneMoves);
 
   // gather the chosen player names to be carried into new games
   let playerOneOldName = document.getElementById("p-one-name").innerText;
@@ -385,6 +388,11 @@ function startPVPNewRound() {
     </div>
 </section>
 
+<div id="floating-message"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <h3 id="message-header">
+        <p id="inner-message">
+        </p></h3></div>
+
 <div id="patern-window-pvp">
 <div id="results">
   <h3>Results</h3>
@@ -418,8 +426,6 @@ function startPVPNewRound() {
 
 <!-- Linking to javascript game logic -->
 <script src="assets/js/script.js"></script>`;
-
-  console.log('Starting next round...');
 
   // update the player names once the html content has been replaced
   nameHeaders[0].innerText = playerOneOldName;
@@ -567,8 +573,6 @@ function startPVC() {
   
   <!-- Linking to javascript game logic -->
   <script src="assets/js/script.js"></script>`;
-
-  console.log('Starting Player VS Computer.');
 }
 
 // the code below shall begin a new round of the player vs computer gametype whilst carrying the scores of the previous game and the chosen player names forward
@@ -578,9 +582,6 @@ function startPVCNewRound() {
 
   playerOneMoves.length = 0;
   computerMoves.length = 0;
-
-  console.log(playerOneMoves);
-  console.log(computerMoves);
 
   playerTwoToggle = "Computer";
 
@@ -721,8 +722,6 @@ function startPVCNewRound() {
 
   document.getElementById('score-one').innerText = playerOnePCOldScore;
   document.getElementById('score-two').innerText = computerOldScore;
-
-  console.log('Starting Player VS Computer.');
 }
 
 // the code below shall open a game manual with intructions on how to operate the Player vs Player Game Mode
@@ -921,43 +920,52 @@ function openPVCManual() {
 
 // the code below is a function that is called when a player selects the bright yellow 'nucleur' text in the title of the Game, it shall increment the relevant players score by 1 and force a new game to begin
 function nukeGame() {
-  console.log("You blew it up! Damn you all to hell");
-  alert("NUKE INCOMING!");
+  let messageBox = document.getElementById("floating-message");
+  messageBox.innerHTML = `<h2 id="big-message">NUKE INCOMMING</h2>`
 
   var audioNuke = new Audio('assets/audio/nuke.mp3');
   var audioEmpty = new Audio('assets/audio/empty.wav');
 
-  if (playerTwoToggle === "False" && nukeCounterOne < 3) {
-    audioNuke.play();
-    incrementPlayerOneScore();
-    alert("Player One nuked the game!\nYou have been awarded 1 Point.");
-    incrementNukeCounterOne();
-    console.log(nukeCounterOne);
-    startPVPNewRound();
-  } else if (playerTwoToggle === "True" && nukeCounterTwo < 3) {
-    audioNuke.play();
-    incrementPlayerTwoScore();
-    alert("Player Two nuked the game!\nYou have been awarded 1 Point.");
-    incrementNukeCounterTwo();
-    console.log(nukeCounterTwo);
-    startPVPNewRound();
-  } else if (playerTwoToggle === "False" && nukeCounterOne === 3) {
-    alert("You're all out of Nukes!");
-    audioEmpty.play();
-  } else if (playerTwoToggle === "True" && nukeCounterTwo === 3) {
-    alert("You're all out of Nukes!");
-    audioEmpty.play();
-  } else if (playerTwoToggle === "Computer" && nukeCounterOne < 3) {
-    audioNuke.play();
-    incrementPlayerOneScore();
-    alert("You nuked the game!\nYou have been awarded 1 Point.");
-    incrementNukeCounterOne();
-    console.log(nukeCounterOne);
-    startPVCNewRound();
-  } else if (playerTwoToggle === "Computer" && nukeCounterOne === 3) {
-    alert("You're all out of Nukes!");
-    audioEmpty.play();
-  }
+  setTimeout(() => {
+    if (playerTwoToggle === "False" && nukeCounterOne < 3) {
+      audioNuke.play();
+      incrementPlayerOneScore();
+      messageBox.innerHTML = `<h3 id="message-header">BOOM!</h3><p id="inner-message">Player One nuked the game! You have been awarded 1 Point.</p>`
+      incrementNukeCounterOne();
+      
+      setTimeout(() => {
+        startPVPNewRound();
+      }, 5000);
+      
+    } else if (playerTwoToggle === "True" && nukeCounterTwo < 3) {
+      audioNuke.play();
+      incrementPlayerTwoScore();
+      messageBox.innerHTML = `<h3 id="message-header">BOOM!</h3><p id="inner-message">Player Two nuked the game! You have been awarded 1 Point.</p>`
+      incrementNukeCounterTwo();
+      setTimeout(() => {
+        startPVPNewRound();
+      }, 5000);
+    } else if (playerTwoToggle === "False" && nukeCounterOne === 3) {
+      alert("You're all out of Nukes!");
+      audioEmpty.play();
+    } else if (playerTwoToggle === "True" && nukeCounterTwo === 3) {
+      alert("You're all out of Nukes!");
+      audioEmpty.play();
+    } else if (playerTwoToggle === "Computer" && nukeCounterOne < 3) {
+      audioNuke.play();
+      incrementPlayerOneScore();
+      messageBox.innerHTML = `<h3 id="message-header">BOOM!</h3><p id="inner-message">You nuked the game! You have been awarded 1 Point.</p>`
+      incrementNukeCounterOne();
+      setTimeout(() => {
+        startPVCNewRound();
+      }, 5000);
+    } else if (playerTwoToggle === "Computer" && nukeCounterOne === 3) {
+      alert("You're all out of Nukes!");
+      audioEmpty.play();
+    }
+  }, 3000);
+
+  
 
   function incrementNukeCounterOne() {
     nukeCounterOne++;
@@ -981,7 +989,6 @@ pickPlayerOneChoiceOne = (handOne) => {
   hideInputOne[0].style.display = "none";
 
   playerOneMoves.push(handOne);
-  console.log(playerOneMoves);
 
   let fillOne = document.getElementById("first-players-move");
   fillOne.innerHTML = `<h3>${handOne.toUpperCase()}, </h3>`;
@@ -999,7 +1006,6 @@ pickPlayerOneChoiceOne = (handOne) => {
     hideInputTwo[1].style.display = "none";
 
     playerOneMoves.push(handTwo);
-    console.log(playerOneMoves);
 
     let fillTwo = document.getElementById("second-players-move");
     fillTwo.innerHTML = `<h3> ${handTwo.toUpperCase()}, </h3>`;
@@ -1017,7 +1023,6 @@ pickPlayerOneChoiceOne = (handOne) => {
     hideInputThree[2].style.display = "none";
 
     playerOneMoves.push(handThree);
-    console.log(playerOneMoves);
 
     let fillThree = document.getElementById("third-players-move");
     fillThree.innerHTML = `<h3>${handThree.toUpperCase()}. </h3>`;
@@ -1025,12 +1030,10 @@ pickPlayerOneChoiceOne = (handOne) => {
 
     if (gameToggle === "PVP") {
       let showLockAnswers = document.getElementById("lock-answer");
-      console.log(showLockAnswers);
 
       showLockAnswers.style.display = "block";
     } else if (gameToggle === "PVPC") {
       let showLockAnswers = document.getElementById("lock-pc-choices");
-      console.log(showLockAnswers);
 
       showLockAnswers.style.display = "block";
     }
@@ -1049,7 +1052,6 @@ pickPlayerTwoChoiceOne = (handOne) => {
   hideInputOne[3].style.display = "none";
 
   playerTwoMoves.push(handOne);
-  console.log(playerTwoMoves);
 
   let fillOne = document.getElementById("first-second-move");
   fillOne.innerHTML = `<h3>${handOne.toUpperCase()}, </h3>`;
@@ -1065,7 +1067,6 @@ pickPlayerTwoChoiceOne = (handOne) => {
     hideInputTwo[4].style.display = "none";
 
     playerTwoMoves.push(handTwo);
-    console.log(playerTwoMoves);
 
     let fillTwo = document.getElementById("second-second-move");
     fillTwo.innerHTML = `<h3>${handTwo.toUpperCase()}, </h3>`;
@@ -1082,7 +1083,6 @@ pickPlayerTwoChoiceOne = (handOne) => {
     hideInputThree[5].style.display = "none";
 
     playerTwoMoves.push(handThree);
-    console.log(playerTwoMoves);
 
     let fillThree = document.getElementById("third-second-move");
     fillThree.innerHTML = `<h3>${handThree.toUpperCase()}, </h3>`;
@@ -1094,7 +1094,6 @@ pickPlayerTwoChoiceOne = (handOne) => {
     audioWin.play();
 
     showLockAnswers = document.getElementById("lock-answer-two");
-    console.log(showLockAnswers);
     showLockAnswers.style.display = "block";
   };
 };
@@ -1109,7 +1108,6 @@ function pickComputerChoiceOne() {
   document.getElementById("lock-pc-choices").style.display = "none";
 
   computerMoves.push(computerHandOne, computerHandTwo, computerHandThree);
-  console.log(computerMoves);
 
   let fillComputerOne = document.getElementById("first-computers-move");
   fillComputerOne.innerHTML = `<h3>${computerHandOne.toUpperCase()}.</h3>`;
@@ -1158,144 +1156,117 @@ const compareResultsPVP = (playerOneMoves, playerTwoMoves) => {
 
   // Draw cases round 1 (array index [0])
   if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "paper") {
-    console.log("Round 1 is... A draw!");
     alert("Round 1 is...\nA draw!");
   }
   if (playerOneMoves[0] == "rock" && playerTwoMoves[0] == "rock") {
-    console.log("Round 1 is... A draw!");
     alert("Round 1 is...\nA draw!");
   }
   if (playerOneMoves[0] == "scissors" && playerTwoMoves[0] == "scissors") {
-    console.log("Round 1 is... A draw!");
     alert("Round 1 is...\nA draw!");
   }
 
   // Player One winning cases round 1 (array index [0])
   if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "rock") {
-    console.log("Player One wins Round 1!");
     alert("Player One wins Round 1!");
     incrementPlayerOneScore();
   }
   if (playerOneMoves[0] == "rock" && playerTwoMoves[0] == "scissors") {
-    console.log("Player One wins Round 1!");
     alert("Player One wins Round 1!");
     incrementPlayerOneScore();
   }
   if (playerOneMoves[0] == "scissors" && playerTwoMoves[0] == "paper") {
-    console.log("Player One wins Round 1!");
     alert("Player One wins Round 1!");
     incrementPlayerOneScore();
   }
 
   // Player Two winning cases round 1 (array index [0])
   if (playerOneMoves[0] == "paper" && playerTwoMoves[0] == "scissors") {
-    console.log("Player Two wins Round 1!");
     alert("Player Two wins Round 1!");
     incrementPlayerTwoScore();
   }
   if (playerOneMoves[0] == "rock" && playerTwoMoves[0] == "paper") {
-    console.log("Player Two wins Round 1!");
     alert("Player Two wins Round 1!");
     incrementPlayerTwoScore();
   }
   if (playerOneMoves[0] == "scissors" && playerTwoMoves[0] == "rock") {
-    console.log("Player Two wins Round 1!");
     alert("Player Two wins Round 1!");
     incrementPlayerTwoScore();
   }
 
   // draw cases, check round two (array index [1])
   if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "paper") {
-    console.log("Round 2 is... A draw!");
     alert("Round 2 is...\nA draw!");
   }
   if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "rock") {
-    console.log("Round 2 is... A draw!");
     alert("Round 2 is...\nA draw!");
   }
   if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "scissors") {
-    console.log("Round 2 is... A draw!");
     alert("Round 2 is...\nA draw!");
   }
 
   // player one wins, check round two (array index [1])
   if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "rock") {
-    console.log("Player One wins Round 2!");
     alert("Player One wins Round 2!");
     incrementPlayerOneScore();
   }
   if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "scissors") {
-    console.log("Player One wins Round 2!");
     alert("Player One wins Round 2!");
     incrementPlayerOneScore();
   }
   if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "paper") {
-    console.log("Player One wins Round 2!");
     alert("Player One wins Round 2!");
     incrementPlayerOneScore();
   }
 
   //player two wins, check round two (array index [1])
   if (playerOneMoves[1] == "paper" && playerTwoMoves[1] == "scissors") {
-    console.log("Player Two wins Round 2!");
     alert("Player Two wins Round 2!");
     incrementPlayerTwoScore();
   }
   if (playerOneMoves[1] == "rock" && playerTwoMoves[1] == "paper") {
-    console.log("Player Two wins Round 2!");
     alert("Player Two wins Round 2!");
     incrementPlayerTwoScore();
   }
   if (playerOneMoves[1] == "scissors" && playerTwoMoves[1] == "rock") {
-    console.log("Player Two wins Round 2!");
     alert("Player Two wins Round 2!");
     incrementPlayerTwoScore();
   }
 
   //draw cases, check round three (array index [2])
   if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "paper") {
-    console.log("Round 3 is... A draw!");
     alert("Round 3 is...\nA draw!");
   }
   if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "rock") {
-    console.log("Round 3 is... A draw!");
     alert("Round 3 is...\nA draw!");
   }
   if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "scissors") {
-    console.log("Round 3 is... A draw!");
     alert("Round 3 is...\nA draw!");
   }
 
   //player one wins, check round three (array index [2])
   if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "rock") {
-    console.log("Player One wins Round 3!");
     alert("Player One wins Round 3!");
     incrementPlayerOneScore();
   }
   if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "scissors") {
-    console.log("Player One wins Round 3!");
     alert("Player One wins Round 3!");
     incrementPlayerOneScore();
   }
   if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "paper") {
-    console.log("Player One wins Round 3!");
     alert("Player One wins Round 3!");
     incrementPlayerOneScore();
   }
 
   //player two wins, check round three (array index [2])
   if (playerOneMoves[2] == "paper" && playerTwoMoves[2] == "scissors") {
-    console.log("Player Two wins Round 3!");
     alert("Player Two wins Round 3!");
     incrementPlayerTwoScore();
   }
   if (playerOneMoves[2] == "rock" && playerTwoMoves[2] == "paper") {
-    console.log("Player Two wins Round 3!");
     alert("Player Two wins Round 3!");
     incrementPlayerTwoScore();
   }
   if (playerOneMoves[2] == "scissors" && playerTwoMoves[2] == "rock") {
-    console.log("Player Two wins Round 3!");
     alert("Player Two wins Round 3!");
     incrementPlayerTwoScore();
   }
@@ -1306,144 +1277,117 @@ const compareResultsPVC = (playerOneMoves, computerMoves) => {
 
   // Draw cases round 1 (array index [0])
   if (playerOneMoves[0] == "paper" && computerMoves[0] == "paper") {
-    console.log("Round 1 is... A draw!");
     alert("Round 1 is... A draw!");
   }
   if (playerOneMoves[0] == "rock" && computerMoves[0] == "rock") {
-    console.log("Round 1 is... A draw!");
     alert("Round 1 is...\nA draw!");
   }
   if (playerOneMoves[0] == "scissors" && computerMoves[0] == "scissors") {
-    console.log("Round 1 is... A draw!");
     alert("Round 1 is...\nA draw!");
   }
 
   // Player One winning cases round 1 (array index [0])
   if (playerOneMoves[0] == "paper" && computerMoves[0] == "rock") {
-    console.log("Player One wins Round 1!");
     alert("Player One wins Round 1!");
     incrementPlayerOneScore();
   }
   if (playerOneMoves[0] == "rock" && computerMoves[0] == "scissors") {
-    console.log("Player One wins Round 1!");
     alert("Player One wins Round 1!");
     incrementPlayerOneScore();
   }
   if (playerOneMoves[0] == "scissors" && computerMoves[0] == "paper") {
-    console.log("Player One wins Round 1!");
     alert("Player One wins Round 1!");
     incrementPlayerOneScore();
   }
 
   // Player Two winning cases round 1 (array index [0])
   if (playerOneMoves[0] == "paper" && computerMoves[0] == "scissors") {
-    console.log("The Computer wins Round 1!");
     alert("The Computer wins Round 1!");
     incrementPlayerTwoScore();
   }
   if (playerOneMoves[0] == "rock" && computerMoves[0] == "paper") {
-    console.log("The Computer wins Round 1!");
     alert("The Computer wins Round 1!");
     incrementPlayerTwoScore();
   }
   if (playerOneMoves[0] == "scissors" && computerMoves[0] == "rock") {
-    console.log("The Computer wins Round 1!");
     alert("The Computer wins Round 1!");
     incrementPlayerTwoScore();
   }
 
   // draw cases, check round two (array index [1])
   if (playerOneMoves[1] == "paper" && computerMoves[1] == "paper") {
-    console.log("Round 2 is... A draw!");
     alert("Round 2 is...\nA draw!");
   }
   if (playerOneMoves[1] == "rock" && computerMoves[1] == "rock") {
-    console.log("Round 2 is... A draw!");
     alert("Round 2 is...\nA draw!");
   }
   if (playerOneMoves[1] == "scissors" && computerMoves[1] == "scissors") {
-    console.log("Round 2 is.. A draw!");
     alert("Round 2 is...\nA draw!");
   }
 
   // player one wins, check round two (array index [1])
   if (playerOneMoves[1] == "paper" && computerMoves[1] == "rock") {
-    console.log("Player One wins Round 2!");
     alert("Player One wins Round 2!");
     incrementPlayerOneScore();
   }
   if (playerOneMoves[1] == "rock" && computerMoves[1] == "scissors") {
-    console.log("Player One wins Round 2!");
     alert("Player One wins Round 2!");
     incrementPlayerOneScore();
   }
   if (playerOneMoves[1] == "scissors" && computerMoves[1] == "paper") {
-    console.log("Player One wins Round 2!");
     alert("Player One wins Round 2!");
     incrementPlayerOneScore();
   }
 
   //player two wins, check round two (array index [1])
   if (playerOneMoves[1] == "paper" && computerMoves[1] == "scissors") {
-    console.log("The Computer wins Round 2!");
     alert("The Computer wins Round 2!");
     incrementPlayerTwoScore();
   }
   if (playerOneMoves[1] == "rock" && computerMoves[1] == "paper") {
-    console.log("The Computer wins Round 2!");
     alert("The Computer wins Round 2!");
     incrementPlayerTwoScore();
   }
   if (playerOneMoves[1] == "scissors" && computerMoves[1] == "rock") {
-    console.log("The Computer wins Round 2!");
     alert("The Computer wins Round 2!");
     incrementPlayerTwoScore();
   }
 
   //draw cases, check round three (array index [2])
   if (playerOneMoves[2] == "paper" && computerMoves[2] == "paper") {
-    console.log("Round 3 is... A draw!");
     alert("Round 3 is...\nA draw!");
   }
   if (playerOneMoves[2] == "rock" && computerMoves[2] == "rock") {
-    console.log("Round 3 is... A draw!");
     alert("Round 3 is...\nA draw!");
   }
   if (playerOneMoves[2] == "scissors" && computerMoves[2] == "scissors") {
-    console.log("Round 3 is... A draw!");
     alert("Round 3 is...\nA draw!");
   }
 
   //player one wins, check round three (array index [2])
   if (playerOneMoves[2] == "paper" && computerMoves[2] == "rock") {
-    console.log("Player One wins Round 3!");
     alert("Player One wins Round 3!");
     incrementPlayerOneScore();
   }
   if (playerOneMoves[2] == "rock" && computerMoves[2] == "scissors") {
-    console.log("Player One wins Round 3!");
     alert("Player One wins Round 3!");
     incrementPlayerOneScore();
   }
   if (playerOneMoves[2] == "scissors" && computerMoves[2] == "paper") {
-    console.log("Player One wins Round 3!");
     alert("Player One wins Round 3!");
     incrementPlayerOneScore();
   }
 
   //player two wins, check round three (array index [2])
   if (playerOneMoves[2] == "paper" && computerMoves[2] == "scissors") {
-    console.log("The Computer wins Round 3!");
     alert("The Computer wins Round 3!");
     incrementPlayerTwoScore();
   }
   if (playerOneMoves[2] == "rock" && computerMoves[2] == "paper") {
-    console.log("The Computer wins Round 3!");
     alert("The Computer wins Round 3!");
     incrementPlayerTwoScore();
   }
   if (playerOneMoves[2] == "scissors" && computerMoves[2] == "rock") {
-    console.log("The Computer wins Round 3!");
     alert("The Computer wins Round 3!");
     incrementPlayerTwoScore();
   }
@@ -1489,7 +1433,6 @@ function resetGame() {
 
   let startBody = document.body;
   startBody.innerHTML = mainMenu;
-  console.log('Returning to the Main Menu...');
 }
 
 // the code below will switch from the player one game area to player two, logging alerts to the player. for the PVP game mode
@@ -1500,10 +1443,7 @@ function lockAnswers() {
   if (hiddenAnswers.style.display !== "none") {
     hiddenAnswers.style.display = "none";
     showAnswers.id = "player-two-moves-show";
-    console.log("Player One choices locked");
-    alert("Click OK to hide your choices,\nthen hand the controls to Player Two!");
     playerTwoToggle = "True";
-    console.log(playerTwoToggle);
   } else {
     hiddenAnswers.style.display = "block";
   }
