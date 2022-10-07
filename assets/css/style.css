@@ -145,6 +145,7 @@ body {
 #pvp-instructions h3 {
     font-family: 'Silkscreen', cursive, sans-serif;
     margin-top: 10px;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 .pvp-step {
@@ -153,7 +154,7 @@ body {
 }
 
 .pvp-step:hover {
-    color: rgb(202, 105, 238);
+    color: gold;
 }
 
 
@@ -396,7 +397,7 @@ section {
     display: flex;
     width: 100%;
     align-items: center;
-    margin-left: 250px;
+    margin-left: 410px;
 }
 
 #score-board i {
@@ -548,8 +549,16 @@ section {
         width: 175px;
     }
 
+    #pvp-instructions {
+        width: 900px;
+    }
+
+    #pvp-instructions p {
+        font-size: 24px;
+    }
+
     img {
-        width: 75%;
+        width: 85%;
     }
 
     #move-selection {
@@ -564,7 +573,7 @@ section {
 /* media querie: index page on screens between 768px and 1024px wide (tablets, ipads) */
 @media (min-width: 768px) and (max-width: 1024px) {
     #landing-title {
-        height: 420px;
+        height: 500px;
     }
 
     section {
@@ -640,8 +649,16 @@ section {
 
     }
 
+    #pvp-instructions {
+        width: 700px;
+    }
+
+    #pvp-instructions p {
+        font-size: 20px;
+    }
+
     img {
-        width: 75%;
+        width: 80%;
     }
 
     #move-selection {
@@ -798,8 +815,16 @@ section {
         font-size: 30px;
     }
 
+    #pvp-instructions {
+        width: 440px;
+    }
+
+    #pvp-instructions p {
+        font-size: 18px;
+    }
+
     img {
-        width: 75%;
+        width: 95%;
     }
 
     img:hover {
@@ -866,6 +891,14 @@ section {
 
     #gradient-five {
         margin-top: 41px;
+    }
+
+    #pvp-instructions {
+        width: 280px;
+    }
+
+    #pvp-instructions p {
+        font-size: 15px;
     }
 
     section {
@@ -1007,7 +1040,7 @@ section {
     }
 
     img {
-        width: 75%;
+        width: 95%;
     }
 
     img:hover {
