@@ -6,7 +6,7 @@ let playerOneMoves = [];
 let playerTwoMoves = [];
 let computerMoves = [];
 
-// below is the code for a toggle which is used in the nukeGame functionality to determine which party has nuked the game
+// below is the code for toggles for which the value is used in the nukeGame functionality to determine which party has nuked the game other functions change the value of these toggles
 let playerTwoToggle = "False";
 
 let gameToggle = "";
@@ -477,7 +477,7 @@ function startPVC() {
 
       <div class="score-chart">
         <h3>SCOREBOARD</h3>
-        <p id="p-one-name" contenteditable="true">Player One</p>
+        <p id="p-one-name" contenteditable="true">PLAYERONE</p>
         <i class="fa-solid fa-lock-open" onclick="setPOneName();"></i>
         <h2 id="score-one"> 0 </h2>
       </div>
@@ -634,7 +634,7 @@ function startPVCNewRound() {
 
       <div class="score-chart">
         <h3>SCOREBOARD</h3>
-        <p id="p-one-name">Player One</p>
+        <p id="p-one-name">PLAYERONE</p>
         <i id="p-one-name-lock" class="fa-solid fa-lock"></i>
         <h2 id="score-one"> 0 </h2>
       </div>
@@ -984,21 +984,30 @@ function openPVCManual() {
 
 // the code below is a function that is called when a player selects the bright yellow 'nucleur' text in the title of the Game, it shall increment the relevant players score by 1 and force a new game to begin
 function nukeGame() {
+  // get the chosen player names for messages
+  let playerOneName = document.getElementById("p-one-name").innerText;
+  let playerTwoName = document.getElementById("p-two-name").innerText;
+
+  // get the message box divs
   let messageBox = document.getElementById("floating-message");
   let messageBoxTwo = document.getElementById("floating-message-two");
+
+  // change the style so they appear and begin filling the text
   messageBox.style.display = "block";
   messageBox.innerHTML = `<h2 id="big-message">NUKE INCOMMING</h2>`;
 
+  // setup audio for an explosion and an empty click
   var audioNuke = new Audio('assets/audio/nuke.mp3');
   var audioEmpty = new Audio('assets/audio/empty.wav');
 
+  // delay for dramatic effect and display relevant messages based on the toggle states
   setTimeout(() => {
     if (playerTwoToggle === "False" && nukeCounterOne < 3) {
       audioNuke.play();
       incrementPlayerOneScore();
 
       setTimeout(() => {
-        messageBox.innerHTML = `<h3 id="message-header">BOOM!</h3><p id="inner-message">Player One nuked the game! You have been awarded 1 Point.</p>`;
+        messageBox.innerHTML = `<h3 id="message-header">BOOM!</h3><p id="inner-message">${playerOneName} nuked the game! You have been awarded 1 Point.</p>`;
       }, 3000);
 
       incrementNukeCounterOne();
@@ -1017,7 +1026,7 @@ function nukeGame() {
       incrementPlayerTwoScore();
 
       setTimeout(() => {
-        messageBox.innerHTML = `<h3 id="message-header">BOOM!</h3><p id="inner-message">Player Two nuked the game! You have been awarded 1 Point.</p>`;
+        messageBox.innerHTML = `<h3 id="message-header">BOOM!</h3><p id="inner-message">${playerTwoName} nuked the game! You have been awarded 1 Point.</p>`;
       }, 3000);
 
       incrementNukeCounterTwo();
@@ -1049,7 +1058,7 @@ function nukeGame() {
       audioNuke.play();
       incrementPlayerOneScore();
       setTimeout(() => {
-        messageBox.innerHTML = `<h3 id="message-header">BOOM!</h3><p id="inner-message">Player Two nuked the game! You have been awarded 1 Point.</p>`;
+        messageBox.innerHTML = `<h3 id="message-header">BOOM!</h3><p id="inner-message">${playerOneName} nuked the game! You have been awarded 1 Point.</p>`;
       }, 3000);
 
       incrementNukeCounterTwo();
@@ -1075,6 +1084,7 @@ function nukeGame() {
 
 
 
+  // increment the counters that track the amount of times a nuke is used, these will count up to 3
   function incrementNukeCounterOne() {
     nukeCounterOne++;
   }
