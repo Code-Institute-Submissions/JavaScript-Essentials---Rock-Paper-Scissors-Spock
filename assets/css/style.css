@@ -252,11 +252,11 @@ body {
 .choice-header {
     font-size: 30px;
     text-align: center;
-    /* text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; */
     margin-left: 10px;
 }
 
 .player-header {
+    overflow: auto;
     font-family: 'Silkscreen', cursive, sans-serif;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
     background-color: rgb(202, 105, 238);
@@ -644,10 +644,6 @@ section {
     #move-selection {
         width: 800px;
     }
-
-    .player-header {
-        overflow: auto;
-    }
 }
 
 /* media querie: index page on screens between 768px and 1024px wide (tablets, ipads) */
@@ -743,10 +739,6 @@ section {
 
     #move-selection {
         width: 800px;
-    }
-
-    .player-header {
-        overflow: auto;
     }
 }
 
@@ -913,10 +905,6 @@ section {
 
     #move-selection {
         width: 400px;
-    }
-
-    .player-header {
-        overflow: auto;
     }
 
     #reset-button {
@@ -1131,10 +1119,6 @@ section {
 
     #move-selection {
         width: 400px;
-    }
-
-    .player-header {
-        overflow: auto;
     }
 
     #reset-button {
