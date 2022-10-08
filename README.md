@@ -181,6 +181,7 @@ The live link can be found here - [R-P-S Nucleur](https://whlw27.github.io/JavaS
 
 - The icons across the website were taken from [Font Awesome](https://fontawesome.com/).
 - The website fonts are courtesy of [Google Fonts](https://fonts.google.com/about).
+- Favicon courtesy of [Rochak Shukla on Freepik](https://www.freepik.com/free-vector/nuclear-explosion-rising-fireball-atomic-mushroom-cloud-desert-weapon-test_29457345.htm#query=nuke&position=16&from_view=search&track=sph).
 
 ### Media 
 
