@@ -826,11 +826,34 @@ function openPVPManual() {
           Step 5:
       </h3>
       <p>
+          Once the results have been calculated and the points awarded on the scoreboard, messages will pop up below the playing area, detailing the result of each round 
+      </p>
+      <img src="assets/images/step-five-messages.png" alt="an image showing the message center">
+  </div>
+  <br>
+  <div class="pvp-step">
+      <h3>
+          Step 6:
+      </h3>
+      <p>
+          The paterns of Rock, Paper or Scissors chosen by each player shall be shown directly below the message center, here you can check your opponents choices against your own.
+      </p>
+      <img src="assets/images/step-six-paterns.png" alt="an image showing the results area where players can compare their choices.">
+  </div>
+  <br>
+  <div class="pvp-step">
+      <h3>
+          Step 7:
+      </h3>
+      <p>
           Once the results have been calculated and the points awarded on the scoreboard, you can select the text
           'Play again' to continue a new game with your previous scores and chosen player names carried forward.
           the game can be played as many times as you desire. 
       </p>
-      <img src="assets/images/step-five-newround.png" alt="an image showing the button to start a new round">
+      <p>
+        Can you discover the hidden power? They say it's explosive!..
+      </p>
+      <img src="assets/images/step-seven-newround.png" alt="an image showing the button to start a new round">
   </div>
   <br>
   <div id="start-pvp-button" onclick="startPVP()">Start a game!</div>
@@ -904,7 +927,7 @@ function openPVCManual() {
           your choices are locked in, click the padlock icon inside the window as shown in the
           image. This will then compare your pattern against the computers and determine the winner.
       </p>
-      <img src="assets/images/step-three-lockin.png" alt="an image showing the 'lock in' function in the game">
+      <img src="assets/images/step-three-check.png" alt="an image showing the button to check the results when playing the pc.">
   </div>
   <br>
   <div class="pvp-step">
@@ -912,9 +935,10 @@ function openPVCManual() {
           Step 4:
       </h3>
       <p>
-          The winner of each round shall appear in handy message boxes and the hand you picked shall appear alongside the computers choices, the points are awarded to the winner of each round.
+          The winner of each round shall appear in handy message boxes, messages will pop up below the playing area detailing the result of each round. 
+          Points will be awarded via the scoreboard.
       </p>
-      <img src="assets/images/step-pc-compare.png" alt="an image showing the functions for player two">
+      <img src="assets/images/step-pc-compare.png" alt="an image showing the message center">
   </div>
   <br>
   <div class="pvp-step">
@@ -922,9 +946,23 @@ function openPVCManual() {
           Step 5:
       </h3>
       <p>
+        The paterns of Rock, Paper or Scissors chosen by each player shall be shown directly below the message center, 
+        here you can check your opponents choices against your own.
+      </p>
+      <img src="assets/images/step-pc-paterns.png" alt="an image showing the options chosen by the player and the computers randomly generated choices.">
+  </div>
+  <br>
+  <div class="pvp-step">
+      <h3>
+          Step 6:
+      </h3>
+      <p>
           Once the results have been calculated and the points awarded on the scoreboard, you can select the text
           'Play again' to continue a new game with your previous scores and chosen player name carried forward.
           the game can be played as many times as you desire. 
+      </p>
+      <p>
+        Can you discover the hidden power? They say it's explosive!..
       </p>
       <img src="assets/images/step-pc-newround.png" alt="an image showing the button to start a new round">
   </div>
