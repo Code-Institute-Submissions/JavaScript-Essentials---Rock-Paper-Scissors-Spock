@@ -5,7 +5,7 @@ The game has good potential for further development, it features a classic flash
 
 The fourth option, 'Nucleur' has been intentionally hidden within the banner of the site. This is to give options to play the game in the regular original format, or to withold the strength of the option from new players. Chosing this option shall end the round and award exactly 1 point only to the relevant player.
 
-![Responsive](https://github.com/WHLW27/HTML-Essentials-Portfolio-Project/blob/main/assets/images/readme/responsive-mockup.png)
+![Responsive](https://github.com/WHLW27/JavaScript-Essentials---Rock-Paper-Scissors-Spock/blob/main/assets/images/readme/responsive-mockup.png)
 
 ## Features 
 
