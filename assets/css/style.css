@@ -920,7 +920,7 @@ section {
     }
 
     #landing-title {
-        height: 245px;
+        height: 200px;
     }
 
     #landing-title h2 {
@@ -950,7 +950,7 @@ section {
     }
 
     #gradient-three {
-        margin-top: 0px;
+        margin-top: 41px;
     }
 
     #gradient-four {
@@ -1149,7 +1149,7 @@ section {
 
     #inner-message {
         font-family: 'Bebas Neue', cursive, sans-serif;
-        font-size: 18px;
+        font-size: 15px;
     }
 
     #big-message {
