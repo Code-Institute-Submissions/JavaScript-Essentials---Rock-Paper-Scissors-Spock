@@ -130,7 +130,7 @@ A                          |  B
   - This button acts as a call-to-action. featured at the bottom of both game manuals, this button shall start the relevant game type without needing to return to the main menu.  
   - Players who chose first to review the rules of the game and its functions will be pleased to see they do not need to reset the game or make unnecesary clicks and can begin a game with no roadblocks to move around. 
 
-![Start gaem button](https://github.com/WHLW27/JavaScript-Essentials---Rock-Paper-Scissors-Spock/blob/main/assets/images/readme/start.png)
+![Start game button](https://github.com/WHLW27/JavaScript-Essentials---Rock-Paper-Scissors-Spock/blob/main/assets/images/readme/start.png)
 
 ### Potential features to Implement
 
@@ -157,7 +157,9 @@ Below is a detailed explanation of the testing and deployment process of this pr
 
 ### Unfixed Bugs
 
-Regarding the Div's that build the various timeline 'panels'. I had difficulty making the text bold and highlighted whilst keeping the background image's opacity to generate a clear contrast. I struggled to find a clear method to address this through just CSS and HTML and decided it would be best to place the text alongside the image instead of on top.  
+If Players are too trigger happy with the mouse, it appears some functions overlap. Selecting the options is fine, but selecting the 'Check Results' button (which then updates to the 'Play again' button) and suddenly clicking the same area of the screen will begin a new game, results are carried over as are player names by the patern comparison divs that should not be visible at the point in the game are still visible. There is likely various methods to address this, use of setTimeout could delay certain features updating for example.
+
+My tutor also highlighted my used of HTML markup in my JavaScript file, I thought that using javascript to manipulate the DOM to navigate through the site was a good idea. That having a single HTML file that was manipulated by the script was creative. My tutor explained this as an 'Anti-patern' and provided the definition of the word in relation to programming, however, I struggled to find documentation online to explain exactly why the technique I adopted is an anti patern and fell short of time remaining to redesign the script. 
 
 ## Deployment
 
